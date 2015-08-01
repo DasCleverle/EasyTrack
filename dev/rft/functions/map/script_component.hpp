@@ -1,0 +1,1 @@
+#include "\x\cl\addons\rft\script_component.hpp"
