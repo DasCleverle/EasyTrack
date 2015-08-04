@@ -20,4 +20,4 @@ else {
     SET_ICON_ANGLE(_directionIcon, _direction);
 };
 
-MARKER_SET_DIR_CHANGED(GVAR(selectedMarker), true);
+MARKER_SET_CHANGED(GVAR(selectedMarker), true);

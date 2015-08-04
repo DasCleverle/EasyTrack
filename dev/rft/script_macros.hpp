@@ -4,7 +4,7 @@
 #define MODULE_RFT GVAR(module)
 
 // Marker Data access
-#define NEW_MARKER(var1, var2) [var1, var2, ICON_DIR_DEFAULT, ELLIPSE_DEFAULT, true, true, true, true, time, name player, -1]
+#define NEW_MARKER(var1, var2, var3) [var1, var2, ICON_DIR_DEFAULT, ELLIPSE_DEFAULT, true, time, name player, -1, var3]
 
 #define GET_MARKER(var1) (missionNamespace getVariable (QGVAR(marker_) + str var1))
 #define SET_MARKER(var1, var2) (missionNamespace setVariable [QGVAR(marker_) + str var1, var2])
@@ -13,25 +13,21 @@
 #define MARKER_GET_SIZE(var1)               (var1 select 1)
 #define MARKER_GET_DIR(var1)                (var1 select 2)
 #define MARKER_GET_ELLIPSE(var1)            (var1 select 3)
-#define MARKER_GET_ICON_CHANGED(var1)       (var1 select 4)
-#define MARKER_GET_SIZE_CHANGED(var1)       (var1 select 5)
-#define MARKER_GET_DIR_CHANGED(var1)        (var1 select 6)
-#define MARKER_GET_ELLIPSE_CHANGED(var1)    (var1 select 7)
-#define MARKER_GET_TIME(var1)               (var1 select 8)
-#define MARKER_GET_PLAYER(var1)             (var1 select 9)
-#define MARKER_GET_ID(var1)                 (var1 select 10)
+#define MARKER_GET_CHANGED(var1)            (var1 select 4)
+#define MARKER_GET_TIME(var1)               (var1 select 5)
+#define MARKER_GET_PLAYER(var1)             (var1 select 6)
+#define MARKER_GET_ID(var1)                 (var1 select 7)
+#define MARKER_GET_SIDE(var1)               (var1 select 8)
 
-#define MARKER_SET_ICON(var1, var2)               (var1 set [0, var2]); MARKER_SET_ICON_CHANGED(var1, true)
-#define MARKER_SET_SIZE(var1, var2)               (var1 set [1, var2]); MARKER_SET_SIZE_CHANGED(var1, true)
-#define MARKER_SET_DIR(var1, var2)                (var1 set [2, var2]); MARKER_SET_DIR_CHANGED(var1, true)
-#define MARKER_SET_ELLIPSE(var1, var2)            (var1 set [3, var2]); MARKER_SET_ELLIPSE_CHANGED(var1, true)
-#define MARKER_SET_ICON_CHANGED(var1, var2)       (var1 set [4, var2])
-#define MARKER_SET_SIZE_CHANGED(var1, var2)       (var1 set [5, var2])
-#define MARKER_SET_DIR_CHANGED(var1, var2)        (var1 set [6, var2])
-#define MARKER_SET_ELLIPSE_CHANGED(var1, var2)    (var1 set [7, var2])
-#define MARKER_SET_TIME(var1, var2)               (var1 set [8, var2])
-#define MARKER_SET_PLAYER(var1, var2)             (var1 set [9, var2])
-#define MARKER_SET_INDEX(var1, var2)              (var1 set [10, var2])
+#define MARKER_SET_ICON(var1, var2)               (var1 set [0, var2]); MARKER_SET_CHANGED(var1, true)
+#define MARKER_SET_SIZE(var1, var2)               (var1 set [1, var2]); MARKER_SET_CHANGED(var1, true)
+#define MARKER_SET_DIR(var1, var2)                (var1 set [2, var2]); MARKER_SET_CHANGED(var1, true)
+#define MARKER_SET_ELLIPSE(var1, var2)            (var1 set [3, var2]); MARKER_SET_CHANGED(var1, true)
+#define MARKER_SET_CHANGED(var1, var2)            (var1 set [4, var2])
+#define MARKER_SET_TIME(var1, var2)               (var1 set [5, var2])
+#define MARKER_SET_PLAYER(var1, var2)             (var1 set [6, var2])
+#define MARKER_SET_ID(var1, var2)                 (var1 set [7, var2])
+#define MARKER_SET_SIDE(var1, var2)               (var1 set [8, var2])
 
 #define FAV_ICON(var1)  (var1 select 0)
 #define FAV_SIZE(var1)  (var1 select 1)

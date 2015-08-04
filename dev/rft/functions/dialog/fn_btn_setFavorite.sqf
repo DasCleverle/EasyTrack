@@ -28,5 +28,4 @@ SET_ICON_COLOR(_icon, _color);
 
 SET_ICON_PATH(_size, _sizePath);
 
-MARKER_SET_ICON_CHANGED(_selectedMarker, true);
-MARKER_SET_SIZE_CHANGED(_selectedMarker, true);
+MARKER_SET_CHANGED(_selectedMarker, true);

@@ -56,5 +56,5 @@ if(!isNil QGVAR(selectedCatch) && {GVAR(mouseButtonPressed)}) then {
         SET_ELLIPSE_A(_catchEllipse, _dist);
     };
     SET_ELLIPSE_ANGLE(_catchEllipse, _catchDir);
-    MARKER_SET_ELLIPSE_CHANGED(_selectedMarker, true);
+    MARKER_SET_CHANGED(_selectedMarker, true);
 };

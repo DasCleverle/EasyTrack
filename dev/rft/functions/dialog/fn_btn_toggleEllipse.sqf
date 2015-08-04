@@ -22,4 +22,4 @@ else {
     _control ctrlCommit 0;
 };
 
-MARKER_SET_ELLIPSE_CHANGED(_selectedMarker, true);
+MARKER_SET_CHANGED(_selectedMarker, true);

@@ -20,6 +20,7 @@ class CfgFunctions {
             file = FUNCFILE(main);
 
             class initModule {};
+            class getMarkerIndex {};
         };
 
         class map {
@@ -62,9 +63,6 @@ class CfgFunctions {
 
         class sync {
             file = FUNCFILE(sync);
-
-            class addServerMarker {};
-            class removeServerMarker {};
 
             class invokeSyncMarker {};
             class syncMarker {};

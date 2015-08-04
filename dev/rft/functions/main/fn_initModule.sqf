@@ -3,43 +3,28 @@
 GVAR(active) = true;
 
 // Server only init
-if(isServer) then {
+/*if(isServer) then {
     GVAR(serverMarkersWEST) = [];
     GVAR(serverMarkersEAST) = [];
     GVAR(serverMarkersGUER) = [];
     GVAR(serverCurrentMarkerIDWEST) = 0;
     GVAR(serverCurrentMarkerIDEAST) = 0;
     GVAR(serverCurrentMarkerIDGUER) = 0;
-};
+};*/
 
 // Client init
 if(hasInterface) then {
     waitUntil { !isNull player };
     waitUntil { !isNull (finddisplay 46) };
 
-    // remember friendly side for marker sync
-    /*private ["_friends"];
-    _friends = [];
-    {
-        if([side player, _x] call BIS_fnc_areFriendly) then {
-            _friends pushBack _x;
-        };
-    } foreach [west, east, independent];
-    player setVariable [QGVAR(friends), _friends];*/
-
-    // syncing
-    QGVAR(packet) addPublicVariableEventHandler {
-        (_this select 1) call FUNC(syncMarker);
-    };
-
     // JIP
-    {
-        GVAR(markers) pushBack _x;
-        SET_MARKER(MARKER_GET_ID(_x), _x);
-    } foreach ([missionNamespace, QGVAR(serverMarkers) + str side player, []] call BIS_fnc_getServerVariable);
-    GVAR(currentMarkerID) = [missionNamespace, QGVAR(serverCurrentMarkerID) + str side player, 0] call BIS_fnc_getServerVariable;
-};
+    GVAR(markers) = [missionNamespace, QGVAR(markers), []] call BIS_fnc_getServerVariable;
+    GVAR(currentMarkerID) = [missionNamespace, QGVAR(currentMarkerID), 0] call BIS_fnc_getServerVariable;
 
+    {
+        SET_MARKER(MARKER_GET_ID(_x), _x);
+    } foreach GVAR(markers);
+};
 
 // Global variables for client and server
 GVAR(symbols) = [
@@ -101,8 +86,8 @@ GVAR(mainControls) = [
     [QEGVAR(tracking_main,Button),         ["Show Ellipse", FUNC(btn_toggleEllipse)], "btnToggleEllipse"] // "toggle ellipse" button
 ];
 
-GVAR(markers) = [];
-GVAR(currentMarkerID) = 0;
+ISNILS(GVAR(markers),[]);
+ISNILS(GVAR(currentMarkerID),0);
 
 GVAR(dir_controls) = [];
 
@@ -126,3 +111,11 @@ EGVAR(tracking_main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavCont
 
 // Map init
 [] spawn FUNC(initMap);
+
+// syncing
+QGVAR(packet) addPublicVariableEventHandler {
+    (_this select 1) call FUNC(syncMarker);
+};
+
+
+

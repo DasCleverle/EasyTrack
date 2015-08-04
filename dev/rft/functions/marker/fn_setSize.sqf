@@ -3,7 +3,7 @@
 PARAMS_1(_sizePath);
 
 SET_ICON_PATH(MARKER_GET_SIZE(GVAR(selectedMarker)), _sizePath);
-MARKER_SET_SIZE_CHANGED(GVAR(selectedMarker), true);
+MARKER_SET_CHANGED(GVAR(selectedMarker), true);
 
 if(GVAR(editingFav) != -1) then {
     private ["_selectedFav"];

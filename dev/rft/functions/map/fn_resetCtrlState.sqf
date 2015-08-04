@@ -2,7 +2,9 @@
 
 // sync if things on the map have changed
 if(!isNil QGVAR(movingMarker)) then {
-    [GVAR(movingMarker), "update"] call FUNC(invokeSyncMarker);
+    private ["_index"];
+    _index = GVAR(markers) find GVAR(movingMarker);
+    [GVAR(markers) select _index, "update"] call FUNC(invokeSyncMarker);
 };
 
 GVAR(mouseButtonPressed) = false;
