@@ -29,9 +29,9 @@ _grpMain = _mapDisplay ctrlCreate [QGVAR(grpBft), IDC_GRP_BFT];
 // Create Configuration button
 _btnConfigure = _mapDisplay ctrlCreate [QEGVAR(tracking_main,Button), IDC_BTN_CONFIGURE];
 _btnConfigure ctrlSetPosition [
-    safeZoneX + safeZoneW - 21.5 * GUIMIN_2(1.2, 40) + GUIMIN_2(1.2, 40) - 7 * GUIMIN_2(1.2, 40),
+    safeZoneX + safeZoneW - 20.5 * GUIMIN_2(1.2, 40) + GUIMIN_2(1.2, 40) - 7 * GUIMIN_2(1.2, 40),
     safeZoneY + 0.2 * GUIMIN_3_2(1.2, 25),
-    6 * GUIMIN_2(1.2, 40),
+    7 * GUIMIN_2(1.2, 40),
     1.1 * GUIMIN_3_2(1.2, 25)
 ];
 _btnConfigure ctrlSetText "Configure BFT";

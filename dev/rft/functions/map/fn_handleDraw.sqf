@@ -19,10 +19,4 @@ if (HAS_TRACKER) then {
 
     // Rotate Direction Arrow
     [_mapControl, _selectedMarker] call FUNC(drawRotateDirection);
-}
-else {
-    if(GVAR(mainControlsVisible)) then {
-        GVAR(selectedMarker) = nil;
-        [_mapControl, "hide"] call FUNC(toggleMainControl);
-    };
 };

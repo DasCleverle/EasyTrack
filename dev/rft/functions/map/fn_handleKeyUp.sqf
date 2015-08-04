@@ -5,11 +5,6 @@ disableSerialization;
 PARAMS_5(_mapDisplay,_keyCode,_shiftState,_ctrlState,_altState);
 
 if(_keyCode == DIK_LCONTROL || {_keyCode == DIK_RCONTROL}) then {
-    /*GVAR(ctrlPressed) = false;
-    GVAR(selectedCatch) = nil;
-    GVAR(currentDirectionArrow) = nil;
-    GVAR(movingMarker) = nil;*/
-
     GVAR(ctrlPressed) = false;
     call FUNC(resetCtrlState);
 };

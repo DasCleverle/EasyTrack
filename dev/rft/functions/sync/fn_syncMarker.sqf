@@ -35,4 +35,9 @@ if(_action != "delete") then {
     MARKER_SET_SIZE_CHANGED(_marker, false);
     MARKER_SET_DIR_CHANGED(_marker, false);
     MARKER_SET_ELLIPSE_CHANGED(_marker, false);
-};
+}
+else {
+    if(MARKER_GET_ID(GVAR(selectedMarker)) == _index) then {
+        GVAR(selectedMarker) = nil;
+    };
+}

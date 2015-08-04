@@ -1,16 +1,5 @@
 #include "script_component.hpp"
 
-/*private ["_functionClasses"];
-_functionClasses = "true" configClasses (configFile >> "cfgFunctions" >> QUOTE(ADDON));
-
-{
-    _functions = "true" configClasses (_x);
-    _file = getText (_x >> "file");
-    {
-        missionNamespace setVariable [QUOTE(DOUBLES(ADDON,fnc)) + "_" + configName _x, compile preProcessFileLineNumbers (_file + "\fn_" + configName _x + ".sqf")];
-    } forEach _functions;
-} foreach _functionClasses;*/
-
 GVAR(components) = [
     "tracking_main",
     "bft",

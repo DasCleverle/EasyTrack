@@ -17,9 +17,13 @@
 #define SIZE_SQUAD      QUOTE(SIZE_BASE_SYS(2))
 #define SIZE_PLATOON    QUOTE(SIZE_BASE_SYS(3))
 
-#define TABLET_ITEMS    ["b_itemLAPTOP_FT", "o_itemLAPTOP_FT", "i_itemLAPTOP_FT"]
-#define PDA_ITEMS       ["b_itemGPS_FT", "o_itemGPS_FT", "i_itemGPS_FT"]
-#define TRACKER_ITEMS   (TABLET_ITEMS + PDA_ITEMS)
+#define TABLET_ITEMS_SYS    "b_itemLAPTOP_FT", "o_itemLAPTOP_FT", "i_itemLAPTOP_FT"
+#define PDA_ITEMS_SYS       "b_itemGPS_FT", "o_itemGPS_FT", "i_itemGPS_FT"
+#define TRACKER_ITEMS_SYS   TABLET_ITEMS_SYS, PDA_ITEMS_SYS
+
+#define TABLET_ITEMS    [TABLET_ITEMS_SYS]
+#define PDA_ITEMS       [PDA_ITEMS_SYS]
+#define TRACKER_ITEMS   [TRACKER_ITEMS_SYS]
 
 #define UHAS_ITEMS(var1, var2) (count (var1 arrayIntersect (assignedItems var2) + (items var2)) > 0)
 #define HAS_ITEMS(var1) UHAS_ITEMS(var1, player)

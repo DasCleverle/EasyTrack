@@ -5,8 +5,8 @@ class CfgFunctions {
 
             class btn_centerOnIcon {};
             class btn_configure {};
-            class btn_configureChecked {};
             class btn_configureHide {};
+            class lst_configureChanged {};
 
             class toggleMainControl {};
         };
@@ -45,8 +45,11 @@ class CfgFunctions {
             class setSymbol {};
         }
 
-        class sync {
-            file = FUNCFILE(sync);
+        class xeh {
+            file = FUNCFILE(xeh);
+
+            class xeh_handlePut {};
+            class xeh_handleTake {};
         };
     };
 };

@@ -69,5 +69,11 @@ class CfgFunctions {
             class invokeSyncMarker {};
             class syncMarker {};
         };
+
+        class xeh {
+            file = FUNCFILE(xeh);
+
+            class xeh_handlePut {};
+        };
     };
 };
