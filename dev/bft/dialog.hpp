@@ -1,35 +1,9 @@
 class RscControlsGroupNoHScrollbars;
 class RscControlsGroupNoScrollbars;
+class RscListbox;
 class EGVAR(tracking_main,Background);
 class EGVAR(tracking_main,LabelTooltip);
 class EGVAR(tracking_main,Button);
-class RscShortcutButton;
-
-class RscButtonMenu : RscShortcutButton {
-    class Attributes;
-    class AttributesImage;
-    class HitZone;
-    class ShortcutPos;
-    class TextPos;
-};
-
-class GVAR(ButtonCheck): RscButtonMenu {
-    idc = -1;
-
-    colorBackground[] = {COLOR_RED_TR};
-    colorBackgroundActive[] = {COLOR_RED_TR};
-    colorFocused[] = {COLOR_BLACK_TR25};
-
-    period = 0;
-    periodFocus = 0;
-    periodOver = 0;
-
-    style = 2;
-
-    class Attributes : Attributes {
-        font = "PuristaMedium";
-    };
-};
 
 class GVAR(grpBft): RscControlsGroupNoHScrollbars {
     idc = IDC_GRP_BFT;
@@ -118,8 +92,18 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
     h = CONFIG_HEIGHT + BASE_Y + BASE_H;
 
     class controls {
-        class GVAR(grpConfigure): RscControlsGroupNoHScrollbars {
-            idc = IDC_GRP_CONFIGURE;
+        class lstConfigure : RscListbox {
+            idc = IDC_LST_CONFIGURE;
+
+            colorBackground[] = {COLOR_BLACK_TR25};
+            colorSelect2[] = {COLOR_WHITE};
+            colorSelect[] = {COLOR_WHITE};
+            colorText[] = {COLOR_WHITE};
+            colorSelectBackground2[] = {COLOR_TR};
+            colorSelectBackground[] = {COLOR_TR};
+            period = 0;
+
+            onLbSelChanged = _this spawn FUNC(lst_configureChanged);
 
             x = 0;
             y = 0;
