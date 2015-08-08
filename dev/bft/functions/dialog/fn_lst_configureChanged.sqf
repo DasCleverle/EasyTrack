@@ -8,7 +8,7 @@ private ["_unit", "_drawMarker"];
     if((_control lbText _index) == name _x) exitWith {
         _unit = _x;
     };
-} foreach allPlayers;
+} foreach GVAR(configureUnits);
 if(isNil "_unit") exitWith {};
 
 _drawMarker = _unit getVariable [QGVAR(drawMarker), false];

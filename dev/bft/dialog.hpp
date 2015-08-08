@@ -3,6 +3,7 @@ class RscControlsGroupNoScrollbars;
 class RscListbox;
 class EGVAR(tracking_main,Background);
 class EGVAR(tracking_main,LabelTooltip);
+class EGVAR(tracking_main,Label);
 class EGVAR(tracking_main,Button);
 
 class GVAR(grpBft): RscControlsGroupNoHScrollbars {
@@ -84,18 +85,29 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
 };
 
 class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
-    idc = IDC_GRP_CONFIGURE;
+    idc = IDC_LST_CONFIGURE;
 
     x = safeZoneX + (safeZoneW - CONFIG_WIDTH) / 2;
     y = safeZoneY + (safeZoneH - CONFIG_HEIGHT) / 2;
     w = CONFIG_WIDTH;
-    h = CONFIG_HEIGHT + BASE_Y + BASE_H;
+    h = CONFIG_HEIGHT;// + BASE_Y + BASE_H;
 
     class controls {
+        class background: EGVAR(tracking_main,Background) {
+            idc = -1;
+
+            colorBackground[] = {COLOR_BLACK_TR50};
+
+            x = 0;
+            y = 0;
+            w = CONFIG_WIDTH;
+            h = CONFIG_HEIGHT;
+        };
+
         class lstConfigure : RscListbox {
             idc = IDC_LST_CONFIGURE;
 
-            colorBackground[] = {COLOR_BLACK_TR25};
+            colorBackground[] = {COLOR_TR};
             colorSelect2[] = {COLOR_WHITE};
             colorSelect[] = {COLOR_WHITE};
             colorText[] = {COLOR_WHITE};
@@ -108,18 +120,89 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             x = 0;
             y = 0;
             w = CONFIG_WIDTH;
-            h = CONFIG_HEIGHT;
+            h = CONFIG_HEIGHT - BASE_Y - 4 * (BASE_Y + BASE_H);
+        };
+
+        class btnShowLeaders: EGVAR(tracking_main,Button) {
+            idc = -1;
+
+            text = "Only show leaders";
+            onButtonClick = [_this,"leaders"] spawn FUNC(btn_changePlayers);
+
+            x = BASE_X;
+            y = CONFIG_HEIGHT - 4 * (BASE_Y + BASE_H);
+            w = CONFIG_WIDTH - 2 * BASE_X;
+            h = BASE_H;
+        };
+
+        class btnShowAll: EGVAR(tracking_main,Button) {
+            idc = -1;
+
+            text = "Show all players";
+            onButtonClick = [_this,"all"] spawn FUNC(btn_changePlayers);
+
+            x = BASE_X;
+            y = CONFIG_HEIGHT - 3 * (BASE_Y + BASE_H);
+            w = CONFIG_WIDTH - 2 * BASE_X;
+            h = BASE_H;
+        };
+
+        class btnAllSymbols: EGVAR(tracking_main,Button) {
+            idc = -1;
+
+            text = "All";
+            onButtonClick = [_this,"all"] spawn FUNC(btn_changeSymbols);
+
+            x = BASE_X;
+            y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
+            w = 0.15 * (CONFIG_WIDTH - 2 * BASE_X);
+            h = BASE_H;
+        };
+
+        class btnNoSymbols: EGVAR(tracking_main,Button) {
+            idc = -1;
+
+            text = "No";
+            onButtonClick = [_this,"none"] spawn FUNC(btn_changeSymbols);
+
+            x = BASE_X + (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
+            y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
+            w = 0.15 * (CONFIG_WIDTH - 2 * BASE_X);
+            h = BASE_H;
+        };
+
+        class btnToggleSymbols: EGVAR(tracking_main,Button) {
+            idc = -1;
+
+            text = "Toggle";
+            onButtonClick = [_this,"toggle"] spawn FUNC(btn_changeSymbols);
+
+            x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
+            y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
+            w = 0.25 * (CONFIG_WIDTH - 2 * BASE_X);
+            h = BASE_H;
+        };
+
+        class lblSymbols: EGVAR(tracking_main,Label) {
+             idc = -1;
+
+            text = "Symbols";
+
+            x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)) + (0.5 * BASE_X + 0.25 * (CONFIG_WIDTH - 2 * BASE_X));
+            y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
+            w = 0.5 * (CONFIG_WIDTH - 2 * BASE_X);
+            h = BASE_H;
         };
 
         class btnHide: EGVAR(tracking_main,Button) {
-            idc = IDC_BTN_CONFIGURE_HIDE;
+            idc = -1;
 
             text = "Close";
             onButtonClick = _this spawn FUNC(btn_configureHide);
 
-            x = 0.25 * CONFIG_WIDTH;
-            y = 0.5 * BASE_Y + CONFIG_HEIGHT;
-            w = 0.5 * CONFIG_WIDTH;
+            x = BASE_X;
+            y = CONFIG_HEIGHT - 1 * (BASE_Y + BASE_H);
+            w = CONFIG_WIDTH - 2 * BASE_X;
             h = BASE_H;
         };
     };

@@ -2,8 +2,6 @@
 
 disableSerialization;
 
-if(GVAR(configureVisible)) exitWith {};
-
 PARAMS_1(_control);
 private ["_mapDisplay", "_grpConfigureContainer", "_lstConfigure", "_background", "_y", "_idc"];
 
@@ -26,6 +24,7 @@ lbClear _lstConfigure;
             _lstConfigure lbSetPicture [_index, QDATAPATH(transparent.paa)];
         };
     };
-} foreach allPlayers;
+} foreach GVAR(configureUnits);
+lbSort [_lstConfigure, "ASC"];
 
 GVAR(configureVisible) = true;

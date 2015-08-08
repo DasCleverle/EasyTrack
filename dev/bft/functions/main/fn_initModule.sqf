@@ -42,7 +42,8 @@ GVAR(sizes) = [
 GVAR(mainControls) = [
     [QEGVAR(tracking_main,LabelHeading),        ["Blue Force Tracking"]],
     [QEGVAR(tracking_main,Button),              ["Center on marker", FUNC(btn_centerOnIcon)]],
-    [QEGVAR(tracking_main,Label),               ["John Doe"], "lblPlayerName"],
+    [QEGVAR(tracking_main,Label),               ["Unit (read only)"]],
+    [QEGVAR(tracking_main,TextBox),             [{}], "txtPlayerName"],
     [QEGVAR(tracking_main,Label),               ["Callsign", false]],
     [QEGVAR(tracking_main,TextBox),             [{ [ctrlText (_this select 0)] call FUNC(setCallsign); }], "txtCallsign"],
     [QEGVAR(tracking_main,Label),               ["Frequency/Channel", false]],
@@ -51,9 +52,9 @@ GVAR(mainControls) = [
     [QEGVAR(tracking_main,Container),           ["sizes",   GVAR(sizes),   4]]
 ];
 
-GVAR(configure_controls) = [];
 GVAR(createdCheckboxes) = 0;
 GVAR(configureVisible) = false;
+GVAR(configureUnits) = allUnits;
 
 GVAR(mapInitialized) = false;
 

@@ -20,7 +20,7 @@ if(!isNil QGVAR(hoveredMarker)) then {
         switch (_name) do {
             case "txtCallsign": { _control ctrlSetText MARKER_GET_CALLSIGN(GVAR(selectedMarker)); };
             case "txtFrequency": { _control ctrlSetText MARKER_GET_FREQUENCY(GVAR(selectedMarker)); };
-            case "lblPlayerName": { _control ctrlSetText "Unit: " + name MARKER_GET_UNIT(GVAR(selectedMarker)); };
+            case "txtPlayerName": { _control ctrlSetText name MARKER_GET_UNIT(GVAR(selectedMarker)); };
         };
     } foreach GVAR(mainControls);
 

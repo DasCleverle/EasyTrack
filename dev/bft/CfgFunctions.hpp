@@ -6,6 +6,8 @@ class CfgFunctions {
             class btn_centerOnIcon {};
             class btn_configure {};
             class btn_configureHide {};
+            class btn_changePlayers {};
+            class btn_changeSymbols {};
             class lst_configureChanged {};
 
             class toggleMainControl {};

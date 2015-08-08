@@ -52,16 +52,6 @@
 #define X(var1) (var1 select 0)
 #define Y(var1) (var1 select 1)
 
-#define EXPLODE_10(ARRAY,A,B,C,D,E,F,G,H,I,J) EXPLODE_9_SYS(ARRAY,A,B,C,D,E,F,G,H,I); J = (ARRAY) select 9
-#define EXPLODE_10_PVT(ARRAY,A,B,C,D,E,F,G,H,I,J) \
-    private [#A,#B,#C,#D,#E,#F,#G,#H,#I,#J]; \
-    EXPLODE_10(ARRAY,A,B,C,D,E,F,G,H,I,J)
-
-#define EXPLODE_11(ARRAY,A,B,C,D,E,F,G,H,I,J,K) EXPLODE_10(ARRAY,A,B,C,D,E,F,G,H,I,J); K = (ARRAY) select 10
-#define EXPLODE_11_PVT(ARRAY,A,B,C,D,E,F,G,H,I,J,K) \
-    private [#A,#B,#C,#D,#E,#F,#G,#H,#I,#J,#K]; \
-    EXPLODE_11(ARRAY,A,B,C,D,E,F,G,H,I,J,K)
-
 #define ICON_PATH(var1)     (var1 select 0)
 #define ICON_COLOR(var1)    (var1 select 1)
 #define ICON_POS(var1)      (var1 select 2)
