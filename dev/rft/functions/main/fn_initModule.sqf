@@ -24,6 +24,25 @@ if(hasInterface) then {
     {
         SET_MARKER(MARKER_GET_ID(_x), _x);
     } foreach GVAR(markers);
+
+    // GPS
+    GVAR(pfhGPS) = [
+        {
+            _finished = false;
+            {
+                if(ctrlIDD _x == 133) then {
+                    _mapControl = _x displayCtrl 101;
+                    _mapControl ctrlAddEventHandler ["draw", { _this call FUNC(handleDraw); }];
+                    _finished = true;
+                };
+            } forEach (uiNamespace getVariable "IGUI_displays");
+            if(_finished) then {
+                [GVAR(pfhGPS)] call CBA_fnc_removePerFrameHandler;
+            };
+        },
+        0,
+        []
+    ] call CBA_fnc_addPerFrameHandler;
 };
 
 // Global variables for client and server
