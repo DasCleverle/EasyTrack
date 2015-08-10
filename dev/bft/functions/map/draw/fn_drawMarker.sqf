@@ -36,6 +36,7 @@ _hoveringCount = 0;
         _mapControl drawIcon _icon;
         _mapControl drawIcon _size;
     };
+    true
 } count allPlayers;
 
 if(_hoveringCount == 0) then {

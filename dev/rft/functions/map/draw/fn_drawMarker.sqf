@@ -17,6 +17,7 @@ _sides = [];
             true
         } count ([_side] call BIS_fnc_friendlySides);
     };
+    true
 } count TRACKER_ITEMS;
 
 {
