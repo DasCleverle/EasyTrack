@@ -15,6 +15,28 @@ if(hasInterface) then {
     // set player variables
     player setVariable [QGVAR(drawMarker), false, true];
     player setVariable [QGVAR(marker), NEW_MARKER, true];
+
+    // GPS
+    if(EGVAR(rft,active)) then {
+        waitUntil { !isNil QEGVAR(rft,pfhGPS); };
+    };
+    GVAR(pfhGPS) = [
+        {
+            _finished = false;
+            {
+                if(ctrlIDD _x == 133) then {
+                    _mapControl = _x displayCtrl 101;
+                    _mapControl ctrlAddEventHandler ["draw", { _this call FUNC(handleDraw); }];
+                    _finished = true;
+                };
+            } forEach (uiNamespace getVariable "IGUI_displays");
+            if(_finished) then {
+                [GVAR(pfhGPS)] call CBA_fnc_removePerFrameHandler;
+            };
+        },
+        0,
+        []
+    ] call CBA_fnc_addPerFrameHandler;
 };
 
 // Common init
@@ -42,7 +64,7 @@ GVAR(sizes) = [
 GVAR(mainControls) = [
     [QEGVAR(tracking_main,LabelHeading),        ["Blue Force Tracking"]],
     [QEGVAR(tracking_main,Button),              ["Center on marker", FUNC(btn_centerOnIcon)]],
-    [QEGVAR(tracking_main,Label),               ["Unit (read only)"]],
+    [QEGVAR(tracking_main,Label),               ["Unit (read only)", false]],
     [QEGVAR(tracking_main,TextBox),             [{}], "txtPlayerName"],
     [QEGVAR(tracking_main,Label),               ["Callsign", false]],
     [QEGVAR(tracking_main,TextBox),             [{ [ctrlText (_this select 0)] call FUNC(setCallsign); }], "txtCallsign"],
@@ -60,3 +82,4 @@ GVAR(mapInitialized) = false;
 
 waitUntil { !isNil QEGVAR(tracking_main,controlTypes) };
 [] spawn FUNC(initMap);
+
