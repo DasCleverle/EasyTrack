@@ -10,7 +10,7 @@ _background ctrlSetBackgroundColor [COLOR_BLACK_TR50];
 _yPos = 0;
 {
     private ["_control", "_arguments", "_result"];
-    params ["_controlType", "_args", "_name"];
+    _x params ["_controlType", "_args", "_name"];
 
     // Create the control
     _control = _mapDisplay ctrlCreate [_controlType, _idc, _grpMain];
@@ -24,7 +24,7 @@ _yPos = 0;
         if(_type == _controlType) exitWith {
             _result = _arguments call _fnc;
         };
-    } foreach GVAR(controlTypes);
+    } count GVAR(controlTypes);
 
     if(isNil "_name") then {
         _x pushBack "";
@@ -33,7 +33,8 @@ _yPos = 0;
 
     ADD(_yPos,_result);
     ADD(_idc,1000);
-} foreach _controls;
+    true
+} count _controls;
 
 // increase height of background if contrls dont fit on the screen
 private ["_bgPos", "_bgHeight"];

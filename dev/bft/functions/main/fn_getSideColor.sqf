@@ -7,6 +7,3 @@ call {
     if (independent == _side) exitWith { [COLOR_INDEP] };
     [COLOR_GREY]
 }
-switch(_side) do {
-
-};
