@@ -8,8 +8,7 @@ params ["_control", "_type"];
 
 if(ctrlIDC _control == IDC_GRP_RFTREPORT) then {
     _grpMain = _control;
-}
-else {
+} else {
     _mapDisplay = ctrlParent _control;
     _grpMain = _mapDisplay displayCtrl IDC_GRP_RFTREPORT;
 };

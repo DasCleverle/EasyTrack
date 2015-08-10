@@ -18,5 +18,6 @@ params ["_mapDisplay", "_keyCode", "_shiftState", "_ctrlState", "_altState"];
         _grpConfigure ctrlShow false;
         GVAR(configureVisible) = false;
     };
-} foreach actionKeys "hideMap";
-nil
+    true
+} count actionKeys "hideMap";
+false

@@ -16,12 +16,14 @@ if(!isNil QGVAR(hoveredMarker)) then {
         private ["_control", "_text"];
         _x params ["_type", "_params", "_name", "_idc"];
         _control = _mapDisplay displayCtrl _idc;
-        _text = call {
+        _text = (call {
             if (_name == "txtCallsign") exitWith { MARKER_GET_CALLSIGN(GVAR(selectedMarker)) };
             if (_name == "txtFrequency") exitWith { MARKER_GET_FREQUENCY(GVAR(selectedMarker)) };
             if (_name == "txtPlayerName") exitWith { name MARKER_GET_UNIT(GVAR(selectedMarker)) };
+        });
+        if (!isNil "_text") then {
+            _control ctrlSetText _text;
         };
-        _control ctrlSetText _text;
     } count GVAR(mainControls);
 
     [_mapControl, "show"] call FUNC(toggleMainControl);

@@ -10,11 +10,11 @@ _mapControl = _mapDisplay displayCtrl IDC_MAINMAP;
 
 // Add eventhandlers to map and map display
 _mapControl ctrlAddEventHandler ["Draw", FUNC(handleDraw)];
-_mapControl ctrlAddEventHandler ["MouseButtonClick", FUNC(handleMouseButtonClick)];
+_mapControl ctrlAddEventHandler ["MouseButtonClick", { _this spawn FUNC(handleMouseButtonClick); }];
 _mapControl ctrlAddEventHandler ["MouseMoving", FUNC(handleMouseMoving)];
 _mapControl ctrlAddEventHandler ["MouseHolding", FUNC(handleMouseMoving)];
 
-_mapDisplay displayAddEventHandler ["KeyDown", FUNC(handleKeyDown)];
+_mapDisplay displayAddEventHandler ["KeyDown", { _this spawn FUNC(handleKeyDown); nil }];
 
 // Create the tooltip group
 _grpTooltip = _mapDisplay ctrlCreate [QGVAR(grpMarkerTooltip), IDC_GRP_MARKERTOOLTIP];

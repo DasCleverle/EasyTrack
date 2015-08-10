@@ -6,7 +6,7 @@ params ["_control", "_index"];
 GVAR(editingFav) = _index;
 
 {
-    params ["_picEmphasis"];
+    _x params ["_picEmphasis"];
 
     if(_foreachIndex != _index) then {
         _picEmphasis ctrlSetText "";

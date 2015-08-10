@@ -66,7 +66,7 @@ _newHeight = CONTAINER_BASE_H;
     _newButton ctrlSetTooltip _tooltip;
 
     // Add eventhandler for button
-    _newButton ctrlAddEventHandler ["ButtonClick", format ["[_this select 0, %1, %2] call %3;", ctrlIDC _newPic, ctrlIDC _backgroundPic, _fnc_onClick]];
+    _newButton ctrlAddEventHandler ["ButtonClick", format ["[_this select 0, %1, %2] spawn %3;", ctrlIDC _newPic, ctrlIDC _backgroundPic, _fnc_onClick]];
 
     // Commit the changes
     _newPic ctrlCommit 0;
