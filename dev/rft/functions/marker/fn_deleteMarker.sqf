@@ -16,4 +16,5 @@ if(_sync) then {
 };
 
 _index = [_marker] call FUNC(getMarkerIndex);
+if (isNil "_index") exitWith {};
 GVAR(markers) deleteAt _index;
