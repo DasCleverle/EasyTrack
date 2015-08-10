@@ -2,7 +2,8 @@
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 
 disableSerialization;
-PARAMS_5(_mapDisplay,_keyCode,_shiftState,_ctrlState,_altState);
+
+params ["_mapDisplay", "_keyCode", "_shiftState", "_ctrlState", "_altState"];
 
 {
     if((_keyCode == _x || {_keyCode == DIK_ESCAPE})) exitWith {
@@ -18,3 +19,4 @@ PARAMS_5(_mapDisplay,_keyCode,_shiftState,_ctrlState,_altState);
         GVAR(configureVisible) = false;
     };
 } foreach actionKeys "hideMap";
+nil

@@ -1,10 +1,9 @@
 #include "script_component.hpp"
-
-PARAMS_2(_mapControl,_source);
 private ["_mousePos", "_icon", "_size", "_side", "_marker", "_dir", "_ellipse", "_index"];
+params ["_mapControl", "_source"];
 
 _mousePos = _mapControl ctrlMapScreenToWorld GVAR(mousePos);
-if(typeName _source == typeName "") then {
+if(typeName _source == "STRING") then {
     _icon = ICON_DEFAULT;
     _size = ICON_SIZE_DEFAULT;
     _side = [player] call MFUNC(getSideFromItem);
@@ -16,8 +15,7 @@ if(typeName _source == typeName "") then {
     GVAR(selectedMarker) = _marker;
 
     ["static"] call FUNC(dir_setSelected);
-}
-else {
+} else {
     _marker = +_source;
 
     _icon = MARKER_GET_ICON(_marker);

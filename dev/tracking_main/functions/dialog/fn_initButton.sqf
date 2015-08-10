@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
-PARAMS_3(_control,_mainYPos,_params);
-EXPLODE_2_PVT(_params,_text,_fnc_onClick);
+params ["_control", "_mainYPos", "_args"];
+_args params ["_text", "_fnc_onClick"];
 
 _controlPos = ctrlPosition _control;
 _controlPos set [0, BASE_X];

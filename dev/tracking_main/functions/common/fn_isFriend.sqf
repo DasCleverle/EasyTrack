@@ -1,22 +1,22 @@
 #include "script_component.hpp"
 
-PARAMS_1(_target);
+private ["_fnc_getItemSides", "_playerSides", "_targetSides", "_result"];
+params ["_target"];
 
-private ["_getItemSides", "_playerSides", "_targetSides", "_result"];
-
-_getItemSides = {
+_fnc_getItemSides = {
     PARAMS_1(_unit);
     _itemNames = (TRACKER_ITEMS arrayIntersect ((items _unit) + (assignedItems _unit)));
     _sides = [];
     {
         _sides pushBack ([_x] call FUNC(getSideFromItem));
-    } foreach _itemNames;
+        true
+    } count _itemNames;
 
     _sides;
 };
 
-_playerSides = [player] call _getItemSides;
-_targetSides = [_target] call _getItemSides;
+_playerSides = [player] call _fnc_getItemSides;
+_targetSides = [_target] call _fnc_getItemSides;
 
 _result = false;
 scopeName "main";
@@ -25,7 +25,9 @@ scopeName "main";
     {
         _result = _playerSide in ([_x] call BIS_fnc_friendlySides);
         if(_result) then { breakTo "main"; };
-    } foreach _targetSides;
-} foreach _playerSides;
+            true
+    } count _targetSides;
+    true
+} count _playerSides;
 
 _result;

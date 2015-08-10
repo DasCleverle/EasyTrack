@@ -1,9 +1,11 @@
 #include "script_component.hpp"
 
 disableSerialization;
-PARAMS_1(_control);
 
 private ["_mapDisplay", "_grpConfigure"];
+
+params ["_control"];
+
 _mapDisplay = ctrlParent _control;
 _grpConfigure = _mapDisplay displayCtrl IDC_GRP_CONFIGURECONTAINER;
 

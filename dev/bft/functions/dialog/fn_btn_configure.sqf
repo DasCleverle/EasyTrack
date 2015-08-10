@@ -2,8 +2,9 @@
 
 disableSerialization;
 
-PARAMS_1(_control);
 private ["_mapDisplay", "_grpConfigureContainer", "_lstConfigure", "_background", "_y", "_idc"];
+
+params ["_control"];
 
 _mapDisplay = ctrlParent _control;
 _grpConfigureContainer = _mapDisplay displayCtrl IDC_GRP_CONFIGURECONTAINER;
@@ -24,7 +25,9 @@ lbClear _lstConfigure;
             _lstConfigure lbSetPicture [_index, QDATAPATH(transparent.paa)];
         };
     };
-} foreach GVAR(configureUnits);
+    true
+} count GVAR(configureUnits);
+
 lbSort [_lstConfigure, "ASC"];
 
 GVAR(configureVisible) = true;

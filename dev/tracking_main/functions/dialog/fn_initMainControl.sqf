@@ -1,25 +1,25 @@
 #include "script_component.hpp"
 
-PARAMS_4(_mapDisplay,_grpMain,_controls,_idc);
-
 private ["_background"];
+params ["_mapDisplay", "_grpMain", "_controls", "_idc"];
+
 _background = _mapDisplay ctrlCreate [QGVAR(Background), -1, _grpMain];
 _background ctrlSetBackgroundColor [COLOR_BLACK_TR50];
 
 // The current y-position to create controls on
 _yPos = 0;
 {
-    EXPLODE_3_PVT(_x,_controlType,_params,_name);
     private ["_control", "_arguments", "_result"];
+    params ["_controlType", "_args", "_name"];
 
     // Create the control
     _control = _mapDisplay ctrlCreate [_controlType, _idc, _grpMain];
 
     // Initialize control
-    _arguments = [_control, _yPos, _params];
+    _arguments = [_control, _yPos, _args];
     _result = 0;
     {
-        EXPLODE_2_PVT(_x,_type,_fnc);
+        _x params ["_type", "_fnc"];
 
         if(_type == _controlType) exitWith {
             _result = _arguments call _fnc;

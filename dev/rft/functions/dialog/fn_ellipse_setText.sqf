@@ -1,17 +1,18 @@
 #include "script_component.hpp"
 
-PARAMS_1(_marker);
 private ["_btnToggleEllipse", "_ellipsePos"];
+params ["_marker"];
 
 {
-    EXPLODE_4_PVT(_x,_type,_params,_name,_idc);
     private ["_control"];
+    _x params ["", "", "_name", "_idc"];
     _control = DISPLAY(IDD_MAINMAP) displayCtrl _idc;
 
     if(_name == "btnToggleEllipse") exitWith {
         _btnToggleEllipse = _control;
     };
-} foreach GVAR(mainControls);
+    true
+} count GVAR(mainControls);
 
 _ellipsePos = ELLIPSE_POS(MARKER_GET_ELLIPSE(_marker));
 

@@ -6,6 +6,7 @@ private ["_markerIds"];
 _markerIds = [];
 {
     _markerIds pushBack MARKER_GET_ID(_x);
-} foreach GVAR(markers);
+    true
+} count GVAR(markers);
 
 _markerIds find MARKER_GET_ID(_marker);

@@ -2,7 +2,7 @@
 #include "\a3\editor_f\Data\Scripts\dikCodes.h"
 
 disableSerialization;
-PARAMS_5(_mapDisplay,_keyCode,_shiftState,_ctrlState,_altState);
+params ["_mapDisplay", "_keyCode", "_shiftState", "_ctrlState", "_altState"];
 
 // Control button
 if(_keyCode == DIK_LCONTROL || {_keyCode == DIK_RCONTROL}) then {
@@ -29,4 +29,6 @@ if(_ctrlState && {_keyCode == DIK_V} && {!GVAR(pasted)} && {!isNil QGVAR(clipboa
     if((_keyCode == _x || {_keyCode == DIK_ESCAPE}) && {!isNil QGVAR(selectedMarker)}) exitWith {
         [GVAR(selectedMarker), "update"] call FUNC(invokeSyncMarker);
     };
-} foreach actionKeys "hideMap";
+    true
+} count actionKeys "hideMap";
+nil

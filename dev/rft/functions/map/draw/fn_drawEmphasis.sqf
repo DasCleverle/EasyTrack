@@ -1,10 +1,10 @@
 #include "script_component.hpp"
 
-PARAMS_2(_mapControl,_selectedMarker);
+private ["_selectedIcon", "_selectedIconPos", "_emphasisIcon", "_factor"];
+params ["_mapControl", "_selectedMarker"];
 
 if(isNil "_selectedMarker") exitWith {};
 
-private ["_selectedIcon", "_selectedIconPos", "_emphasisIcon", "_factor"];
 _selectedIcon = MARKER_GET_ICON(_selectedMarker);
 _selectedIconPos = ICON_POS(_selectedIcon);
 

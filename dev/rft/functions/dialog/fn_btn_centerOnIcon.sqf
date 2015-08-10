@@ -1,8 +1,7 @@
 #include "script_component.hpp"
 
 disableSerialization;
-
-PARAMS_1(_control);
+params ["_control"];
 
 private ["_mapDisplay", "_mapControl", "_selectedIcon", "_selectedIconPos"];
 _mapDisplay = ctrlParent _control;

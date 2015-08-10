@@ -2,9 +2,9 @@
 
 disableSerialization;
 
-PARAMS_1(_mapControl);
-
 private ["_selectedMarker", "_mapDisplay"];
+params ["_mapControl"];
+
 _mapDisplay = ctrlParent _mapControl;
 _selectedMarker = GVAR(selectedMarker);
 

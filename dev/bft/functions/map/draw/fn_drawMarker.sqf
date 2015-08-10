@@ -36,7 +36,7 @@ _hoveringCount = 0;
         _mapControl drawIcon _icon;
         _mapControl drawIcon _size;
     };
-} foreach allPlayers;
+} count allPlayers;
 
 if(_hoveringCount == 0) then {
     GVAR(hoveredMarker) = nil;

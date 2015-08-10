@@ -1,12 +1,12 @@
 #include "script_component.hpp"
 
 disableSerialization;
-PARAMS_1(_index);
+params ["_index"];
 
 if(_index == -1) exitWith {};
 
-EXPLODE_2_PVT((GVAR(favControls) select _index),_picSymbol,_picSize);
-EXPLODE_3_PVT((GVAR(favorites) select _index),_symbol,_size,_color);
+(GVAR(favControls) select _index) params ["_picSymbol", "_picSize"];
+(GVAR(favorites) select _index) params ["_symbol", "_size", "_color"];
 
 _picSymbol ctrlSetTextColor _color;
 _picSymbol ctrlSetText _symbol;

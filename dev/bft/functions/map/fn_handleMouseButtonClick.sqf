@@ -2,7 +2,7 @@
 
 disableSerialization;
 
-PARAMS_7(_mapControl,_mouseButton,_mouseX,_mouseY,_shiftState,_ctrlState,_altState);
+params ["_mapControl", "_mouseButton", "_mouseX", "_mouseY", "_shiftState", "_ctrlState", "_altState"];
 
 if(_mouseButton != 0 || !HAS_TABLET) exitWith {};
 
@@ -13,16 +13,16 @@ if(!isNil QGVAR(hoveredMarker)) then {
     private ["_mapDisplay"];
     _mapDisplay = ctrlParent _mapControl;
     {
-        EXPLODE_4_PVT(_x,_type,_params,_name,_idc);
-        private ["_control"];
+        private ["_control", "_text"];
+        _x params ["_type", "_params", "_name", "_idc"];
         _control = _mapDisplay displayCtrl _idc;
-
-        switch (_name) do {
-            case "txtCallsign": { _control ctrlSetText MARKER_GET_CALLSIGN(GVAR(selectedMarker)); };
-            case "txtFrequency": { _control ctrlSetText MARKER_GET_FREQUENCY(GVAR(selectedMarker)); };
-            case "txtPlayerName": { _control ctrlSetText name MARKER_GET_UNIT(GVAR(selectedMarker)); };
+        _text = call {
+            if (_name == "txtCallsign") exitWith { MARKER_GET_CALLSIGN(GVAR(selectedMarker)) };
+            if (_name == "txtFrequency") exitWith { MARKER_GET_FREQUENCY(GVAR(selectedMarker)) };
+            if (_name == "txtPlayerName") exitWith { name MARKER_GET_UNIT(GVAR(selectedMarker)) };
         };
-    } foreach GVAR(mainControls);
+        _control ctrlSetText _text;
+    } count GVAR(mainControls);
 
     [_mapControl, "show"] call FUNC(toggleMainControl);
 }

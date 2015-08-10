@@ -1,19 +1,19 @@
 #include "script_component.hpp"
 
 private ["_dirString"];
-PARAMS_2(_dir,_pos);
+params ["_dir","_pos"];
 
-_dirString = switch(_dir) do {
-    case -1:  { "static" };
-    case 0:   { "north" };
-    case 45:  { "north east" };
-    case 90:  { "east" };
-    case 135: { "south east" };
-    case 180: { "south" };
-    case 225: { "south west" };
-    case 270: { "west" };
-    case 315: { "north west" };
-    default   { "custom" };
+_dirString = call {
+    if (_dir == -1) exitWith { "static" };
+    if (_dir == 0) exitWith { "north" };
+    if (_dir == 45) exitWith { "north east" };
+    if (_dir == 90) exitWith { "east" };
+    if (_dir == 135) exitWith { "south east" };
+    if (_dir == 180) exitWith { "south" };
+    if (_dir == 225) exitWith { "south west" };
+    if (_dir == 270) exitWith { "west" };
+    if (_dir == 315) exitWith { "north west" };
+    "custom"
 };
 
 if(!isNil "_pos") then {

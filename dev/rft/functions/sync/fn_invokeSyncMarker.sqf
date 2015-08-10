@@ -1,7 +1,6 @@
 #include "script_component.hpp"
 
-PARAMS_2(_marker,_action);
-private ["_packet", "_cancel"];
+params ["_marker", "_action"];
 
 // exit if no property has changed
 if((_action != "delete" && !MARKER_GET_CHANGED(_marker)) || MARKER_GET_ID(_marker) == -1) exitWith {};

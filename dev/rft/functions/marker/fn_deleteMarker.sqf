@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-PARAMS_3(_mapControl,_marker,_sync);
+params ["_mapControl", "_marker", "_sync"];
 
 if(isNil "_marker") exitWith {};
 

@@ -1,8 +1,9 @@
 #include "script_component.hpp"
 
-PARAMS_2(_mapControl,_selectedMarker);
-
 private ["_hoveringCount", "_mapDisplay", "_sides"];
+params ["_mapControl", "_selectedMarker"];
+
+
 _mapDisplay = ctrlParent _mapControl;
 _hoveringCount = 0;
 _sides = [];
@@ -13,14 +14,16 @@ _sides = [];
     if(_x in (items player + assignedItems player) && !(_side in _sides)) then {
         {
             _sides pushBack _x;
-        } foreach ([_side] call BIS_fnc_friendlySides);
+            true
+        } count ([_side] call BIS_fnc_friendlySides);
     };
-} foreach TRACKER_ITEMS;
+} count TRACKER_ITEMS;
 
 {
     if(MARKER_GET_SIDE(_x) in _sides) then {
-        EXPLODE_4_PVT(_x,_icon,_size,_direction,_ellipse);
         private ["_iconColor", "_iconPos", "_iconSize", "_iconSizeFactor", "_iconScreenPos", "_distance", "_timeFade"];
+        _x params ["_icon", "_size", "_direction", "_ellipse"];
+
 
         _iconColor = ICON_COLOR(_icon);
         _iconPos = ICON_POS(_icon);
@@ -74,7 +77,8 @@ _sides = [];
         _mapControl drawIcon _icon;
         _mapControl drawIcon _size;
     };
-} foreach GVAR(markers);
+    true
+} count GVAR(markers);
 
 if(_hoveringCount == 0) then {
     GVAR(hoveredMarker) = nil;
@@ -115,7 +119,7 @@ if(!isNil QGVAR(hoveredMarker) && {GVAR(ctrlPressed)} && {GVAR(mouseButtonPresse
 
 if(!isNil QGVAR(movingMarker)) then {
     private ["_mousePos"];
-    EXPLODE_4_PVT(GVAR(movingMarker),_icon,_size,_dir,_ellipse);
+    GVAR(movingMarker) params ["_icon", "_size", "_dir", "_ellipse"];
 
     _mousePos = _mapControl ctrlMapScreenToWorld GVAR(mousePos);
     SET_ICON_POS(_icon, _mousePos);
