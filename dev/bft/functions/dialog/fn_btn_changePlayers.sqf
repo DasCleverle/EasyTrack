@@ -17,7 +17,7 @@ switch (toLower _scope) do {
         } foreach allGroups;
     };
     case "all": {
-        GVAR(configureUnits) = allUnits;
+        GVAR(configureUnits) = allPlayers;
     };
 };
 
