@@ -36,6 +36,7 @@ _btnConfigure ctrlSetPosition [
 ];
 _btnConfigure ctrlSetText "Configure BFT";
 _btnConfigure ctrlAddEventHandler ["ButtonClick", { _this spawn FUNC(btn_configure); }];
+_btnConfigure ctrlShow HAS_TABLET;
 _btnConfigure ctrlCommit 0;
 
 _grpConfigure = _mapDisplay ctrlCreate [QGVAR(grpConfigureContainer), IDC_GRP_CONFIGURECONTAINER];
