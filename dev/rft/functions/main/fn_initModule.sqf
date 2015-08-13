@@ -47,48 +47,48 @@ if(hasInterface) then {
 
 // Global variables for client and server
 GVAR(symbols) = [
-    [QMAINDATAPATH(symbols\unknown.paa),         "Unknown",                 { [QMAINDATAPATH(symbols\unknown.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\inf.paa),             "Infantry",                { [QMAINDATAPATH(symbols\inf.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\motinf.paa),          "Motorized Infantry",      { [QMAINDATAPATH(symbols\motinf.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\mechinf.paa),         "Mechanized Infantry",     { [QMAINDATAPATH(symbols\mechinf.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\recon.paa),           "Recon",                   { [QMAINDATAPATH(symbols\recon.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\hq.paa),              "HQ",                      { [QMAINDATAPATH(symbols\hq.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\armor.paa),           "Armor",                   { [QMAINDATAPATH(symbols\armor.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\artillery.paa),       "Artillery",               { [QMAINDATAPATH(symbols\artillery.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\heli.paa),            "Heli",                    { [QMAINDATAPATH(symbols\heli.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\jet.paa),             "Jet",                     { [QMAINDATAPATH(symbols\jet.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\uav.paa),             "UAV",                     { [QMAINDATAPATH(symbols\uav.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\logistics.paa),       "Logistics",               { [QMAINDATAPATH(symbols\logistics.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\medical.paa),         "Medical",                 { [QMAINDATAPATH(symbols\medical.paa)] spawn FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\static.paa),          "Static",                  { [QMAINDATAPATH(symbols\static.paa)] spawn FUNC(setSymbol); }]
+    [QMAINDATAPATH(symbols\unknown.paa),         "Unknown",                 { [QMAINDATAPATH(symbols\unknown.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\inf.paa),             "Infantry",                { [QMAINDATAPATH(symbols\inf.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\motinf.paa),          "Motorized Infantry",      { [QMAINDATAPATH(symbols\motinf.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\mechinf.paa),         "Mechanized Infantry",     { [QMAINDATAPATH(symbols\mechinf.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\recon.paa),           "Recon",                   { [QMAINDATAPATH(symbols\recon.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\hq.paa),              "HQ",                      { [QMAINDATAPATH(symbols\hq.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\armor.paa),           "Armor",                   { [QMAINDATAPATH(symbols\armor.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\artillery.paa),       "Artillery",               { [QMAINDATAPATH(symbols\artillery.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\heli.paa),            "Heli",                    { [QMAINDATAPATH(symbols\heli.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\jet.paa),             "Jet",                     { [QMAINDATAPATH(symbols\jet.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\uav.paa),             "UAV",                     { [QMAINDATAPATH(symbols\uav.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\logistics.paa),       "Logistics",               { [QMAINDATAPATH(symbols\logistics.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\medical.paa),         "Medical",                 { [QMAINDATAPATH(symbols\medical.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\static.paa),          "Static",                  { [QMAINDATAPATH(symbols\static.paa)] call FUNC(setSymbol); }]
 ];
 
 GVAR(colors) = [
-    [STRCOLOR(COLOR_GREY),      "Unknown",      { [COLOR_GREY]   spawn FUNC(setColor); }],
-    [STRCOLOR(COLOR_OPFOR),     "OPFOR",        { [COLOR_OPFOR]  spawn FUNC(setColor); }],
-    [STRCOLOR(COLOR_BLUFOR),    "BLUFOR",       { [COLOR_BLUFOR] spawn FUNC(setColor); }],
-    [STRCOLOR(COLOR_INDEP),     "Independent",  { [COLOR_INDEP]  spawn FUNC(setColor); }],
-    [STRCOLOR(COLOR_CIVIL),     "Civil",        { [COLOR_CIVIL]  spawn FUNC(setColor); }]
+    [STRCOLOR(COLOR_GREY),      "Unknown",      { [COLOR_GREY]   call FUNC(setColor); }],
+    [STRCOLOR(COLOR_OPFOR),     "OPFOR",        { [COLOR_OPFOR]  call FUNC(setColor); }],
+    [STRCOLOR(COLOR_BLUFOR),    "BLUFOR",       { [COLOR_BLUFOR] call FUNC(setColor); }],
+    [STRCOLOR(COLOR_INDEP),     "Independent",  { [COLOR_INDEP]  call FUNC(setColor); }],
+    [STRCOLOR(COLOR_CIVIL),     "Civil",        { [COLOR_CIVIL]  call FUNC(setColor); }]
 ];
 
 GVAR(sizes) = [
-    [QMAINDATAPATH(sizes\fireteam.paa),         "Fire Team",                { [SIZE_FIRETEAM] spawn FUNC(setSize); }],
-    [QMAINDATAPATH(sizes\unit.paa),             "Unit/Vehicle",             { [SIZE_UNIT] spawn FUNC(setSize); }],
-    [QMAINDATAPATH(sizes\squad.paa),            "Squad",                    { [SIZE_SQUAD] spawn FUNC(setSize); }],
-    [QMAINDATAPATH(sizes\platoon.paa),          "Platoon",                  { [SIZE_PLATOON] spawn FUNC(setSize); }]
+    [QMAINDATAPATH(sizes\fireteam.paa),         "Fire Team",                { [SIZE_FIRETEAM] call FUNC(setSize); }],
+    [QMAINDATAPATH(sizes\unit.paa),             "Unit/Vehicle",             { [SIZE_UNIT] call FUNC(setSize); }],
+    [QMAINDATAPATH(sizes\squad.paa),            "Squad",                    { [SIZE_SQUAD] call FUNC(setSize); }],
+    [QMAINDATAPATH(sizes\platoon.paa),          "Platoon",                  { [SIZE_PLATOON] call FUNC(setSize); }]
 ];
 
 GVAR(directions) = [
-    [QMAINDATAPATH(directions\static.paa),      "Static",                   { ["static", -1] spawn FUNC(setDirection); }],
-    [QMAINDATAPATH(directions\n.paa),           "North",                    { ["north", 0] spawn FUNC(setDirection); }],
-    [QMAINDATAPATH(directions\ne.paa),          "North East",               { ["north east", 45] spawn FUNC(setDirection); }],
-    [QMAINDATAPATH(directions\e.paa),           "East",                     { ["east", 90] spawn FUNC(setDirection); }],
-    [QMAINDATAPATH(directions\se.paa),          "South East",               { ["south east", 135] spawn FUNC(setDirection); }],
+    [QMAINDATAPATH(directions\static.paa),      "Static",                   { ["static", -1] call FUNC(setDirection); }],
+    [QMAINDATAPATH(directions\n.paa),           "North",                    { ["north", 0] call FUNC(setDirection); }],
+    [QMAINDATAPATH(directions\ne.paa),          "North East",               { ["north east", 45] call FUNC(setDirection); }],
+    [QMAINDATAPATH(directions\e.paa),           "East",                     { ["east", 90] call FUNC(setDirection); }],
+    [QMAINDATAPATH(directions\se.paa),          "South East",               { ["south east", 135] call FUNC(setDirection); }],
     [QMAINDATAPATH(directions\custom.paa),      "Custom",                   {}],
-    [QMAINDATAPATH(directions\s.paa),           "South",                    { ["south", 180] spawn FUNC(setDirection); }],
-    [QMAINDATAPATH(directions\sw.paa),          "South West",               { ["south west", 225] spawn FUNC(setDirection); }],
-    [QMAINDATAPATH(directions\w.paa),           "West",                     { ["west", 270] spawn FUNC(setDirection); }],
-    [QMAINDATAPATH(directions\nw.paa),          "North West",               { ["north west", 315] spawn FUNC(setDirection); }]
+    [QMAINDATAPATH(directions\s.paa),           "South",                    { ["south", 180] call FUNC(setDirection); }],
+    [QMAINDATAPATH(directions\sw.paa),          "South West",               { ["south west", 225] call FUNC(setDirection); }],
+    [QMAINDATAPATH(directions\w.paa),           "West",                     { ["west", 270] call FUNC(setDirection); }],
+    [QMAINDATAPATH(directions\nw.paa),          "North West",               { ["north west", 315] call FUNC(setDirection); }]
 ];
 
 GVAR(mainControls) = [
@@ -129,10 +129,9 @@ waitUntil { !isNil QEGVAR(tracking_main,controlTypes); };
 EGVAR(tracking_main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavContainer)];
 
 // Map init
-[] spawn FUNC(initMap);
+[] call FUNC(initMap);
 
 // syncing
 QGVAR(packet) addPublicVariableEventHandler {
     (_this select 1) call FUNC(syncMarker);
 };
-

@@ -1,10 +1,9 @@
 #include "script_component.hpp"
+params ["_side"];
 
-PARAMS_1(_side);
-
-switch(_side) do {
-    case west: { [COLOR_BLUFOR]; };
-    case east: { [COLOR_OPFOR]; };
-    case independent: { [COLOR_INDEP]; };
-    default { [COLOR_GREY]; };
-};
+call {
+    if (west == _side) exitWith { [COLOR_BLUFOR] };
+    if (east == _side) exitWith { [COLOR_OPFOR] };
+    if (independent == _side) exitWith { [COLOR_INDEP] };
+    [COLOR_GREY]
+}

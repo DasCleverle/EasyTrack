@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 
-PARAMS_3(_control,_mainYPos,_params);
-EXPLODE_3_PVT(_params,_id,_source,_perColumn);
-
 private ["_mapDisplay", "_background", "_totalHeight", "_newXPos", "_newYPos", "_newWidth", "_newHeight", "_idc"];
+
+params ["_control", "_mainYPos", "_args"];
+_args params ["_id", "_source", "_perColumn"];
 
 // Create the background
 _mapDisplay = ctrlParent _control;
@@ -18,9 +18,8 @@ _newWidth = ((BASE_W - 2 * CONTAINER_BASE_X) - ((_perColumn - 1) * PADDING_X)) /
 _newHeight = CONTAINER_BASE_H;
 
 {
-    EXPLODE_3_PVT(_x,_picOrColor,_tooltip,_fnc_onClick);
-
     private ["_backgroundPic", "_newPic", "_newButton", "_pos"];
+    _x params ["_picOrColor", "_tooltip", "_fnc_onClick"];
 
     // Create a new RscPicture control for the visual and a RscButton for the functional
     _backgroundPic = _mapDisplay ctrlCreate ["RscPicture", _idc, _control];
@@ -67,7 +66,7 @@ _newHeight = CONTAINER_BASE_H;
     _newButton ctrlSetTooltip _tooltip;
 
     // Add eventhandler for button
-    _newButton ctrlAddEventHandler ["ButtonClick", format ["[_this select 0, %1, %2] call %3;", ctrlIDC _newPic, ctrlIDC _backgroundPic, _fnc_onClick]];
+    _newButton ctrlAddEventHandler ["ButtonClick", format ["[_this select 0, %1, %2] spawn %3;", ctrlIDC _newPic, ctrlIDC _backgroundPic, _fnc_onClick]];
 
     // Commit the changes
     _newPic ctrlCommit 0;

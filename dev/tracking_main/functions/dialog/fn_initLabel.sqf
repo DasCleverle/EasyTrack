@@ -1,10 +1,8 @@
 #include "script_component.hpp"
 
-PARAMS_3(_control,_yPos,_params);
-EXPLODE_1_PVT(_params,_text);
-
-private ["_controlPos", "_setPadding"];
-_setPadding = [_params, 1, true] call CBA_fnc_defaultParam;
+private ["_controlPos"];
+params ["_control", "_yPos", "_args"];
+_args params ["_text", ["_setPadding", true, [true]]];
 
 // Set the label text
 _control ctrlSetText _text;
@@ -19,7 +17,6 @@ _control ctrlCommit 0;
 // Return the new yPos
 if(_setPadding) then {
     (_controlPos select 3) + BASE_Y;
-}
-else {
+} else {
     (_controlPos select 3);
 };

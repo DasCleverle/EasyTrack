@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-PARAMS_3(_mapControl,_marker,_sync);
+params ["_mapControl", "_marker", "_sync"];
 
 if(isNil "_marker") exitWith {};
 
@@ -16,4 +16,5 @@ if(_sync) then {
 };
 
 _index = [_marker] call FUNC(getMarkerIndex);
+if (isNil "_index") exitWith {};
 GVAR(markers) deleteAt _index;

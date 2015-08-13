@@ -1,7 +1,6 @@
 #include "script_component.hpp"
 
-PARAMS_2(_mapControl,_selectedMarker);
-
+params ["_mapControl", "_selectedMarker"];
 if(!GVAR(ctrlPressed) || {isNil "_selectedMarker"} || {!isNil QGVAR(selectedCatch)}) exitWith {};
 
 private ["_mousePos"];

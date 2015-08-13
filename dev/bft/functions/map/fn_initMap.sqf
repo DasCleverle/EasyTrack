@@ -9,10 +9,10 @@ _mapDisplay = DISPLAY(IDD_MAINMAP);
 _mapControl = _mapDisplay displayCtrl IDC_MAINMAP;
 
 // Add eventhandlers to map and map display
-_mapControl ctrlAddEventHandler ["Draw", { _this call FUNC(handleDraw); }];
+_mapControl ctrlAddEventHandler ["Draw", FUNC(handleDraw)];
 _mapControl ctrlAddEventHandler ["MouseButtonClick", { _this spawn FUNC(handleMouseButtonClick); }];
-_mapControl ctrlAddEventHandler ["MouseMoving", { _this call FUNC(handleMouseMoving); }];
-_mapControl ctrlAddEventHandler ["MouseHolding", { _this call FUNC(handleMouseMoving); }];
+_mapControl ctrlAddEventHandler ["MouseMoving", FUNC(handleMouseMoving)];
+_mapControl ctrlAddEventHandler ["MouseHolding", FUNC(handleMouseMoving)];
 
 _mapDisplay displayAddEventHandler ["KeyDown", { _this spawn FUNC(handleKeyDown); nil }];
 

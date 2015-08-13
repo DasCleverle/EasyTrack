@@ -1,29 +1,24 @@
 #include "script_component.hpp"
 
 disableSerialization;
-
-PARAMS_2(_control,_type);
-
 private ["_mapDisplay", "_grpMain"];
+params ["_control", "_type"];
+
 if(ctrlIDC _control == IDC_GRP_BFT) then {
     _grpMain = _control;
-}
-else {
+} else {
     _mapDisplay = ctrlParent _control;
     _grpMain = _mapDisplay displayCtrl IDC_GRP_BFT;
 };
 
-switch (toLower _type) do {
-    case "show": {
-        _grpMain ctrlShow true;
-        GVAR(mainControlsVisible) = true;
+if (toLower _type == "show") then {
+    _grpMain ctrlShow true;
+    GVAR(mainControlsVisible) = true;
 
-        if(EGVAR(rft,active) && {EGVAR(rft,mainControlsVisible)}) then {
-            [_grpMain, "hide"] call EFUNC(rft,toggleMainControl);
-        };
+    if(EGVAR(rft,active) && {EGVAR(rft,mainControlsVisible)}) then {
+        [_grpMain, "hide"] call EFUNC(rft,toggleMainControl);
     };
-    case "hide": {
-        _grpMain ctrlShow false;
-        GVAR(mainControlsVisible) = false;
-    };
+} else {
+    _grpMain ctrlShow false;
+    GVAR(mainControlsVisible) = false;
 };

@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 disableSerialization;
-PARAMS_2(_dirString,_direction);
+params ["_dirString", "_direction"];
 
 [_dirString] call FUNC(dir_setSelected);
 

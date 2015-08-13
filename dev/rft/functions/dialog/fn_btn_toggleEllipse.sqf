@@ -1,9 +1,8 @@
 #include "script_component.hpp"
 
 disableSerialization;
-PARAMS_1(_control);
-
 private ["_selectedMarker", "_ellipse", "_ellipsePos", "_icon", "_iconPos"];
+params ["_control"];
 
 _selectedMarker = GVAR(selectedMarker);
 _ellipse = MARKER_GET_ELLIPSE(_selectedMarker);

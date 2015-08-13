@@ -1,10 +1,9 @@
 #include "script_component.hpp"
 
 if(!GVAR(active)) exitWith {};
-
-PARAMS_3(_unit,_container,_item);
-
 private ["_mapDisplay", "_btnConfigure", "_grpConfigure"];
+params ["_unit", "_container", "_item"];
+
 _mapDisplay = DISPLAY(IDD_MAINMAP);
 
 if(_item in TABLET_ITEMS) then {

@@ -2,11 +2,11 @@
 
 disableSerialization;
 private ["_fav", "_favControls", "_selectedMarker"];
-PARAMS_2(_control,_index);
+params ["_control", "_index"];
 _selectedMarker = GVAR(selectedMarker);
 
 if(GVAR(ctrlPressed)) exitWith {
-    _this spawn FUNC(btn_editFavorite);
+    _this call FUNC(btn_editFavorite);
 };
 
 if(isNil "_selectedMarker") exitWith {};

@@ -2,9 +2,8 @@
 
 #define PADDING_X (3 * CONTAINER_BASE_X)
 
-PARAMS_3(_control,_mainYPos,_params);
-
 private ["_favCount", "_mapDisplay", "_background",  "_newXPos", "_newYPos", "_newWidth", "_newHeight", "_height"];
+params ["_control", "_mainYPos"];
 
 _favCount = 4;
 _mapDisplay = ctrlParent _control;
@@ -18,8 +17,8 @@ _newHeight = _newWidth * 4/3;
 _height = 2 * CONTAINER_BASE_Y + _newHeight;
 
 {
-    EXPLODE_3_PVT(_x,_symbol,_size,_color);
     private ["_picSymbol", "_picSize", "_btnAction", "_picEmphasis"];
+    _x params ["_symbol", "_size", "_color"];
 
     _picSymbol = _mapDisplay ctrlCreate ["RscPicture", -1, _control];
     _picSize = _mapDisplay ctrlCreate ["RscPicture", -1, _control];

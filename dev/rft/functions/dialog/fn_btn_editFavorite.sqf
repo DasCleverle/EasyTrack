@@ -1,14 +1,12 @@
 #include "script_component.hpp"
 
 disableSerialization;
-
-PARAMS_2(_control,_index);
+params ["_control", "_index"];
 
 GVAR(editingFav) = _index;
 
 {
-    private ["_picEmphasis"];
-    _picEmphasis = _x select 2;
+    _x params ["_picEmphasis"];
 
     if(_foreachIndex != _index) then {
         _picEmphasis ctrlSetText "";

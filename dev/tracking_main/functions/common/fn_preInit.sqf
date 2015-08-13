@@ -15,7 +15,7 @@ GVAR(controlTypes) = [
 ];
 
 {
-    missionNamespace setVariable [QUOTE(PREFIX) + "_" + _x + "_active", false];
-} foreach GVAR(components);
+    missionNamespace setVariable [format[QUOTE(PREFIX_%1_active), _x], false];
+} count GVAR(components);
 
 GVAR(active) = true;

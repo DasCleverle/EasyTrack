@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 disableSerialization;
-PARAMS_6(_mapControl,_mouseButton,_mouseX,_mouseY,_shiftState,_ctrlState);
+params ["_mapControl", "_mouseButton", "_mouseX", "_mouseY", "_shiftState", "_ctrlState"];
 
 if(_mouseButton != 0) exitWith {};
 

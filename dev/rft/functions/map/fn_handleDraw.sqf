@@ -2,9 +2,9 @@
 
 disableSerialization;
 
-PARAMS_1(_mapControl);
-
 private ["_selectedMarker"];
+params ["_mapControl"];
+
 _selectedMarker = GVAR(selectedMarker);
 
 if (HAS_TRACKER) then {

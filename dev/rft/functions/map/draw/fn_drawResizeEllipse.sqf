@@ -1,6 +1,6 @@
 #include "script_component.hpp"
 
-PARAMS_2(_mapControl,_selectedMarker);
+params ["_mapControl", "_selectedMarker"];
 
 if(!GVAR(ctrlPressed) || {isNil "_selectedMarker"} || {!isNil QGVAR(currentDirectionArrow)}) exitWith {};
 
@@ -37,7 +37,7 @@ if (_pos isEqualTo [-1]) exitWith {};
     if(_mousePos distance _catchPos <= _dim && {GVAR(mouseButtonPressed)}) then {
         GVAR(selectedCatch) = [_selectedEllipse, _x];
     };
-} foreach [0, 90, 180, 270];
+} count [0, 90, 180, 270];
 
 if(!isNil QGVAR(selectedCatch) && {GVAR(mouseButtonPressed)}) then {
     private ["_catch", "_catchPos", "_catchDir", "_dist"];

@@ -2,9 +2,9 @@
 
 disableSerialization;
 
-PARAMS_1(_control);
-
 private ["_mapDisplay", "_mapControl", "_selectedIcon", "_selectedIconPos"];
+params ["_control"];
+
 _mapDisplay = ctrlParent _control;
 _mapControl = _mapDisplay displayCtrl IDC_MAINMAP;
 
