@@ -4,7 +4,7 @@
 #define MODULE_RFT GVAR(module)
 
 // Marker Data access
-#define NEW_MARKER(var1, var2, var3) [var1, var2, ICON_DIR_DEFAULT, ELLIPSE_DEFAULT, true, time, name player, -1, var3]
+#define NEW_MARKER(var1, var2, var3) [var1, var2, ICON_DIR_DEFAULT, ELLIPSE_DEFAULT, true, TIME_VALUE, name player, -1, var3]
 
 #define GET_MARKER(var1) (missionNamespace getVariable (QGVAR(marker_) + str var1))
 #define SET_MARKER(var1, var2) (missionNamespace setVariable [QGVAR(marker_) + str var1, var2])
@@ -36,6 +36,8 @@
 #define SET_FAV_ICON(var1, var2)  (var1 set [0, var2])
 #define SET_FAV_SIZE(var1, var2)  (var1 set [1, var2])
 #define SET_FAV_COLOR(var1, var2) (var1 set [2, var2])
+
+#define TIME_VALUE ([time,serverTime] select isMultiplayer)
 
 // Default values
 #define ICON_DEFAULT [ \

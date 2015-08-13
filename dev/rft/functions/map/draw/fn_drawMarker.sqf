@@ -29,7 +29,7 @@ _sides = [];
         _iconSizeFactor = 1;
 
         // manipulate the icon color
-        _timeFade = 0.3 * (((time - (MARKER_GET_TIME(_x))) / 1800) min 1);
+        _timeFade = 0.3 * (((TIME_VALUE - (MARKER_GET_TIME(_x))) / 1800) min 1);
         SET_COLOR_A(_iconColor, 1 - 2 * _timeFade);
 
         // Determine Icon and size size
@@ -94,7 +94,7 @@ if(!isNil QGVAR(hoveredMarker)) then {
     _pos set [0, X(_markerScreenPos) + GUIMIN_3_2(1.2, 20)];
     _pos set [1, Y(_markerScreenPos) - GUIMIN_3_2(1.2, 17)];
 
-    _age = round ((time - MARKER_GET_TIME(_marker)) / 60);
+    _age = round ((TIME_VALUE - MARKER_GET_TIME(_marker)) / 60);
 
     (_mapDisplay displayCtrl IDC_LBL_ID) ctrlSetText        str MARKER_GET_ID(_marker);
     (_mapDisplay displayCtrl IDC_LBL_AGE) ctrlSetText       format ["%1 min.", _age];
