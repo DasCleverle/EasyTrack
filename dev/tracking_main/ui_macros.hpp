@@ -33,7 +33,7 @@
 #define BASE_X (GUIMIN_3_2(1.2, 50))
 #define BASE_Y (BASE_X * 4/3)
 #define BASE_W (GRP_WIDTH - 2 * BASE_X)
-#define BASE_H (GRP_HEIGHT / 32)
+#define BASE_H (GRP_HEIGHT / 35)
 
 #define CONTAINER_BASE_X (BASE_X * 0.7)
 #define CONTAINER_BASE_Y (BASE_Y * 0.7)
