@@ -71,7 +71,7 @@ GVAR(mainControls) = [
 
 GVAR(createdCheckboxes) = 0;
 GVAR(configureVisible) = false;
-GVAR(configureUnits) = allUnits;
+GVAR(configureUnits) = allPlayers;
 
 GVAR(mapInitialized) = false;
 

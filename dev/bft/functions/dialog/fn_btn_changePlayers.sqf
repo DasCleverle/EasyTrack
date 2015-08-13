@@ -10,6 +10,15 @@ _mapDisplay = ctrlParent _control;
 
 GVAR(configureUnits) = [];
 
+switch (toLower _scope) do {
+    case "leaders": {
+        {
+            GVAR(configureUnits) pushBack (leader _x);
+        } foreach allGroups;
+    };
+    case "all": {
+        GVAR(configureUnits) = allPlayers;
+    };
 if (toLower _scope == "leader") then {
     {
         GVAR(configureUnits) pushBack (leader _x);
