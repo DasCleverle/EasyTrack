@@ -7,10 +7,7 @@ private ["_mapDisplay", "_grpMain", "_pos", "_icon", "_size", "_marker"];
 
 if(!_ctrlState || {_mouseButton != 0} || {!HAS_TRACKER}) exitWith {};
 
-// wait until the vanialla create marker display opens
-// and close it right away
-waitUntil { !isNull(findDisplay 54); };
-(findDisplay 54) closeDisplay 2;
+GVAR(dblClick) = true;
 
 // Show the main control if it it was invisble
 [_mapControl, "show"] call FUNC(toggleMainControl);

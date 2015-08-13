@@ -13,7 +13,7 @@ _lstConfigure = _mapDisplay displayCtrl IDC_LST_CONFIGURE;
 
 lbClear _lstConfigure;
 {
-    if([_x] call MFUNC(isFriend) && {UHAS_TRACKER(_x)}) then {
+    if([_x] call MFUNC(isFriend) && {UHAS_TRACKER(_x)} && {isPlayer _x}) then {
         private ["_index"];
         _index = _lstConfigure lbAdd name _x;
 

@@ -12,3 +12,5 @@ if(_keyCode == DIK_LCONTROL || {_keyCode == DIK_RCONTROL}) then {
 if(_ctrlState && _keyCode == DIK_V) then {
     GVAR(pasted) = false;
 };
+
+nil;

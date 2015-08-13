@@ -9,7 +9,7 @@ _controlPos set [1, _mainYPos];
 _control ctrlSetPosition _controlPos;
 
 _control ctrlSetText _text;
-_control ctrlAddEventHandler ["ButtonClick", format ["_this spawn %1;", str _fnc_onClick]];
+_control ctrlAddEventHandler ["ButtonClick", format ["_this call %1;", str _fnc_onClick]];
 
 _control ctrlCommit 0;
 

@@ -115,7 +115,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             colorSelectBackground[] = {COLOR_TR};
             period = 0;
 
-            onLbSelChanged = _this spawn FUNC(lst_configureChanged);
+            onLbSelChanged = _this call FUNC(lst_configureChanged);
 
             x = 0;
             y = 0;
@@ -127,7 +127,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = "Only show leaders";
-            onButtonClick = [_this,"leaders"] spawn FUNC(btn_changePlayers);
+            onButtonClick = [_this,"leaders"] call FUNC(btn_changePlayers);
 
             x = BASE_X;
             y = CONFIG_HEIGHT - 4 * (BASE_Y + BASE_H);
@@ -139,7 +139,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = "Show all players";
-            onButtonClick = [_this,"all"] spawn FUNC(btn_changePlayers);
+            onButtonClick = [_this,"all"] call FUNC(btn_changePlayers);
 
             x = BASE_X;
             y = CONFIG_HEIGHT - 3 * (BASE_Y + BASE_H);
@@ -151,7 +151,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = "All";
-            onButtonClick = [_this,"all"] spawn FUNC(btn_changeSymbols);
+            onButtonClick = [_this,"all"] call FUNC(btn_changeSymbols);
 
             x = BASE_X;
             y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
@@ -163,7 +163,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = "No";
-            onButtonClick = [_this,"none"] spawn FUNC(btn_changeSymbols);
+            onButtonClick = [_this,"none"] call FUNC(btn_changeSymbols);
 
             x = BASE_X + (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
             y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
@@ -175,7 +175,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = "Toggle";
-            onButtonClick = [_this,"toggle"] spawn FUNC(btn_changeSymbols);
+            onButtonClick = [_this,"toggle"] call FUNC(btn_changeSymbols);
 
             x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
             y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
@@ -198,7 +198,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = "Close";
-            onButtonClick = _this spawn FUNC(btn_configureHide);
+            onButtonClick = _this call FUNC(btn_configureHide);
 
             x = BASE_X;
             y = CONFIG_HEIGHT - 1 * (BASE_Y + BASE_H);

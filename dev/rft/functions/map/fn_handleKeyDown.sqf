@@ -30,3 +30,5 @@ if(_ctrlState && {_keyCode == DIK_V} && {!GVAR(pasted)} && {!isNil QGVAR(clipboa
         [GVAR(selectedMarker), "update"] call FUNC(invokeSyncMarker);
     };
 } foreach actionKeys "hideMap";
+
+nil;

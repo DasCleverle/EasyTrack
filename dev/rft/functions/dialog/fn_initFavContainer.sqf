@@ -32,7 +32,7 @@ _height = 2 * CONTAINER_BASE_Y + _newHeight;
     _picSymbol ctrlSetText _symbol;
     _picSize ctrlSetText _size;
 
-    _btnAction ctrlAddEventHandler ["ButtonClick", format["[_this,%1] spawn %2;", _foreachIndex, FUNC(btn_setFavorite)]];
+    _btnAction ctrlAddEventHandler ["ButtonClick", format["[_this,%1] call %2;", _foreachIndex, FUNC(btn_setFavorite)]];
 
     _pos = [_newXPos, _newYPos, _newWidth, _newHeight];
     _picSymbol ctrlSetPosition _pos;

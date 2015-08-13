@@ -18,3 +18,5 @@ PARAMS_5(_mapDisplay,_keyCode,_shiftState,_ctrlState,_altState);
         GVAR(configureVisible) = false;
     };
 } foreach actionKeys "hideMap";
+
+nil;

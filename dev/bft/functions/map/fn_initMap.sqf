@@ -9,12 +9,12 @@ _mapDisplay = DISPLAY(IDD_MAINMAP);
 _mapControl = _mapDisplay displayCtrl IDC_MAINMAP;
 
 // Add eventhandlers to map and map display
-_mapControl ctrlAddEventHandler ["Draw", { _this call FUNC(handleDraw); }];
-_mapControl ctrlAddEventHandler ["MouseButtonClick", { _this spawn FUNC(handleMouseButtonClick); }];
-_mapControl ctrlAddEventHandler ["MouseMoving", { _this call FUNC(handleMouseMoving); }];
-_mapControl ctrlAddEventHandler ["MouseHolding", { _this call FUNC(handleMouseMoving); }];
+_mapControl ctrlAddEventHandler ["Draw", FUNC(handleDraw)];
+_mapControl ctrlAddEventHandler ["MouseButtonClick", FUNC(handleMouseButtonClick)];
+_mapControl ctrlAddEventHandler ["MouseMoving", FUNC(handleMouseMoving)];
+_mapControl ctrlAddEventHandler ["MouseHolding", FUNC(handleMouseMoving)];
 
-_mapDisplay displayAddEventHandler ["KeyDown", { _this spawn FUNC(handleKeyDown); nil }];
+_mapDisplay displayAddEventHandler ["KeyDown", FUNC(handleKeyDown)];
 
 // Create the tooltip group
 _grpTooltip = _mapDisplay ctrlCreate [QGVAR(grpMarkerTooltip), IDC_GRP_MARKERTOOLTIP];
@@ -35,14 +35,11 @@ _btnConfigure ctrlSetPosition [
     1.1 * GUIMIN_3_2(1.2, 25)
 ];
 _btnConfigure ctrlSetText "Configure BFT";
-_btnConfigure ctrlAddEventHandler ["ButtonClick", { _this spawn FUNC(btn_configure); }];
+_btnConfigure ctrlAddEventHandler ["ButtonClick", FUNC(btn_configure)];
 _btnConfigure ctrlShow HAS_TABLET;
 _btnConfigure ctrlCommit 0;
 
 _grpConfigure = _mapDisplay ctrlCreate [QGVAR(grpConfigureContainer), IDC_GRP_CONFIGURECONTAINER];
 _grpConfigure ctrlShow false;
-
-/*x = safeZoneX + safeZoneW - GUIMIN_3_2(1.2, 2);
-    y = safeZoneY + 1.5 * GUIMIN_3_2(1.2, 25);*/
 
 GVAR(mapInitialized) = true;
