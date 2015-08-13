@@ -6,7 +6,6 @@ if(isNil "_marker") exitWith {};
 
 if(!isNil QGVAR(selectedMarker)) then {
     if(MARKER_GET_ID(_marker) == MARKER_GET_ID(GVAR(selectedMarker))) then {
-        GVAR(selectedMarker) = nil;
         [_mapControl, "hide"] call FUNC(toggleMainControl);
     };
 };

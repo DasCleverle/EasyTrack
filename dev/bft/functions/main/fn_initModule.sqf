@@ -60,11 +60,11 @@ GVAR(mainControls) = [
     [QEGVAR(tracking_main,LabelHeading),        ["Blue Force Tracking"]],
     [QEGVAR(tracking_main,Button),              ["Center on marker", FUNC(btn_centerOnIcon)]],
     [QEGVAR(tracking_main,Label),               ["Unit (read only)", false]],
-    [QGVAR(TextBoxNoMapClose),                  [{}], "txtPlayerName"],
+    [QGVAR(TextBoxNoMapClose),                  [], "txtPlayerName"],
     [QEGVAR(tracking_main,Label),               ["Callsign", false]],
-    [QGVAR(TextBoxNoMapClose),                  [{ [ctrlText (_this select 0)] call FUNC(setCallsign); }], "txtCallsign"],
+    [QGVAR(TextBoxNoMapClose),                  [], "txtCallsign"],
     [QEGVAR(tracking_main,Label),               ["Frequency/Channel", false]],
-    [QGVAR(TextBoxNoMapClose),                  [{ [ctrlText (_this select 0)] call FUNC(setFrequency); }], "txtFrequency"],
+    [QGVAR(TextBoxNoMapClose),                  [], "txtFrequency"],
     [QEGVAR(tracking_main,Container),           ["symbols", GVAR(symbols), 6]],
     [QEGVAR(tracking_main,Container),           ["sizes",   GVAR(sizes),   4]]
 ];

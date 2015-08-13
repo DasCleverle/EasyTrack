@@ -21,24 +21,9 @@ if(!isNil QGVAR(selectedMarker)) then {
 };
 
 if(!isNil QGVAR(hoveredMarker)) then {
-    // set the selected marker if in range
-    GVAR(selectedMarker) = GVAR(hoveredMarker);
-
-    // set the selected direction button in main control
-    private ["_dir", "_angle", "_dirString"];
-    _dir = MARKER_GET_DIR(GVAR(selectedMarker));
-    _angle = ICON_ANGLE(_dir);
-    _pos = ICON_POS(_dir);
-    _dirString = [_angle, _pos] call MFUNC(dirToString);
-    [_dirString] call FUNC(dir_setSelected);
-
-    // determine ellipse ctrl text
-    [GVAR(selectedMarker)] call FUNC(ellipse_setText);
-
     [_mapControl, "show"] call FUNC(toggleMainControl);
 }
 else {
     // hide the main control
-    GVAR(selectedMarker) = nil;
     [_mapControl, "hide"] call FUNC(toggleMainControl);
 };

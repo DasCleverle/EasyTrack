@@ -12,6 +12,13 @@ _isHideKey = _keyCode in (actionKeys "hideMap");
 
 if(_isHideKey || {_keyCode == DIK_ESCAPE}) then {
     if(!isNil QGVAR(selectedMarker)) then {
+        [_mapDisplay, GVAR(mainControls), [
+                ["txtCallsign", { (ctrlText (_this select 0)) call FUNC(setCallsign); }],
+                ["txtFrequency", { (ctrlText (_this select 0)) call FUNC(setFrequency); }]
+        ]] call MFUNC(ctrlAction);
+    };
+
+    if(!isNil QGVAR(selectedMarker)) then {
         private ["_unit"];
         _unit = MARKER_GET_UNIT(GVAR(selectedMarker));
         _unit setVariable [QGVAR(marker), GVAR(selectedMarker), true];

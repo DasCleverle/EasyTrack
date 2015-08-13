@@ -15,6 +15,8 @@ class CfgFunctions {
         class dialog {
             file = FUNCFILE(dialog);
 
+            class ctrlAction {};
+
             class initButton {};
             class initContainer {};
             class initLabel {};
