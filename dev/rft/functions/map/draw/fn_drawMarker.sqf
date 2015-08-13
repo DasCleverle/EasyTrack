@@ -100,12 +100,16 @@ if(!isNil QGVAR(hoveredMarker)) then {
     (_mapDisplay displayCtrl IDC_LBL_AGE) ctrlSetText       format ["%1 min.", _age];
     (_mapDisplay displayCtrl IDC_LBL_CREATOR) ctrlSetText   MARKER_GET_PLAYER(_marker);
 
-    _grpToolitp ctrlShow true;
+    if(!ctrlShown _grpToolitp) then {
+        _grpToolitp ctrlShow true;
+    };
     _grpToolitp ctrlSetPosition _pos;
     _grpToolitp ctrlCommit 0;
 }
 else {
-    _grpToolitp ctrlShow false;
+    if(ctrlShown _grpToolitp) then {
+        _grpToolitp ctrlShow false;
+    };
 };
 
 // Make the marker moveable
