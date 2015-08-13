@@ -25,5 +25,6 @@ switch (toLower _type) do {
     case "hide": {
         _grpMain ctrlShow false;
         GVAR(mainControlsVisible) = false;
+        GVAR(txtFocused) = nil;
     };
 };

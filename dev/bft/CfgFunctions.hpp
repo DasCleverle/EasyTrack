@@ -10,6 +10,7 @@ class CfgFunctions {
             class btn_changeSymbols {};
             class lst_configureChanged {};
 
+            class initTextBoxNoMapClose {};
             class toggleMainControl {};
         };
 

@@ -5,6 +5,10 @@ class EGVAR(tracking_main,Background);
 class EGVAR(tracking_main,LabelTooltip);
 class EGVAR(tracking_main,Label);
 class EGVAR(tracking_main,Button);
+class EGVAR(tracking_main,TextBox);
+
+class GVAR(TextBoxNoMapClose): EGVAR(tracking_main,TextBox) {
+};
 
 class GVAR(grpBft): RscControlsGroupNoHScrollbars {
     idc = IDC_GRP_BFT;

@@ -13,3 +13,5 @@ _selectedIconPos = ICON_POS(_selectedIcon);
 
 _mapControl ctrlMapAnimAdd [0.5, ctrlMapScale _mapControl, _selectedIconPos];
 ctrlMapAnimCommit _mapControl;
+
+GVAR(txtFocused) = nil;
