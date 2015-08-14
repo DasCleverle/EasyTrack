@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="EasyTrack">
+	<Package name="BFT">
+		<Container ID="Common">
+			<Key ID="STR_BFT_BFTNAME">
+				<Original>Blue Force Tracking</Original>
+				<English>Blue Force Tracking</English>
+				<German>Blue Force Tracking</German>
+			</Key>
+			<Key ID="STR_BFT_CALLSIGN">
+				<Original>Callsign</Original>
+				<English>Callsign</English>
+				<German>Rufname</German>
+			</Key>
+			<Key ID="STR_BFT_CALLSIGN_DEFAULT">
+				<Original>NO CALLSIGN</Original>
+				<English>NO CALLSIGN</English>
+				<German>KEIN RUFNAME</German>
+			</Key>
+			<Key ID="STR_BFT_FREQUENCY">
+				<Original>Frequency/Channel</Original>
+				<English>Frequency/Channel</English>
+				<German>Frequenz/Kanal</German>
+			</Key>
+			<Key ID="STR_BFT_FREQUENCY_DEFAULT">
+				<Original>NO FREQ</Original>
+				<English>NO FREQ</English>
+				<German>KEINE FREQUENZ</German>
+			</Key>
+			<Key ID="STR_BFT_CENTERONICON">
+				<Original>Center on marker</Original>
+				<English>Center on marker</English>
+				<German>Auf Marker zentrieren</German>
+			</Key>
+			<Key ID="STR_BFT_UNITRO">
+				<Original>Unit (read only)</Original>
+				<English>Unit (read only)</English>
+				<German>Unit (nicht änderbar)</German>
+			</Key>
+		</Container>
+		<Container ID="Symbol names">
+			<Key ID="STR_BFT_INF">
+				<Original>Infantry</Original>
+				<English>Infantry</English>
+				<German>Infanterie</German>
+			</Key>
+			<Key ID="STR_BFT_MOTINF">
+				<Original>Motorized Infantry</Original>
+				<English>Motorized Infantry</English>
+				<German>Motorisierte Infanterie</German>
+			</Key>
+			<Key ID="STR_BFT_MECHINF">
+				<Original>Mechanized Infantry</Original>
+				<English>Mechanized Infantry</English>
+				<German>Mechanisierte Infanterie</German>
+			</Key>
+			<Key ID="STR_BFT_RECON">
+				<Original>Recon</Original>
+				<English>Recon</English>
+				<German>Aufklärer</German>
+			</Key>
+			<Key ID="STR_BFT_HQ">
+				<Original>HQ</Original>
+				<English>HQ</English>
+				<German>HQ</German>
+			</Key>
+			<Key ID="STR_BFT_ARMOR">
+				<Original>Armor</Original>
+				<English>Armor</English>
+				<German>Panzer</German>
+			</Key>
+			<Key ID="STR_BFT_ARTILLERY">
+				<Original>Artillery</Original>
+				<English>Artillery</English>
+				<German>Artillerie</German>
+			</Key>
+			<Key ID="STR_BFT_HELI">
+				<Original>Heli</Original>
+				<English>Heli</English>
+				<German>Helikopter</German>
+			</Key>
+			<Key ID="STR_BFT_JET">
+				<Original>Jet</Original>
+				<English>Jet</English>
+				<German>Flugzeug</German>
+			</Key>
+			<Key ID="STR_BFT_LOGISTICS">
+				<Original>Logistics</Original>
+				<English>Logistics</English>
+				<German>Logistik</German>
+			</Key>
+			<Key ID="STR_BFT_MEDICAL">
+				<Original>Medical</Original>
+				<English>Medical</English>
+				<German>Medizinisch</German>
+			</Key>
+		</Container>
+		<Container ID="Unit sizes">
+			<Key ID="STR_BFT_FIRETEAM">
+				<Original>Fireteam</Original>
+				<English>Fireteam</English>
+				<German>Fireteam</German>
+			</Key>
+			<Key ID="STR_BFT_UNIT">
+				<Original>Unit/Vehicle</Original>
+				<English>Unit/Vehicle</English>
+				<German>Einheit/Fahrzeug</German>
+			</Key>
+			<Key ID="STR_BFT_SQUAD">
+				<Original>Squad</Original>
+				<English>Squad</English>
+				<German>Squad</German>
+			</Key>
+			<Key ID="STR_BFT_PLATOON">
+				<Original>Platoon</Original>
+				<English>Platoon</English>
+				<German>Platoon</German>
+			</Key>
+		</Container>
+		<Container ID="CfgVehicles">
+			<Key ID="STR_MODULE_BFT_NAME">
+				<Original>Enable Blue Force Tracking</Original>
+				<English>Enable Blue Force Tracking</English>
+				<German>Blue Force Tracking aktivieren</German>
+			</Key>
+			<Key ID="STR_MODULE_BFT_ASSIGN_NAME">
+				<Original>Assign BFT Information</Original>
+				<English>Assign BFT Information</English>
+				<German>BFT-Informationen zuweisen</German>
+			</Key>
+			<Key ID="STR_BFT_CALLSIGN_DESC">
+				<Original>The callsign of the unit</Original>
+				<English>The callsign of the unit</English>
+				<German>Rufname der Einheit</German>
+			</Key>
+			<Key ID="STR_BFT_FREQUENCY_DESC">
+				<Original>Internal frequency (TFAR) or channel (ACRE) of the unit</Original>
+				<English>Internal frequency (TFAR) or channel (ACRE) of the unit</English>
+				<German>Interne Frequenz (TFAR) oder Kanal (ACRE) der Einheit</German>
+			</Key>
+			<Key ID="STR_BFT_SYMBOL">
+				<Original>Symbol</Original>
+				<English>Symbol</English>
+				<German>Symbol</German>
+			</Key>
+			<Key ID="STR_BFT_SYMBOL_DESC">
+				<Original>The NATO symbol that represents the unit</Original>
+				<English>The NATO symbol that represents the unit</English>
+				<German>Das NATO-Symbol, das die Einheit repräsentiert</German>
+			</Key>
+			<Key ID="STR_BFT_SIZE">
+				<Original>Size</Original>
+				<English>Size</English>
+				<German>Größe</German>
+			</Key>
+			<Key ID="STR_BFT_SIZE_DESC">
+				<Original>The size of the unit</Original>
+				<English>The size of the unit</English>
+				<German>Größe der Einheit</German>
+			</Key>
+		</Container>
+		<Container ID="dialog">
+			<Key ID="STR_BFT_LBL_TEXTUNIT">
+				<Original>Unit:</Original>
+				<English>Unit:</English>
+				<German>Einheit:</German>
+			</Key>
+			<Key ID="STR_BFT_LBL_TEXTCALLSIGN">
+				<Original>Callsign:</Original>
+				<English>Callsign:</English>
+				<German>Rufname:</German>
+			</Key>
+			<Key ID="STR_BFT_LBL_TEXTFREQUENCY">
+				<Original>Frequency:</Original>
+				<English>Frequency:</English>
+				<German>Frequenz:</German>
+			</Key>
+			<Key ID="STR_BFT_BTN_SHOWLEADERS">
+				<Original>Only show leaders</Original>
+				<English>Only show leaders</English>
+				<German>Nur Gruppenführer anzeigen</German>
+			</Key>
+			<Key ID="STR_BFT_BTN_SHOWALL">
+				<Original>Show all units</Original>
+				<English>Show all units</English>
+				<German>Alle Einheiten anzeigen</German>
+			</Key>
+			<Key ID="STR_BFT_BTN_ALLSYMBOLS">
+				<Original>All</Original>
+				<English>All</English>
+				<German>Alle</German>
+			</Key>
+			<Key ID="STR_BFT_BTN_NOSYMBOLS">
+				<Original>No</Original>
+				<English>No</English>
+				<German>Keine</German>
+			</Key>
+			<Key ID="STR_BFT_BTN_TOGGLESYMBOLS">
+				<Original>Toggle</Original>
+				<English>Toggle</English>
+				<German>Toggle</German>
+			</Key>
+			<Key ID="STR_BFT_LBL_SYMBOLS">
+				<Original>Symbols</Original>
+				<English>Symbols</English>
+				<German>Symbole</German>
+			</Key>
+			<Key ID="STR_BFT_BTN_HIDE">
+				<Original>Close</Original>
+				<English>Close</English>
+				<German>Schließen</German>
+			</Key>
+		</Container>
+		<Container ID="Actions">
+			<Key ID="STR_BFT_CONFIGURE">
+				<Original>Configure BFT</Original>
+				<English>Configure BFT</English>
+				<German>BFT konfigurieren</German>
+			</Key>
+		</Container>
+	</Package>
+</Project>

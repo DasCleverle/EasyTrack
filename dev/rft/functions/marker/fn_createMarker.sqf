@@ -15,7 +15,7 @@ if(typeName _source == typeName "") then {
     _marker = NEW_MARKER(_icon, _size, _side);
     GVAR(selectedMarker) = _marker;
 
-    ["static"] call FUNC(dir_setSelected);
+    [localize "STR_RFT_STATIC"] call FUNC(dir_setSelected);
 }
 else {
     _marker = +_source;
@@ -40,10 +40,6 @@ else {
 };
 
 MARKER_SET_ID(_marker, GVAR(currentMarkerID));
-
-/*GVAR(markers) pushBack _marker;
-SET_MARKER(GVAR(currentMarkerID),_marker);
-INC(GVAR(currentMarkerID));*/
 
 [_marker, "create"] call FUNC(invokeSyncMarker);
 

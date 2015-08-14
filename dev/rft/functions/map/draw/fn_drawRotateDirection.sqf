@@ -34,5 +34,5 @@ if(!isNil QGVAR(currentDirectionArrow)) then {
     private ["_dirAngle", "_dirPos"];
     _dirPos = ICON_POS(GVAR(currentDirectionArrow));
     _dirAngle = [_dirPos, _mousePos] call BIS_fnc_dirTo;
-    ["custom", _dirAngle] call FUNC(setDirection);
+    [localize "STR_RFT_CUSTOM", _dirAngle] call FUNC(setDirection);
 };

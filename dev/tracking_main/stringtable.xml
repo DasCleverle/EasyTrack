@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="EasyTrack">
+	<Package name="tracking_main">
+		<Container ID="Common">
+			<Key ID="STR_MAIN_MAINNAME">
+				<Original>EasyTrack</Original>
+				<English>EasyTrack</English>
+				<German>EasyTrack</German>
+			</Key>
+		</Container>
+		<Container ID="Actions">
+			<Key ID="STR_MAIN_SELFDESTRUCT">
+				<Original>Self Destruction</Original>
+				<English>Self Destruction</English>
+				<German>Selbstzerstörung</German>
+			</Key>
+			<Key ID="STR_MAIN_SELFDESTRUCT_CONFIRM">
+				<Original>Do you really want to self destruct your EasyTrack Device?</Original>
+				<English>Do you really want to self destruct your EasyTrack Device?</English>
+				<German>Möchten Sie wirklich Ihr EasyTrack-Gerät zerstören?</German>
+			</Key>
+			<Key ID="STR_MAIN_YES">
+				<Original>Yes</Original>
+				<English>Yes</English>
+				<German>Ja</German>
+			</Key>
+			<Key ID="STR_MAIN_NO">
+				<Original>No</Original>
+				<English>No</English>
+				<German>Nein</German>
+			</Key>
+		</Container>
+	</Package>
+</Project>

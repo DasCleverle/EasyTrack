@@ -22,7 +22,7 @@ switch (toLower _type) do {
         _dir = MARKER_GET_DIR(GVAR(selectedMarker));
         _angle = ICON_ANGLE(_dir);
         _pos = ICON_POS(_dir);
-        _dirString = [_angle, _pos] call MFUNC(dirToString);
+        _dirString = [_angle, _pos] call FUNC(dirToString);
         [_dirString] call FUNC(dir_setSelected);
 
         // determine ellipse ctrl text

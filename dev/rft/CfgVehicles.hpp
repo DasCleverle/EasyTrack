@@ -9,7 +9,7 @@ class CfgVehicles {
 
     class MODULE_RFT: Module_F {
         scope = 2;
-        displayName = "Enable Red Force Tracking";
+        displayName = $STR_MODULE_RFT_NAME;
         category = QUOTE(MODULE_CATEGORY);
         function = QUOTE(FUNC(initModule));
         functionPriority = 1;

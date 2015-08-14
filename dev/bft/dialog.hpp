@@ -36,21 +36,21 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
         };
 
         class lblTextUnit: EGVAR(tracking_main,LabelTooltip) {
-            text = "Unit:";
+            text = $STR_BFT_LBL_TEXTUNIT;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(0);
         };
 
         class lblTextCallsign: EGVAR(tracking_main,LabelTooltip) {
-            text = "Callsign:";
+            text = $STR_BFT_LBL_TEXTCALLSIGN;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(1);
         };
 
         class lblTextFrequency: EGVAR(tracking_main,LabelTooltip) {
-            text = "Frequency:";
+            text = $STR_BFT_LBL_TEXTFREQUENCY;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(2);
@@ -130,7 +130,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnShowLeaders: EGVAR(tracking_main,Button) {
             idc = -1;
 
-            text = "Only show leaders";
+            text = $STR_BFT_BTN_SHOWLEADERS;
             onButtonClick = [_this,"leaders"] call FUNC(btn_changePlayers);
 
             x = BASE_X;
@@ -142,7 +142,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnShowAll: EGVAR(tracking_main,Button) {
             idc = -1;
 
-            text = "Show all players";
+            text = $STR_BFT_BTN_SHOWALL;
             onButtonClick = [_this,"all"] call FUNC(btn_changePlayers);
 
             x = BASE_X;
@@ -154,7 +154,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnAllSymbols: EGVAR(tracking_main,Button) {
             idc = -1;
 
-            text = "All";
+            text = $STR_BFT_BTN_ALLSYMBOLS;
             onButtonClick = [_this,"all"] call FUNC(btn_changeSymbols);
 
             x = BASE_X;
@@ -166,7 +166,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnNoSymbols: EGVAR(tracking_main,Button) {
             idc = -1;
 
-            text = "No";
+            text = $STR_BFT_BTN_NOSYMBOLS;
             onButtonClick = [_this,"none"] call FUNC(btn_changeSymbols);
 
             x = BASE_X + (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
@@ -178,7 +178,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnToggleSymbols: EGVAR(tracking_main,Button) {
             idc = -1;
 
-            text = "Toggle";
+            text = $STR_BFT_BTN_TOGGLESYMBOLS;
             onButtonClick = [_this,"toggle"] call FUNC(btn_changeSymbols);
 
             x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
@@ -190,7 +190,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class lblSymbols: EGVAR(tracking_main,Label) {
              idc = -1;
 
-            text = "Symbols";
+            text = $STR_BFT_LBL_SYMBOLS;
 
             x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)) + (0.5 * BASE_X + 0.25 * (CONFIG_WIDTH - 2 * BASE_X));
             y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
@@ -201,7 +201,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnHide: EGVAR(tracking_main,Button) {
             idc = -1;
 
-            text = "Close";
+            text = $STR_BFT_BTN_HIDE;
             onButtonClick = _this call FUNC(btn_configureHide);
 
             x = BASE_X;

@@ -16,15 +16,6 @@ class GVAR(grpReport): RscControlsGroupNoHScrollbars {
     h = GRP_HEIGHT;
 
     class controls {
-        // Background
-        /*class ctrlBackground: GVAR(Background) {
-            idc = IDC_GRP_BACKGROUND;
-
-            w = GRP_WIDTH;
-            h = GRP_HEIGHT;
-
-            colorBackground[] = {COLOR_BLACK_TR50};
-        };*/
     };
 };
 
@@ -45,21 +36,21 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
         };
 
         class lblTextID: EGVAR(tracking_main,LabelTooltip) {
-            text = "ID:";
+            text = $STR_RFT_LBL_TEXTID;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(0);
         };
 
         class lblTextAge: EGVAR(tracking_main,LabelTooltip) {
-            text = "Last edited:";
+            text = $STR_RFT_LBL_TEXTAGE;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(1);
         };
 
         class lblTextCreator: EGVAR(tracking_main,LabelTooltip) {
-            text = "Creator:";
+            text = $STR_RFT_LBL_TEXTCREATOR;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(2);
@@ -96,62 +87,3 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
         };
     };
 };
-
-/*class RscControlsGroupNoScrollbars;
-class IGUIBack;
-class RscText;
-class RscStructuredText;
-class RscButton;
-
-class GVAR(Label): RscText {
-    idc = -1;
-    shadow = 0;
-    sizeEx = FONTSIZE;
-    style = 528;
-
-    DIM(1, 1);
-
-    colorText[] = {COLOR_WHITE};
-};
-
-class GVAR(LabelHeading): GVAR(Label) {
-    sizeEx = 1.5 * FONTSIZE;
-    DIM(1, 1.5 * 0.8);
-};
-
-class GVAR(LabelTooltip): GVAR(Label) {
-    sizeEx = TOOLTIP_FONTSIZE;
-
-    TOOLTIP_COL(0);
-    TOOLTIP_ROW(0);
-    w = TOOLTIP_COL_WIDTH;
-    h = TOOLTIP_ROW_HEIGHT;
-};
-
-class GVAR(Button): RscButton {
-    idc = -1;
-    sizeEx = FONTSIZE;
-
-    DIM(1,1);
-};
-
-class GVAR(ButtonInvisble): GVAR(Button) {
-    colorText[] = {COLOR_TR};
-    colorBackground[] = {COLOR_TR};
-    colorBackgroundActive[] = {COLOR_WHITE_TR25};
-    colorFocused[] = {COLOR_TR};
-};
-
-class GVAR(Background): IGUIBack {
-    idc = -1;
-
-    x = 0;
-    y = 0;
-    DIM(1, 1);
-
-    colorBackground[] = {COLOR_BLACK_TR25};
-};
-
-class GVAR(Container): RscControlsGroupNoScrollbars {
-    idc = -1;
-};*/

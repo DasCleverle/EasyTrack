@@ -19,7 +19,7 @@ class CfgVehicles {
 
     class MODULE_BFT: Module_F {
         scope = 2;
-        displayName = "Enable Blue Force Tracking";
+        displayName = $STR_MODULE_BFT_NAME;
         category = QUOTE(MODULE_CATEGORY);
         function = QUOTE(FUNC(initModule));
         functionPriority = 1;
@@ -31,7 +31,7 @@ class CfgVehicles {
 
     class MODULE_BFT_ASSIGN: Module_F {
         scope = 2;
-        displayName = "Assign Blue Force Information";
+        displayName = $STR_MODULE_BFT_ASSIGN_NAME;
         category = QUOTE(MODULE_CATEGORY);
         function = QUOTE(FUNC(initModuleAssign));
         functionPriority = 1;
@@ -50,44 +50,44 @@ class CfgVehicles {
             };
 
             class Callsign {
-                displayName = "Callsign";
-                description = "The callsign of the unit";
-                defaultValue = "NO CALLSIGN";
+                displayName = $STR_BFT_CALLSIGN;
+                description = $STR_BFT_CALLSIGN_DESC;
+                defaultValue = $STR_BFT_CALLSIGN_DEFAULT;
             };
 
             class Frequency {
-                displayName = "Frequency/Channel";
-                description = "Internal frequency (TFAR) or channel (ACRE) of the unit";
-                defaultValue = "NO FREQ";
+                displayName = $STR_BFT_FREQUENCY;
+                description = $STR_BFT_FREQUENCY_DESC;
+                defaultValue = $STR_BFT_FREQUENCY;
             };
 
             class Symbol {
-                displayName = "Symbol";
-                description = "The NATO symbol that represents the unit";
+                displayName = $STR_BFT_SYMBOL;
+                description = "$STR_BFT_SYMBOL_DESC";
                 class values {
-                    SYMBOL(inf,Infantry);
-                    SYMBOL(motinf,Motorized Infantry);
-                    SYMBOL(mechinf,Mechanized Infantry);
-                    SYMBOL(recon,Recon);
-                    SYMBOL(hq,HQ);
-                    SYMBOL(armor,Armor);
-                    SYMBOL(artillery,Artillery);
-                    SYMBOL(heli,Heli);
-                    SYMBOL(jet,Jet);
-                    SYMBOL(logistics,Logistics);
-                    SYMBOL(medical,Medical);
+                    SYMBOL(inf,$STR_BFT_INF);
+                    SYMBOL(motinf,$STR_BFT_MOTINF);
+                    SYMBOL(mechinf,$STR_BFT_MECHINF);
+                    SYMBOL(recon,$STR_BFT_RECON);
+                    SYMBOL(hq,$STR_BFT_HQ);
+                    SYMBOL(armor,$STR_BFT_ARMOR);
+                    SYMBOL(artillery,$STR_BFT_ARTILLERY);
+                    SYMBOL(heli,$STR_BFT_HELI);
+                    SYMBOL(jet,$STR_BFT_JET);
+                    SYMBOL(logistics,$STR_BFT_LOGISTICS);
+                    SYMBOL(medical,$STR_BFT_MEDICAL);
                 }
             };
 
             class Size {
-                displayName = "Size";
-                description = "The size of the unit";
+                displayName = $STR_BFT_SIZE;
+                description = $STR_BFT_SIZE_DESC;
 
                 class values {
-                    SIZE(fireteam,Fireteam,SIZE_FIRETEAM);
-                    SIZE_DEF(unit,Unit/Vehicle,SIZE_UNIT);
-                    SIZE(squad,Squad,SIZE_SQUAD);
-                    SIZE(platoon,Platoon,SIZE_PLATOON);
+                    SIZE(fireteam,$STR_BFT_FIRETEAM,SIZE_FIRETEAM);
+                    SIZE_DEF(unit,$STR_BFT_UNIT,SIZE_UNIT);
+                    SIZE(squad,$STR_BFT_SQUAD,SIZE_SQUAD);
+                    SIZE(platoon,$STR_BFT_PLATOON,SIZE_PLATOON);
                 };
             };
         };

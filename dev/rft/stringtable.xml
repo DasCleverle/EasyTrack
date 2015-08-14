@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Project name="EasyTrack">
+	<Package name="RFT">
+		<Container ID="Common">
+			<Key ID="STR_RFT_RFTNAME">
+				<Original>Red Force Tracking</Original>
+				<English>Red Force Tracking</English>
+				<German>Red Force Tracking</German>
+			</Key>
+			<Key ID="STR_RFT_CENTERONICON">
+				<Original>Center on marker</Original>
+				<English>Center on marker</English>
+				<German>Auf Marker zentrieren</German>
+			</Key>
+			<Key ID="STR_RFT_FAVHEADING">
+				<Original>Favorites</Original>
+				<English>Favorites</English>
+				<German>Favoriten</German>
+			</Key>
+			<Key ID="STR_RFT_FAVINFO1">
+				<Original>CTRL + Left Click to select for</Original>
+				<English>CTRL + Left Click to select for</English>
+				<German>STRG + Linksklick, um zu bearbei-</German>
+			</Key>
+			<Key ID="STR_RFT_FAVINFO2">
+				<Original>editing</Original>
+				<English>editing</English>
+				<German>ten</German>
+			</Key>
+		</Container>
+		<Container ID="Symbol names">
+			<Key ID="STR_RFT_UNKNOWN">
+				<Original>Unknown</Original>
+				<English>Unknown</English>
+				<German>Unbekannt</German>
+			</Key>
+			<Key ID="STR_RFT_INF">
+				<Original>Infantry</Original>
+				<English>Infantry</English>
+				<German>Infanterie</German>
+			</Key>
+			<Key ID="STR_RFT_MOTINF">
+				<Original>Motorized Infantry</Original>
+				<English>Motorized Infantry</English>
+				<German>Motorisierte Infanterie</German>
+			</Key>
+			<Key ID="STR_RFT_MECHINF">
+				<Original>Mechanized Infantry</Original>
+				<English>Mechanized Infantry</English>
+				<German>Mechanisierte Infanterie</German>
+			</Key>
+			<Key ID="STR_RFT_RECON">
+				<Original>Recon</Original>
+				<English>Recon</English>
+				<German>Aufklärer</German>
+			</Key>
+			<Key ID="STR_RFT_HQ">
+				<Original>HQ</Original>
+				<English>HQ</English>
+				<German>HQ</German>
+			</Key>
+			<Key ID="STR_RFT_ARMOR">
+				<Original>Armor</Original>
+				<English>Armor</English>
+				<German>Panzer</German>
+			</Key>
+			<Key ID="STR_RFT_ARTILLERY">
+				<Original>Artillery</Original>
+				<English>Artillery</English>
+				<German>Artillerie</German>
+			</Key>
+			<Key ID="STR_RFT_HELI">
+				<Original>Heli</Original>
+				<English>Heli</English>
+				<German>Helikopter</German>
+			</Key>
+			<Key ID="STR_RFT_JET">
+				<Original>Jet</Original>
+				<English>Jet</English>
+				<German>Flugzeug</German>
+			</Key>
+			<Key ID="STR_RFT_UAV">
+				<Original>UAV</Original>
+				<English>UAV</English>
+				<German>UAV</German>
+			</Key>
+			<Key ID="STR_RFT_LOGISTICS">
+				<Original>Logistics</Original>
+				<English>Logistics</English>
+				<German>Logistik</German>
+			</Key>
+			<Key ID="STR_RFT_MEDICAL">
+				<Original>Medical</Original>
+				<English>Medical</English>
+				<German>Medizinisch</German>
+			</Key>
+			<Key ID="STR_RFT_STATIC">
+				<Original>Static</Original>
+				<English>Static</English>
+				<German>Statisch</German>
+			</Key>
+		</Container>
+		<Container ID="Side names">
+			<Key ID="STR_RFT_OPFOR">
+				<Original>OPFOR</Original>
+				<English>OPFOR</English>
+				<German>OPFOR</German>
+			</Key>
+			<Key ID="STR_RFT_BLUFOR">
+				<Original>BLUFOR</Original>
+				<English>BLUFOR</English>
+				<German>BLUFOR</German>
+			</Key>
+			<Key ID="STR_RFT_INDEP">
+				<Original>Independent</Original>
+				<English>Independent</English>
+				<German>Unabhängige</German>
+			</Key>
+			<Key ID="STR_RFT_CIVIL">
+				<Original>Civil</Original>
+				<English>Civil</English>
+				<German>Zivil</German>
+			</Key>
+		</Container>
+		<Container ID="Unit sizes">
+			<Key ID="STR_RFT_FIRETEAM">
+				<Original>Fireteam</Original>
+				<English>Fireteam</English>
+				<German>Fireteam</German>
+			</Key>
+			<Key ID="STR_RFT_UNIT">
+				<Original>Unit/Vehicle</Original>
+				<English>Unit/Vehicle</English>
+				<German>Einheit/Fahrzeug</German>
+			</Key>
+			<Key ID="STR_RFT_SQUAD">
+				<Original>Squad</Original>
+				<English>Squad</English>
+				<German>Squad</German>
+			</Key>
+			<Key ID="STR_RFT_PLATOON">
+				<Original>Platoon</Original>
+				<English>Platoon</English>
+				<German>Platoon</German>
+			</Key>
+		</Container>
+		<Container ID="Directions">
+			<Key ID="STR_RFT_NORTH">
+				<Original>North</Original>
+				<English>North</English>
+				<German>Norden</German>
+			</Key>
+			<Key ID="STR_RFT_NORTHEAST">
+				<Original>North East</Original>
+				<English>North East</English>
+				<German>Nordosten</German>
+			</Key>
+			<Key ID="STR_RFT_EAST">
+				<Original>East</Original>
+				<English>East</English>
+				<German>Osten</German>
+			</Key>
+			<Key ID="STR_RFT_SOUTHEAST">
+				<Original>South East</Original>
+				<English>South East</English>
+				<German>Südosten</German>
+			</Key>
+			<Key ID="STR_RFT_SOUTH">
+				<Original>South</Original>
+				<English>South</English>
+				<German>Süden</German>
+			</Key>
+			<Key ID="STR_RFT_SOUTHWEST">
+				<Original>South West</Original>
+				<English>South West</English>
+				<German>Südwesten</German>
+			</Key>
+			<Key ID="STR_RFT_WEST">
+				<Original>West</Original>
+				<English>West</English>
+				<German>Westen</German>
+			</Key>
+			<Key ID="STR_RFT_NORTHWEST">
+				<Original>North West</Original>
+				<English>North West</English>
+				<German>Nordwesten</German>
+			</Key>
+			<Key ID="STR_RFT_CUSTOM">
+				<Original>Custom</Original>
+				<English>Custom</English>
+				<German>Benutzerdefiniert</German>
+			</Key>
+		</Container>
+		<Container ID="CfgVehicles">
+			<Key ID="STR_MODULE_RFT_NAME">
+				<Original>Enable Red Force Tracking</Original>
+				<English>Enable Red Force Tracking</English>
+				<German>Red Force Tracking aktivieren</German>
+			</Key>
+		</Container>
+		<Container ID="dialog">
+			<Key ID="STR_RFT_LBL_TEXTID">
+				<Original>ID:</Original>
+				<English>ID:</English>
+				<German>ID:</German>
+			</Key>
+			<Key ID="STR_RFT_LBL_TEXTAGE">
+				<Original>Last edited:</Original>
+				<English>Last edited:</English>
+				<German>Letzte Änd.:</German>
+			</Key>
+			<Key ID="STR_RFT_LBL_TEXTCREATOR">
+				<Original>Creator:</Original>
+				<English>Creator:</English>
+				<German>Ersteller:</German>
+			</Key>
+			<Key ID="STR_RFT_BTN_SHOWELLIPSE">
+				<Original>Show Ellipse</Original>
+				<English>Show Ellipse</English>
+				<German>Ellipse anzeigen</German>
+			</Key>
+			<Key ID="STR_RFT_BTN_HIDEELLIPSE">
+				<Original>Hide Ellipse</Original>
+				<English>Hide Ellipse</English>
+				<German>Ellipse entfernen</German>
+			</Key>
+		</Container>
+		<Container ID="Actions">
+			<Key ID="STR_RFT_CONFIGURE">
+				<Original>Configure RFT</Original>
+				<English>Configure RFT</English>
+				<German>RFT konfigurieren</German>
+			</Key>
+		</Container>
+	</Package>
+</Project>

@@ -16,7 +16,6 @@ class CfgFunctions {
 
             class colorArrayToString {};
             class colorStringToArray {};
-            class dirToString {};
             class getSideFromItem {};
             class isFriend {};
             class preInit { preInit = 1; };

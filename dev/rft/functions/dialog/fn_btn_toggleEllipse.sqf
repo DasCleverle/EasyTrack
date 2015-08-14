@@ -13,12 +13,12 @@ _iconPos = ICON_POS(_icon);
 
 if(_ellipsePos isEqualTo [-1]) then {
     SET_ELLIPSE_POS(_ellipse, _iconPos);
-    _control ctrlSetText "Hide Ellipse";
+    _control ctrlSetText localize "STR_RFT_BTN_HIDEELLIPSE";
     _control ctrlCommit 0;
 }
 else {
     SET_ELLIPSE_POS(_ellipse, [-1]);
-    _control ctrlSetText "Show Ellipse";
+    _control ctrlSetText localize "STR_RFT_BTN_SHOWELLIPSE";
     _control ctrlCommit 0;
 };
 

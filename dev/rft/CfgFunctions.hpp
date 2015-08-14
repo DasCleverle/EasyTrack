@@ -21,6 +21,7 @@ class CfgFunctions {
 
             class initModule {};
             class getMarkerIndex {};
+            class dirToString {};
         };
 
         class map {
