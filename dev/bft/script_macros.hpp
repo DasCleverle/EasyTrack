@@ -2,6 +2,7 @@
 
 // Constants
 #define MODULE_BFT GVAR(module)
+#define MODULE_BFT_ASSIGN GVAR(moduleAssign)
 
 #define NEW_MARKER [player, "NO CALLSIGN", "NO FREQ", ICON_DEFAULT, ICON_SIZE_DEFAULT]
 

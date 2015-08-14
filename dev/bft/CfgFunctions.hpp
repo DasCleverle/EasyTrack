@@ -19,6 +19,7 @@ class CfgFunctions {
             file = FUNCFILE(main);
 
             class initModule {};
+            class initModuleAssign {};
             class getSideColor {};
         };
 
