@@ -1,16 +1,20 @@
 #include "script_component.hpp"
 
-disableSerialization;
+[] spawn {
+    disableSerialization;
+    private ["_configs", "_result"];
 
-private ["_configs"];
-_configs = configProperties [configFile >> "Extended_Put_Eventhandlers" >> "Man", 'isClass _x && { (configName _x find "putTracker") != -1 } && { (configName _x find QUOTE(PREFIX)) != -1 }'];
+    _result = ["Do you really want to self destruct your EasyTrack Device?", "Self Destruction", "Yes", "No", DISPLAY(IDD_MAINMAP)] call BIS_fnc_guiMessage;
+    if(!_result) exitWith {};
 
-{
-    _item = _x;
-    player unassignItem _item;
-    player removeItem _item;
-
+    _configs = configProperties [configFile >> "Extended_Put_Eventhandlers" >> "Man", 'isClass _x && { (configName _x find "putTracker") != -1 } && { (configName _x find QUOTE(PREFIX)) != -1 }'];
     {
-        [player, objNull, _item] call compile getText(_x >> "put");
-    } foreach _configs;
-} foreach TRACKER_ITEMS;
+        _item = _x;
+        player unassignItem _item;
+        player removeItem _item;
+
+        {
+            [player, objNull, _item] call compile getText(_x >> "put");
+        } foreach _configs;
+    } foreach TRACKER_ITEMS;
+};
