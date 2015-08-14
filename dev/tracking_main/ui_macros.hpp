@@ -3,6 +3,10 @@
 #define IDD_MAINMAP 12
 #define IDC_MAINMAP 51
 
+#define IDC_BTN_ACTIONS 16700
+#define IDC_GRP_ACTIONS 16701
+#define IDC_LST_ACTIONS 16702
+
 // Functional Macros
 #define GUIMIN_1(var1)                  GUIMIN_2(var1, var1)
 #define GUIMIN_2(var1, var2)            (((safezoneW / safezoneH) min var1) / var2)

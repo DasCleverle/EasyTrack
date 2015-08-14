@@ -3,8 +3,9 @@ class CfgFunctions {
         class dialog {
             file = FUNCFILE(dialog);
 
+            class actionConfigure {};
+
             class btn_centerOnIcon {};
-            class btn_configure {};
             class btn_configureHide {};
             class btn_changePlayers {};
             class btn_changeSymbols {};
@@ -52,7 +53,6 @@ class CfgFunctions {
             file = FUNCFILE(xeh);
 
             class xeh_handlePut {};
-            class xeh_handleTake {};
         };
     };
 };

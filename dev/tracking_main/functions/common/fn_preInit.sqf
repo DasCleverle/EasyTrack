@@ -19,3 +19,6 @@ GVAR(controlTypes) = [
 } foreach GVAR(components);
 
 GVAR(active) = true;
+
+GVAR(mapInitialized) = false;
+GVAR(actions) = [];

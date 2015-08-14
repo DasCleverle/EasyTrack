@@ -119,6 +119,7 @@ EGVAR(tracking_main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavCont
 
 // Map init
 [] spawn FUNC(initMap);
+[] spawn MFUNC(initMap);
 
 // syncing
 QGVAR(packet) addPublicVariableEventHandler {

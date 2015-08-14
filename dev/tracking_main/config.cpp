@@ -16,3 +16,4 @@ class CfgPatches {
 #include "CfgFunctions.hpp"
 #include "CfgWeapons.hpp"
 #include "dialog.hpp"
+#include "Extended_Eventhandlers.hpp"
