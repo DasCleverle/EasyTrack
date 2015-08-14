@@ -118,8 +118,8 @@ waitUntil { !isNil QEGVAR(tracking_main,controlTypes); };
 EGVAR(tracking_main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavContainer)];
 
 // Map init
-[] spawn FUNC(initMap);
-[] spawn MFUNC(initMap);
+[] call FUNC(initMap);
+[] call MFUNC(initMap);
 
 // syncing
 QGVAR(packet) addPublicVariableEventHandler {

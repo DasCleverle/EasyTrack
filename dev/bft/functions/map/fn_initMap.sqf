@@ -28,4 +28,10 @@ _grpMain = _mapDisplay ctrlCreate [QGVAR(grpBft), IDC_GRP_BFT];
 _grpConfigure = _mapDisplay ctrlCreate [QGVAR(grpConfigureContainer), IDC_GRP_CONFIGURECONTAINER];
 _grpConfigure ctrlShow false;
 
+// PFH for focusing the text box after typing in a hideMap key
+[{
+    if(isNil QGVAR(txtFocused)) exitWith {};
+    ctrlSetFocus (GVAR(txtFocused) select 0);
+},0,[]] call CBA_fnc_addPerFrameHandler;
+
 GVAR(mapInitialized) = true;

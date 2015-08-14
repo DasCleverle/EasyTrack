@@ -31,10 +31,6 @@ if(_isHideKey || {_keyCode == DIK_ESCAPE}) then {
 };
 
 if((_isHideKey || _keyCode in NUM_KEYS) && {!isNil QGVAR(txtFocused)}) then {
-    [] spawn {
-        sleep 0.001;
-        ctrlSetFocus (GVAR(txtFocused) select 0);
-    };
     true;
 }
 else {

@@ -76,9 +76,9 @@ GVAR(mapInitialized) = false;
 waitUntil { !isNil QEGVAR(tracking_main,controlTypes) };
 EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapClose),FUNC(initTextBoxNoMapClose)];
 
-[] spawn FUNC(initMap);
+[] call FUNC(initMap);
 if(!EGVAR(rft,active)) then {
-    [] spawn MFUNC(initMap);
+    [] call MFUNC(initMap);
 };
 
 ["Configure BFT", { HAS_TABLET }, FUNC(actionConfigure)] call MFUNC(addAction);
