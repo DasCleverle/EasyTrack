@@ -23,12 +23,12 @@ _newHeight = CONTAINER_BASE_H;
     private ["_backgroundPic", "_newPic", "_newButton", "_pos"];
 
     // Create a new RscPicture control for the visual and a RscButton for the functional
+    ADD(_idc, 10);
     _backgroundPic = _mapDisplay ctrlCreate ["RscPicture", _idc, _control];
     ADD(_idc, 10);
     _newPic = _mapDisplay ctrlCreate ["RscPicture", _idc, _control];
     ADD(_idc, 10);
     _newButton = _mapDisplay ctrlCreate [QGVAR(ButtonInvisble), _idc, _control];
-    ADD(_idc, 10);
 
     // Handle special cases
     if(_id != "symbols") then {
