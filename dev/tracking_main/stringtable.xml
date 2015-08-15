@@ -15,9 +15,9 @@
 				<German>Selbstzerstörung</German>
 			</Key>
 			<Key ID="STR_MAIN_SELFDESTRUCT_CONFIRM">
-				<Original>Do you really want to self destruct your EasyTrack Device?</Original>
-				<English>Do you really want to self destruct your EasyTrack Device?</English>
-				<German>Möchten Sie wirklich Ihr EasyTrack-Gerät zerstören?</German>
+				<Original>Do you really want to self destruct your EasyTrack Device(s)?</Original>
+				<English>Do you really want to self destruct your EasyTrack Device(s)?</English>
+				<German>Möchten Sie wirklich Ihr EasyTrack-Gerät(e) zerstören?</German>
 			</Key>
 			<Key ID="STR_MAIN_YES">
 				<Original>Yes</Original>
@@ -30,5 +30,17 @@
 				<German>Nein</German>
 			</Key>
 		</Container>
+		<Container ID="CfgWeapons">
+			<Key ID="STR_MAIN_TABLET_DESTRCUTED">
+				<Original>Destructed EasyTrack Tablet</Original>
+				<English>Destructed EasyTrack Tablet</English>
+				<German>Zerstörtes EasyTrack-Tablet</German>
+			</Key>
+			<Key ID="STR_MAIN_PDA_DESTRCUTED">
+				<Original>Destructed EasyTrack PDA</Original>
+				<English>Destructed EasyTrack PDA</English>
+				<German>Zerstörtes EasyTrack-PDA</German>
+			</Key>
+		</Container>		
 	</Package>
 </Project>

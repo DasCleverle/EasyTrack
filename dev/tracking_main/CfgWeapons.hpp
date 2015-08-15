@@ -28,4 +28,22 @@ class CfgWeapons {
     TABLET(b, BLUFOR);
     TABLET(o, OPFOR);
     TABLET(i, GUER);
+
+    class EasyTrack_PDA_Destructed: itemGPS {
+        _generalMacro = "itemGPS_FT";
+        author = MAINAUTHOR;
+        displayName = $STR_MAIN_PDA_DESTRCUTED;
+        picture = QDATAPATH(icon_pda_destructed.paa);
+    };
+
+    class EasyTrack_Tablet_Destructed: itemGPS {
+        _generalMacro = "itemLAPTOP_FT";
+        author = MAINAUTHOR;
+        displayName = $STR_MAIN_TABLET_DESTRCUTED;
+        picture = QDATAPATH(icon_tablet_destructed.paa);
+
+        class iteminfo {
+            mass = 10;
+        };
+    };
 };
