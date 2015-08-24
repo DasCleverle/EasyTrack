@@ -10,6 +10,10 @@ class EGVAR(tracking_main,TextBox);
 class GVAR(TextBoxNoMapClose): EGVAR(tracking_main,TextBox) {
 };
 
+class GVAR(TextBoxNoMapCloseReadOnly): GVAR(TextBoxNoMapClose) {
+    canModify = 0;
+};
+
 class GVAR(grpBft): RscControlsGroupNoHScrollbars {
     idc = IDC_GRP_BFT;
 

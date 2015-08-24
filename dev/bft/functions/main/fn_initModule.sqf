@@ -60,7 +60,7 @@ GVAR(mainControls) = [
     [QEGVAR(tracking_main,LabelHeading),        [localize "STR_BFT_BFTNAME"]],
     [QEGVAR(tracking_main,Button),              [localize "STR_BFT_CENTERONICON", FUNC(btn_centerOnIcon)]],
     [QEGVAR(tracking_main,Label),               [localize "STR_BFT_UNITRO", false]],
-    [QGVAR(TextBoxNoMapClose),                  [], "txtPlayerName"],
+    [QGVAR(TextBoxNoMapCloseReadOnly),          [], "txtPlayerName"],
     [QEGVAR(tracking_main,Label),               [localize "STR_BFT_CALLSIGN", false]],
     [QGVAR(TextBoxNoMapClose),                  [], "txtCallsign"],
     [QEGVAR(tracking_main,Label),               [localize "STR_BFT_FREQUENCY", false]],
@@ -75,6 +75,7 @@ GVAR(mapInitialized) = false;
 
 waitUntil { !isNil QEGVAR(tracking_main,controlTypes) };
 EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapClose),FUNC(initTextBoxNoMapClose)];
+EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapCloseReadOnly),FUNC(initTextBoxNoMapClose)];
 
 [] call FUNC(initMap);
 if(!EGVAR(rft,active)) then {

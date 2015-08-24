@@ -33,9 +33,9 @@
 				<German>Auf Marker zentrieren</German>
 			</Key>
 			<Key ID="STR_BFT_UNITRO">
-				<Original>Unit (read only)</Original>
-				<English>Unit (read only)</English>
-				<German>Unit (nicht änderbar)</German>
+				<Original>Unit</Original>
+				<English>Unit</English>
+				<German>Einheit</German>
 			</Key>
 		</Container>
 		<Container ID="Symbol names">
