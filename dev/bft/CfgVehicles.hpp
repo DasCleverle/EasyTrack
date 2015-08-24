@@ -20,6 +20,7 @@ class CfgVehicles {
     class MODULE_BFT: Module_F {
         scope = 2;
         displayName = $STR_MODULE_BFT_NAME;
+        icon = QDATAPATH(icon_module.paa);
         category = QUOTE(MODULE_CATEGORY);
         function = QUOTE(FUNC(initModule));
         functionPriority = 1;
@@ -32,6 +33,7 @@ class CfgVehicles {
     class MODULE_BFT_ASSIGN: Module_F {
         scope = 2;
         displayName = $STR_MODULE_BFT_ASSIGN_NAME;
+        icon = QDATAPATH(icon_module_assign.paa);
         category = QUOTE(MODULE_CATEGORY);
         function = QUOTE(FUNC(initModuleAssign));
         functionPriority = 1;

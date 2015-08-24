@@ -10,6 +10,7 @@ class CfgVehicles {
     class MODULE_RFT: Module_F {
         scope = 2;
         displayName = $STR_MODULE_RFT_NAME;
+        icon = QDATAPATH(icon_module.paa);
         category = QUOTE(MODULE_CATEGORY);
         function = QUOTE(FUNC(initModule));
         functionPriority = 1;
