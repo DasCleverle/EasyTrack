@@ -129,15 +129,3 @@
 #define COLOR_OPFOR         0.5,0,0,1
 #define COLOR_INDEP         0,0.5,0,1
 #define COLOR_CIVIL         0.4,0,0.5,1
-
-
-// CBA Overrides
-#define EXPLODE_1_PVT(ARRAY,A) (ARRAY) params [#A]; TRACE_1("EXPLODE_1, " + QUOTE(ARRAY),A)
-#define EXPLODE_2_PVT(ARRAY,A,B) (ARRAY) params [#A,#B]; TRACE_2("EXPLODE_2, " + QUOTE(ARRAY),A,B)
-#define EXPLODE_3_PVT(ARRAY,A,B,C) (ARRAY) params [#A,#B,#C]; TRACE_3("EXPLODE_3, " + QUOTE(ARRAY),A,B,C)
-#define EXPLODE_4_PVT(ARRAY,A,B,C,D) (ARRAY) params [#A,#B,#C,#D]; TRACE_4("EXPLODE_4, " + QUOTE(ARRAY),A,B,C,D)
-#define EXPLODE_5_PVT(ARRAY,A,B,C,D,E) (ARRAY) params [#A,#B,#C,#D,#E]; TRACE_5("EXPLODE_5, " + QUOTE(ARRAY),A,B,C,D,E)
-#define EXPLODE_6_PVT(ARRAY,A,B,C,D,E,F) (ARRAY) params [#A,#B,#C,#D,#E,#F]; TRACE_6("EXPLODE_6, " + QUOTE(ARRAY),A,B,C,D,E,F)
-#define EXPLODE_7_PVT(ARRAY,A,B,C,D,E,F,G) (ARRAY) params [#A,#B,#C,#D,#E,#F,#G]; TRACE_7("EXPLODE_7, " + QUOTE(ARRAY),A,B,C,D,E,F,G)
-#define EXPLODE_8_PVT(ARRAY,A,B,C,D,E,F,G,H) (ARRAY) params [#A,#B,#C,#D,#E,#F,#G,#H]; TRACE_8("EXPLODE_8, " + QUOTE(ARRAY),A,B,C,D,E,F,G,H)
-#define EXPLODE_9_PVT(ARRAY,A,B,C,D,E,F,G,H,I) (ARRAY) params [#A,#B,#C,#D,#E,#F,#G,#H,#I]; TRACE_9("EXPLODE_9, " + QUOTE(ARRAY),A,B,C,D,E,F,G,H,I)
