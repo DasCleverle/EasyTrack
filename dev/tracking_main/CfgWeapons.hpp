@@ -1,14 +1,14 @@
 #define PDA(S, NAME) \
-    class S##_itemGPS_FT : itemGPS { \
-        _generalMacro = "itemGPS_FT"; \
+    class S##_EasyTrack_PDA : itemGPS { \
+        _generalMacro = "EasyTrack_PDA"; \
         author = MAINAUTHOR; \
         displayName = NAME EasyTrack PDA; \
         picture = QDATAPATH(icon_pda.paa); \
     }
 
 #define TABLET(S, NAME) \
-    class S##_itemLAPTOP_FT : itemGPS { \
-        _generalMacro = "itemLAPTOP_FT"; \
+    class S##_EasyTrack_Tablet : itemGPS { \
+        _generalMacro = "EasyTrack_Tablet"; \
         author = MAINAUTHOR; \
         displayName = NAME EasyTrack Tablet; \
         picture = QDATAPATH(icon_tablet.paa); \
@@ -30,14 +30,14 @@ class CfgWeapons {
     TABLET(i, GUER);
 
     class EasyTrack_PDA_Destructed: itemGPS {
-        _generalMacro = "itemGPS_FT";
+        _generalMacro = "EasyTrack_PDA";
         author = MAINAUTHOR;
         displayName = $STR_MAIN_PDA_DESTRCUTED;
         picture = QDATAPATH(icon_pda_destructed.paa);
     };
 
     class EasyTrack_Tablet_Destructed: itemGPS {
-        _generalMacro = "itemLAPTOP_FT";
+        _generalMacro = "EasyTrack_Tablet";
         author = MAINAUTHOR;
         displayName = $STR_MAIN_TABLET_DESTRCUTED;
         picture = QDATAPATH(icon_tablet_destructed.paa);
