@@ -8,9 +8,8 @@
 #define AUTHORS MAINAUTHOR, "[W] JeremiahRose", "Orginated by [W] Fett_Li"
 
 #define MAJOR 1
-#define MINOR 0
+#define MINOR 1
 #define PATCHLVL 1
-#define DEV 13
 
 #ifdef DEV
     #define VERSION MAJOR.MINOR.PATCHLVL-dev.DEV
