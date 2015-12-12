@@ -10,7 +10,7 @@ _mapControl ctrlAddEventHandler ["MouseButtonClick", { ((ctrlParent (_this selec
 
 _btnActions = _mapDisplay ctrlCreate [QGVAR(Button), IDC_BTN_ACTIONS];
 _btnActions ctrlSetPosition [
-    safeZoneX + safeZoneW - 20.5 * GUIMIN_2(1.2, 40) + GUIMIN_2(1.2, 40) - 7 * GUIMIN_2(1.2, 40),
+    safeZoneX + safeZoneW - 23.5 * GUIMIN_2(1.2, 40) + GUIMIN_2(1.2, 40) - 7 * GUIMIN_2(1.2, 40),
     safeZoneY + 0.2 * GUIMIN_3_2(1.2, 25),
     7 * GUIMIN_2(1.2, 40),
     1.1 * GUIMIN_3_2(1.2, 25)
