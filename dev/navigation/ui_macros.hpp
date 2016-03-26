@@ -1,0 +1,3 @@
+#define IDC_GRP_NAVIGATION 21600
+
+#define IDC_FIRST 21900
