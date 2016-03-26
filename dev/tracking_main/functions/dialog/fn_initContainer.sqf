@@ -1,9 +1,9 @@
 #include "script_component.hpp"
 
-PARAMS_3(_control,_mainYPos,_params);
+params ["_control","_mainOrientationPos","_orientation","_params"];
 EXPLODE_3_PVT(_params,_id,_source,_perColumn);
 
-private ["_mapDisplay", "_background", "_totalHeight", "_newXPos", "_newYPos", "_newWidth", "_newHeight", "_idc"];
+private ["_mapDisplay", "_background", "_totalHeight", "_newXPos", "_newYPos", "_newWidth", "_newHeight", "_idc", "_return"];
 
 // Create the background
 _mapDisplay = ctrlParent _control;
@@ -92,11 +92,20 @@ _newHeight = CONTAINER_BASE_H;
 _totalHeight = _totalHeight + (PADDING_Y);
 
 // Set the control's and the background's position
-_control ctrlSetPosition [BASE_X, _mainYPos, BASE_W, _totalHeight];
-_control ctrlCommit 0;
-
+switch(_orientation) do {
+    case "horizontal": {
+        _control ctrlSetPosition [_mainOrientationPos, BASE_Y, BASE_W, _totalHeight];
+        _return = BASE_W + BASE_X;
+    };
+    case "vertical": {
+        _control ctrlSetPosition [BASE_X, _mainOrientationPos, BASE_W, _totalHeight];
+        _return = _totalHeight + BASE_Y;
+    };
+};
 _background ctrlSetPosition [0, 0, BASE_W, _totalHeight];
+
+_control ctrlCommit 0;
 _background ctrlCommit 0;
 
 // Return the height of the control for yPos calculation
-_totalHeight + BASE_Y;
+_return;

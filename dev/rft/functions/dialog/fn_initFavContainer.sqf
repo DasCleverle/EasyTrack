@@ -2,9 +2,9 @@
 
 #define PADDING_X (3 * CONTAINER_BASE_X)
 
-PARAMS_3(_control,_mainYPos,_params);
+params ["_control","_mainOrientationPos","_orientation","_params"];
 
-private ["_favCount", "_mapDisplay", "_background",  "_newXPos", "_newYPos", "_newWidth", "_newHeight", "_height"];
+private ["_favCount", "_mapDisplay", "_background",  "_newXPos", "_newYPos", "_newWidth", "_newHeight", "_height", "_return"];
 
 _favCount = 4;
 _mapDisplay = ctrlParent _control;
@@ -49,10 +49,19 @@ _height = 2 * CONTAINER_BASE_Y + _newHeight;
     GVAR(favControls) pushBack [_picSymbol, _picSize, _picEmphasis];
 } foreach GVAR(favorites);
 
-_control ctrlSetPosition [BASE_X, _mainYPos, BASE_W, _height];
+switch(_orientation) do {
+    case "horizontal": {
+        _control ctrlSetPosition [_mainOrientationPos, BASE_Y, BASE_W, _height];
+        _return = BASE_W + BASE_X;
+    };
+    case "vertical": {
+        _control ctrlSetPosition [BASE_X, _mainOrientationPos, BASE_W, _height];
+        _return = _height + BASE_Y;
+    };
+};
 _background ctrlSetPosition [0, 0, BASE_W, _height];
 
 _control ctrlCommit 0;
 _background ctrlCommit 0;
 
-_height + BASE_Y;
+_return;

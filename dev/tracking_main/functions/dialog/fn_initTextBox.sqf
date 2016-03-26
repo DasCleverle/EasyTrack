@@ -1,12 +1,24 @@
 #include "script_component.hpp"
 
-PARAMS_3(_control,_mainYPos,_params);
+params ["_control","_mainOrientationPos","_orientation","_params"];
+private ["_controlPos","_return"];
 
-_controlPos = ctrlPosition _control;
-_controlPos set [0, BASE_X];
-_controlPos set [1, _mainYPos];
+private _controlPos = ctrlPosition _control;
+
+switch(_orientation) do {
+    case "horizontal": {
+        _controlPos set [0, _mainOrientationPos];
+        _controlPos set [1, BASE_Y];
+        _return = (_controlPos select 2) + BASE_X;
+    };
+    case "vertical": {
+        _controlPos set [0, BASE_X];
+        _controlPos set [1, _mainOrientationPos];
+        _return = (_controlPos select 3) + BASE_Y;
+    };
+};
+
 _control ctrlSetPosition _controlPos;
-
 _control ctrlCommit 0;
 
-(_controlPos select 3) + BASE_Y;
+_return;
