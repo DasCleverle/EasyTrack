@@ -31,7 +31,7 @@ _newHeight = CONTAINER_BASE_H;
     _newButton = _mapDisplay ctrlCreate [QGVAR(ButtonInvisble), _idc, _control];
 
     // Handle special cases
-    if(_id != "symbols") then {
+    if(_id != "symbols" || { _id != "icons" }) then {
         _backgroundPic ctrlSetText STRCOLOR(COLOR_BLACK_TR25);
     }
     else {

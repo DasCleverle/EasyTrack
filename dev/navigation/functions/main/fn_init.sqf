@@ -1,29 +1,29 @@
 #include "script_component.hpp"
 
-
-GVAR(icons) = [
-    [QMAINDATAPATH(symbols\unknown.paa), localize "STR_RFT_UNKNOWN", {  }],
-    [QMAINDATAPATH(symbols\inf.paa), localize "STR_RFT_INF", {  }],
-    [QMAINDATAPATH(symbols\motinf.paa), localize "STR_RFT_MOTINF", {  }],
-    [QMAINDATAPATH(symbols\mechinf.paa), localize "STR_RFT_MECHINF", {  }],
-    [QMAINDATAPATH(symbols\recon.paa), localize "STR_RFT_RECON", {  }],
-    [QMAINDATAPATH(symbols\hq.paa), localize "STR_RFT_HQ", {  }],
-    [QMAINDATAPATH(symbols\armor.paa), localize "STR_RFT_ARMOR", {  }],
-    [QMAINDATAPATH(symbols\artillery.paa), localize "STR_RFT_ARTILLERY", {  }],
-    [QMAINDATAPATH(symbols\heli.paa), localize "STR_RFT_HELI", {  }],
-    [QMAINDATAPATH(symbols\jet.paa), localize "STR_RFT_JET", {  }],
-    [QMAINDATAPATH(symbols\uav.paa), localize "STR_RFT_UAV", {  }],
-    [QMAINDATAPATH(symbols\logistics.paa), localize "STR_RFT_LOGISTICS", {  }],
-    [QMAINDATAPATH(symbols\medical.paa), localize "STR_RFT_MEDICAL", {  }],
-    [QMAINDATAPATH(symbols\static.paa), localize "STR_RFT_STATIC", {  }]
+GVAR(iconsControls) = [
+    [QDATAPATH(icons\ambush.paa), "Ambush", { [QDATAPATH(icons\ambush.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\arrow.paa), "Arrow", { [QDATAPATH(icons\arrow.paa)] call FUNC(createNavIcon)  }],
+    [QDATAPATH(icons\arrow2.paa), "Arrow", { [QDATAPATH(icons\arrow2.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\destroy.paa), "Destroy", { [QDATAPATH(icons\destroy.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\dot.paa), "Dot", { [QDATAPATH(icons\dot.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\end.paa), "End", { [QDATAPATH(icons\end.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\flag.paa), "Flag", { [QDATAPATH(icons\flag.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\join.paa), "Join", { [QDATAPATH(icons\join.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\marker.paa), "Marker", { [QDATAPATH(icons\marker.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\objective.paa), "Objective", { [QDATAPATH(icons\objective.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\pickup.paa), "Pickup", { [QDATAPATH(icons\pickup.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\start.paa), "Start", { [QDATAPATH(icons\start.paa)] call FUNC(createNavIcon) }],
+    [QDATAPATH(icons\warning.paa), "Warning", { [QDATAPATH(icons\warning.paa)] call FUNC(createNavIcon) }]
 ];
 
 
 GVAR(mainControls) = [
-    [QEGVAR(tracking_main,Container),      ["icons", GVAR(icons),     6]],
-    [QEGVAR(tracking_main,Container),      ["test", GVAR(icons),     3]]
+    [QEGVAR(tracking_main,Container),      ["icons", GVAR(iconsControls),     5]]
 ];
 
-call FUNC(initMap);
+GVAR(navIcons) = [];
+GVAR(mapInitialized) = false;
+GVAR(ctrlPressed) = false;
+GVAR(altPressed) = false;
 
-systemChat "init";
+call FUNC(initMap);

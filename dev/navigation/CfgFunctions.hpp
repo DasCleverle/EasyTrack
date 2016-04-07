@@ -16,6 +16,27 @@ class CfgFunctions {
             file = FUNCFILE(map);
 
             class initMap {};
-        }
+
+            class handleDraw {};
+            class handleMouseButtonClick {};
+            class handleMouseButtonDown {};
+            class handleMouseButtonUp {};
+            class handleMouseMoving {};
+
+            class handleKeyDown {};
+            class handleKeyUp {};
+        };
+
+        class map_draw {
+            file = FUNCFILE(map\draw);
+
+            class drawNavIcons {};
+        };
+
+        class navicon {
+            file = FUNCFILE(navicon);
+
+            class createNavIcon {};
+        };
     };
 };
