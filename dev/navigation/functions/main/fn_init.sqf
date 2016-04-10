@@ -21,6 +21,7 @@ GVAR(mainControls) = [
     [QEGVAR(tracking_main,Container),      ["icons", GVAR(iconsControls),     5]]
 ];
 
+GVAR(navIconId) = 1;
 GVAR(navIcons) = [];
 GVAR(mapInitialized) = false;
 GVAR(ctrlPressed) = false;

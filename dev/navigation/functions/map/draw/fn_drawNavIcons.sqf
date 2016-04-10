@@ -4,7 +4,7 @@ params ["_mapControl", "_hoveringCount"];
 
 _hoveringCount = 0;
 {
-    _x params ["_icon"];
+    _x params ["_id", "_icon"];
     private ["_iconScreenPos", "_distance"];
     _iconScreenPos = _mapControl ctrlMapWorldToScreen ICON_POS(_icon);
 

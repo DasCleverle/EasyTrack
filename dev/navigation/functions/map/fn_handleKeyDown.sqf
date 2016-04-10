@@ -13,3 +13,10 @@ if(_keyCode == DIK_LCONTROL || {_keyCode == DIK_RCONTROL}) then {
 if(_keyCode == DIK_LALT || {_keyCode == DIK_RALT}) then {
     GVAR(altPressed) = true;
 };
+
+// Delete
+if(_keyCode == DIK_DELETE && {!isNil QGVAR(hoveredNavIcon)}) then {
+    [NAVICON_GET_ID(GVAR(hoveredNavIcon))] call FUNC(deleteNavIcon);
+};
+
+nil;

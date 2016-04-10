@@ -37,6 +37,10 @@ class CfgFunctions {
             file = FUNCFILE(navicon);
 
             class createNavIcon {};
+            class deleteNavIcon {};
+
+            class getNavIconById {};
+            class getNavIconIndex {};
         };
     };
 };
