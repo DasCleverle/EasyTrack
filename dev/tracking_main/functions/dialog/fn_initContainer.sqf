@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 params ["_control","_mainOrientationPos","_orientation","_params"];
-EXPLODE_3_PVT(_params,_id,_source,_perColumn);
+_params params ["_id", "_source", "_perColumn", ["_width", BASE_W]];
 
 private ["_mapDisplay", "_background", "_totalHeight", "_newXPos", "_newYPos", "_newWidth", "_newHeight", "_idc", "_return"];
 
@@ -14,7 +14,7 @@ _idc = ctrlIDC _control;
 _totalHeight = CONTAINER_BASE_Y;
 _newXPos = CONTAINER_BASE_X;
 _newYPos = CONTAINER_BASE_Y;
-_newWidth = ((BASE_W - 2 * CONTAINER_BASE_X) - ((_perColumn - 1) * PADDING_X)) / _perColumn; // (Base width - padding from border - padding between columns) / pictures per column
+_newWidth = ((_width - 2 * CONTAINER_BASE_X) - ((_perColumn - 1) * PADDING_X)) / _perColumn; // (Base width - padding from border - padding between columns) / pictures per column
 _newHeight = CONTAINER_BASE_H;
 
 {
@@ -31,11 +31,11 @@ _newHeight = CONTAINER_BASE_H;
     _newButton = _mapDisplay ctrlCreate [QGVAR(ButtonInvisble), _idc, _control];
 
     // Handle special cases
-    if(_id != "symbols" || { _id != "icons" }) then {
-        _backgroundPic ctrlSetText STRCOLOR(COLOR_BLACK_TR25);
+    if(_id == "symbols" || { _id == "icons" }) then {
+        _backgroundPic ctrlSetText STRCOLOR(COLOR_TR);
     }
     else {
-        _backgroundPic ctrlSetText STRCOLOR(COLOR_TR);
+        _backgroundPic ctrlSetText STRCOLOR(COLOR_BLACK_TR25);
     };
 
     if(_id == "directions" && {EGVAR(rft,active)}) then {
@@ -94,15 +94,15 @@ _totalHeight = _totalHeight + (PADDING_Y);
 // Set the control's and the background's position
 switch(_orientation) do {
     case "horizontal": {
-        _control ctrlSetPosition [_mainOrientationPos, BASE_Y, BASE_W, _totalHeight];
-        _return = BASE_W + BASE_X;
+        _control ctrlSetPosition [_mainOrientationPos, BASE_Y, _width, _totalHeight];
+        _return = _width + BASE_X;
     };
     case "vertical": {
-        _control ctrlSetPosition [BASE_X, _mainOrientationPos, BASE_W, _totalHeight];
+        _control ctrlSetPosition [BASE_X, _mainOrientationPos, _width, _totalHeight];
         _return = _totalHeight + BASE_Y;
     };
 };
-_background ctrlSetPosition [0, 0, BASE_W, _totalHeight];
+_background ctrlSetPosition [0, 0, _width, _totalHeight];
 
 _control ctrlCommit 0;
 _background ctrlCommit 0;
