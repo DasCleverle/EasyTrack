@@ -10,7 +10,7 @@ _hoveringCount = 0;
 
     // Define the hovered NavIcon
     _distance = GVAR(mousePos) distance _iconScreenPos;
-    if(_distance < 0.04) then {
+    if(_distance < 0.031) then {
         GVAR(hoveredNavIcon) = _x;
         INC(_hoveringCount);
     };
@@ -21,8 +21,6 @@ _hoveringCount = 0;
 if(_hoveringCount == 0) then {
     GVAR(hoveredNavIcon) = nil;
 };
-
-hintSilent str [GVAR(hoveredNavIcon),GVAR(rotatingNavIcon),GVAR(movingNavIcon)];
 
 // Make the icon rotatable
 if(!isNil QGVAR(hoveredNavIcon) && {isNil QGVAR(rotatingNavIcon)} && {GVAR(mouseButtonPressed)} && {GVAR(ctrlPressed)}) then {
@@ -53,6 +51,7 @@ if(!isNil QGVAR(movingNavIcon)) then {
     SET_ICON_POS(_icon, _mousePos);
 };
 
+// Move the new NavIcon along the mouse to place it
 if(!isNil QGVAR(newNavIcon) && {isNil QGVAR(movingNavIcon)}) then {
     private ["_icon", "_mousePos"];
     _icon = NAVICON_GET_ICON(GVAR(newNavIcon));
@@ -60,3 +59,21 @@ if(!isNil QGVAR(newNavIcon) && {isNil QGVAR(movingNavIcon)}) then {
 
     SET_ICON_POS(_icon, _mousePos);
 };
+
+// Emphasize the selected NavIcon
+if(!isNil QGVAR(selectedNavIcon)) then {
+    private ["_icon", "_emphasisIcon", "_selectedIconPos"];
+    _icon = NAVICON_GET_ICON(GVAR(selectedNavIcon));
+    _selectedIconPos = ICON_POS(_icon);
+
+    _emphasisIcon = NAVICON_ICON_DEFAULT;
+    SET_ICON_PATH(_emphasisIcon, QDATAPATH(emphasis_square.paa));
+    SET_ICON_POS(_emphasisIcon, _selectedIconPos);
+    SET_ICON_COLOR(_emphasisIcon, [COLOR_YELLOW]);
+    SET_ICON_SIZE_X(_emphasisIcon, NAVICON_SIZE);
+    SET_ICON_SIZE_Y(_emphasisIcon, NAVICON_SIZE);
+
+    _mapControl drawIcon _emphasisIcon;
+};
+
+hintSilent str [GVAR(hoveredNavIcon),GVAR(selectedNavIcon)];
