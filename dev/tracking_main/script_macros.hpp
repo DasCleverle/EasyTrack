@@ -88,6 +88,20 @@
 #define SET_ELLIPSE_COLOR(var1, var2)     (var1 set [4, var2])
 #define SET_ELLIPSE_FILL(var1, var2)      (var1 set [5, var2])
 
+#define RECT_POS(var1)          (var1 select 0)
+#define RECT_WIDTH(var1)        (var1 select 1)
+#define RECT_HEIGHT(var1)       (var1 select 2)
+#define RECT_ANGLE(var1)        (var1 select 3)
+#define RECT_COLOR(var1)        (var1 select 4)
+#define RECT_FILL(var1)         (var1 select 5)
+
+#define SET_RECT_POS(var1, var2)          (var1 set [0, var2])
+#define SET_RECT_WIDTH(var1, var2)        (var1 set [1, var2])
+#define SET_RECT_HEIGHT(var1, var2)       (var1 set [2, var2])
+#define SET_RECT_ANGLE(var1, var2)        (var1 set [3, var2])
+#define SET_RECT_COLOR(var1, var2)        (var1 set [4, var2])
+#define SET_RECT_FILL(var1, var2)         (var1 set [5, var2])
+
 // COLORS
 #define STRCOLOR_BASE_SYS "#(argb,8,8,3)color("
 #define STRCOLOR_SYS(var1) STRCOLOR_BASE_SYS + var1 + ")"

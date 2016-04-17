@@ -31,6 +31,7 @@ class CfgFunctions {
             file = FUNCFILE(map\draw);
 
             class drawNavIcons {};
+            class drawLines {};
         };
 
         class navicon {
@@ -42,5 +43,15 @@ class CfgFunctions {
             class getNavIconById {};
             class getNavIconIndex {};
         };
+
+        class line {
+            file = FUNCFILE(line);
+
+            class createLine {};
+            class deleteLine {};
+
+            class getLineById {};
+            class getLineIndex {};
+        }
     };
 };

@@ -9,3 +9,23 @@ if(isNil QGVAR(newNavIcon) && {isNil QGVAR(movingNavIcon)} && {isNil QGVAR(rotat
 };
 
 GVAR(newNavIcon) = nil;
+
+
+if(GVAR(lineStarted) && {!GVAR(lineDrawStarted)}) then {
+    GVAR(lineEndPos) = GVAR(mouseWorldPos);
+
+    [GVAR(lineStartPos), GVAR(lineEndPos), GVAR(lineThickness)] call FUNC(createLine);
+
+    GVAR(lineStartPos) = nil;
+    GVAR(lineEndPos) = nil;
+    GVAR(lineThickness) = nil;
+    GVAR(lineStarted) = false;
+};
+
+if(GVAR(lineDrawStarted)) then {
+    GVAR(lineStartPos) = GVAR(mouseWorldPos);
+    GVAR(lineStarted) = true;
+    GVAR(lineDrawStarted) = false;
+};
+
+GVAR(selectedLine) = GVAR(hoveredLine);

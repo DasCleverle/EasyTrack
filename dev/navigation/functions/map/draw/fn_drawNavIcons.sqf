@@ -1,8 +1,8 @@
 #include "script_component.hpp"
 
-params ["_mapControl", "_hoveringCount"];
+params ["_mapControl"];
 
-_hoveringCount = 0;
+private _hoveringCount = 0;
 {
     _x params ["_id", "_icon"];
     private ["_iconScreenPos", "_distance"];
@@ -44,20 +44,18 @@ if(!isNil QGVAR(rotatingNavIcon)) then {
 
 // Move the hovered NavIcon along the mouse if Shift key is pressed
 if(!isNil QGVAR(movingNavIcon)) then {
-    private ["_icon", "_mousePos"];
+    private ["_icon"];
     _icon = NAVICON_GET_ICON(GVAR(movingNavIcon));
-    _mousePos = _mapControl ctrlMapScreenToWorld GVAR(mousePos);
 
-    SET_ICON_POS(_icon, _mousePos);
+    SET_ICON_POS(_icon, GVAR(mouseWorldPos));
 };
 
 // Move the new NavIcon along the mouse to place it
 if(!isNil QGVAR(newNavIcon) && {isNil QGVAR(movingNavIcon)}) then {
-    private ["_icon", "_mousePos"];
+    private ["_icon"];
     _icon = NAVICON_GET_ICON(GVAR(newNavIcon));
-    _mousePos = _mapControl ctrlMapScreenToWorld GVAR(mousePos);
 
-    SET_ICON_POS(_icon, _mousePos);
+    SET_ICON_POS(_icon, GVAR(mouseWorldPos));
 };
 
 // Emphasize the selected NavIcon
@@ -75,5 +73,3 @@ if(!isNil QGVAR(selectedNavIcon)) then {
 
     _mapControl drawIcon _emphasisIcon;
 };
-
-hintSilent str [GVAR(hoveredNavIcon),GVAR(selectedNavIcon)];

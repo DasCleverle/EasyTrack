@@ -23,3 +23,24 @@
     "RobotoCondensed", \
     "right" \
 ]
+
+#define THICKNESS_THIN 10
+#define THICKNESS_MIDDLE 20
+#define THICKNESS_THICK 35
+
+#define NEW_LINE [-1, LINE_RECT_DEFAULT]
+
+#define LINE_GET_ID(var1) (var1 select 0)
+#define LINE_GET_RECT(var1) (var1 select 1)
+
+#define LINE_SET_ID(var1, var2) (var1 set [0, var2])
+#define LINE_SET_RECT(var1, var2) (var1 set [1, var2])
+
+#define LINE_RECT_DEFAULT [ \
+    [0,0,0], \
+    THICKNESS_MIDDLE, \
+    100, \
+    0, \
+    [COLOR_BLACK], \
+    STRCOLOR(COLOR_BLACK) \
+]

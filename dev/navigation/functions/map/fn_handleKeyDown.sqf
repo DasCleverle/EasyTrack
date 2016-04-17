@@ -15,8 +15,14 @@ if(_keyCode == DIK_LALT || {_keyCode == DIK_RALT}) then {
 };
 
 // Delete
-if(_keyCode == DIK_DELETE && {!isNil QGVAR(hoveredNavIcon)}) then {
-    [NAVICON_GET_ID(GVAR(hoveredNavIcon))] call FUNC(deleteNavIcon);
+if(_keyCode == DIK_DELETE) then {
+    if(!isNil QGVAR(hoveredNavIcon)) then {
+        [NAVICON_GET_ID(GVAR(hoveredNavIcon))] call FUNC(deleteNavIcon);
+    };
+
+    if(!isNil QGVAR(hoveredLine)) then {
+        [LINE_GET_ID(GVAR(hoveredLine))] call FUNC(deleteLine);
+    };
 };
 
 nil;

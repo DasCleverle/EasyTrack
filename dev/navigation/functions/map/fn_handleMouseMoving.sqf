@@ -3,3 +3,4 @@
 disableSerialization;
 params ["_mapControl", "_mouseX", "_mouseY"];
 GVAR(mousePos) = [_mouseX, _mouseY];
+GVAR(mouseWorldPos) = _mapControl ctrlMapScreenToWorld GVAR(mousePos);

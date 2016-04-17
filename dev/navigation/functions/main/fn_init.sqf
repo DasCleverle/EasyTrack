@@ -16,9 +16,20 @@ GVAR(iconsControls) = [
     [QDATAPATH(icons\warning.paa), "Warning", { [QDATAPATH(icons\warning.paa)] call FUNC(createNavIcon) }]
 ];
 
+GVAR(linesControls) = [
+    [QDATAPATH(lines\line_thin.paa), "Thin Line", { GVAR(lineDrawStarted) = true; GVAR(lineThickness) = THICKNESS_THIN; }],
+    [QDATAPATH(lines\line_middle.paa), "Middle Line", { GVAR(lineDrawStarted) = true; GVAR(lineThickness) = THICKNESS_MIDDLE; }],
+    [QDATAPATH(lines\line_thick.paa), "Thick Line", { GVAR(lineDrawStarted) = true; GVAR(lineThickness) = THICKNESS_THICK; }],
+    [QDATAPATH(lines\line_free.paa), "Free Line", {}],
+    [QDATAPATH(lines\line_dotted.paa), "Dotted Line", {}],
+    [QDATAPATH(lines\line_dashed.paa), "Dashed Line", {}],
+    [QDATAPATH(lines\arrow.paa), "Arrow", {}]
+];
+
 
 GVAR(mainControls) = [
-    [QEGVAR(tracking_main,Container),      ["icons", GVAR(iconsControls),     5]]
+    [QEGVAR(tracking_main,Container),      ["icons", GVAR(iconsControls),     5, 0.75 * BASE_W]],
+    [QEGVAR(tracking_main,Container),      ["lines", GVAR(linesControls),     4, 0.6 * BASE_W]]
 ];
 
 GVAR(navIconId) = 1;
@@ -26,5 +37,10 @@ GVAR(navIcons) = [];
 GVAR(mapInitialized) = false;
 GVAR(ctrlPressed) = false;
 GVAR(altPressed) = false;
+
+GVAR(lineDrawStarted) = false;
+GVAR(lineStarted) = false;
+GVAR(lines) = [];
+GVAR(lineId) = 1;
 
 call FUNC(initMap);

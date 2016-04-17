@@ -6,4 +6,6 @@ params ["_mapControl"];
 
 if (HAS_TRACKER) then {
     [_mapControl] call FUNC(drawNavIcons);
+
+    [_mapControl] call FUNC(drawLines);
 };
