@@ -9,3 +9,5 @@ GVAR(mouseButtonPressed) = false;
 
 GVAR(rotatingNavIcon) = nil;
 GVAR(movingNavIcon) = nil;
+
+GVAR(movingLineEllipse) = nil;

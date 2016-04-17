@@ -10,6 +10,8 @@ class CfgFunctions {
             class init {};
             class initModule {};
             class postInit { postInit = 1; };
+
+            class inArea {};
         };
 
         class map {
@@ -52,6 +54,8 @@ class CfgFunctions {
 
             class getLineById {};
             class getLineIndex {};
+
+            class setLinePos {};
         }
     };
 };

@@ -23,6 +23,10 @@ if(_keyCode == DIK_DELETE) then {
     if(!isNil QGVAR(hoveredLine)) then {
         [LINE_GET_ID(GVAR(hoveredLine))] call FUNC(deleteLine);
     };
+
+    if(!isNil QGVAR(selectedLine) && {isNil QGVAR(hoveredLine)}) then {
+        [LINE_GET_ID(GVAR(selectedLine))] call FUNC(deleteLine);
+    };
 };
 
 nil;

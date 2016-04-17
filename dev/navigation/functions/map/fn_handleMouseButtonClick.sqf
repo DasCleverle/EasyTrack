@@ -28,4 +28,6 @@ if(GVAR(lineDrawStarted)) then {
     GVAR(lineDrawStarted) = false;
 };
 
-GVAR(selectedLine) = GVAR(hoveredLine);
+if(isNil QGVAR(hoveredLineEllipse)) then {
+    GVAR(selectedLine) = GVAR(hoveredLine);
+};
