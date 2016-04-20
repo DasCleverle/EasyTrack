@@ -49,6 +49,7 @@ class CfgFunctions {
         class line {
             file = FUNCFILE(line);
 
+            class startLineDraw {};
             class createLine {};
             class deleteLine {};
 

@@ -12,6 +12,7 @@ if(_mouseButton == 0) then {
 
     GVAR(newNavIcon) = nil;
 
+    // Line was started, end the line here
     if(GVAR(lineStarted) && {!GVAR(lineDrawStarted)}) then {
         GVAR(lineEndPos) = GVAR(mouseWorldPos);
 
@@ -23,20 +24,24 @@ if(_mouseButton == 0) then {
         GVAR(lineStarted) = false;
     };
 
+    // Button for line creation was pressed, start the line here
     if(GVAR(lineDrawStarted)) then {
         GVAR(lineStartPos) = GVAR(mouseWorldPos);
         GVAR(lineStarted) = true;
         GVAR(lineDrawStarted) = false;
     };
 
+    // Select a line only if no line ellipse is hovered, to keep it selected when moving the line
     if(isNil QGVAR(hoveredLineEllipse)) then {
         GVAR(selectedLine) = GVAR(hoveredLine);
     };
 }
 // right click
 else {
+    // Delete the newest NavIcon
     [NAVICON_GET_ID(GVAR(newNavIcon))] call FUNC(deleteNavIcon);
 
+    // Abort line creation
     if(GVAR(lineStarted)) then {
         GVAR(lineStartPos) = nil;
         GVAR(lineEndPos) = nil;
