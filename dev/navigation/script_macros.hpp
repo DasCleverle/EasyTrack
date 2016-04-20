@@ -28,17 +28,21 @@
 #define THICKNESS_MIDDLE 20
 #define THICKNESS_THICK 35
 
-#define NEW_LINE [-1, LINE_RECT_DEFAULT, [0,0,0], [0,0,0]]
+#define LINE_DISTANCE_FACTOR 4
+
+#define NEW_LINE [-1, LINE_RECT_DEFAULT, "default", [0,0,0], [0,0,0]]
 
 #define LINE_GET_ID(var1) (var1 select 0)
 #define LINE_GET_RECT(var1) (var1 select 1)
-#define LINE_GET_START(var1) (var1 select 2)
-#define LINE_GET_END(var1) (var1 select 3)
+#define LINE_GET_TYPE(var1) (var1 select 2)
+#define LINE_GET_START(var1) (var1 select 3)
+#define LINE_GET_END(var1) (var1 select 4)
 
 #define LINE_SET_ID(var1, var2) (var1 set [0, var2])
 #define LINE_SET_RECT(var1, var2) (var1 set [1, var2])
-#define LINE_SET_START(var1, var2) (var1 set [2, var2])
-#define LINE_SET_END(var1, var2) (var1 set [3, var2])
+#define LINE_SET_TYPE(var1, var2) (var1 set [2, var2])
+#define LINE_SET_START(var1, var2) (var1 set [3, var2])
+#define LINE_SET_END(var1, var2) (var1 set [4, var2])
 
 #define LINE_RECT_DEFAULT [ \
     [0,0,0], \

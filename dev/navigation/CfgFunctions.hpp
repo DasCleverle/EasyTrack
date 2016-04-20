@@ -56,6 +56,12 @@ class CfgFunctions {
             class getLineIndex {};
 
             class setLinePos {};
-        }
+        };
+
+        class line_draw {
+            file = FUNCFILE(line\draw);
+
+            class drawLine {};
+        };
     };
 };

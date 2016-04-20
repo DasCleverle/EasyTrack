@@ -21,9 +21,10 @@ GVAR(linesControls) = [
     [QDATAPATH(lines\line_middle.paa), "Middle Line", { GVAR(lineDrawStarted) = true; GVAR(lineThickness) = THICKNESS_MIDDLE; }],
     [QDATAPATH(lines\line_thick.paa), "Thick Line", { GVAR(lineDrawStarted) = true; GVAR(lineThickness) = THICKNESS_THICK; }],
     [QDATAPATH(lines\line_free.paa), "Free Line", {}],
-    [QDATAPATH(lines\line_dotted.paa), "Dotted Line", {}],
-    [QDATAPATH(lines\line_dashed.paa), "Dashed Line", {}],
-    [QDATAPATH(lines\arrow.paa), "Arrow", {}]
+    [QDATAPATH(lines\line_middle.paa), "Default Line", { LINE_SET_TYPE(GVAR(selectedLine), "default") }],
+    [QDATAPATH(lines\line_dotted.paa), "Dotted Line", { LINE_SET_TYPE(GVAR(selectedLine), "dotted") }],
+    [QDATAPATH(lines\line_dashed.paa), "Dashed Line", { LINE_SET_TYPE(GVAR(selectedLine), "dashed") }],
+    [QDATAPATH(lines\arrow.paa), "Arrow", { LINE_SET_TYPE(GVAR(selectedLine), "arrow") }]
 ];
 
 

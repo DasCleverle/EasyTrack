@@ -11,7 +11,7 @@ if(!isNil QGVAR(selectedLine)) then {
     SET_RECT_WIDTH(_emphasisRect, RECT_WIDTH(_emphasisRect) + 5);
     SET_RECT_HEIGHT(_emphasisRect, RECT_HEIGHT(_emphasisRect) + 5);
     SET_RECT_COLOR(_emphasisRect, [COLOR_YELLOW]);
-    SET_RECT_FILL(_emphasisRect, STRCOLOR(COLOR_YELLOW));
+    SET_RECT_FILL(_emphasisRect, "");
 
     // Draw ellipses at start and of line to be able to move it
     _startEllipse = LINE_ELLIPSE;
@@ -53,8 +53,6 @@ if(!isNil QGVAR(selectedLine)) then {
         };
     };
 
-    hintSilent str [GVAR(hoveredLineEllipse),GVAR(movingLineEllipse)];
-
     _mapControl drawRectangle _emphasisRect;
     _mapControl drawEllipse _startEllipse;
     _mapControl drawEllipse _endEllipse;
@@ -73,7 +71,7 @@ private _hoveringCount = 0;
         INC(_hoveringCount);
     };
 
-    _mapControl drawRectangle _rect;
+    [_mapControl, _x] call FUNC(drawLine);
 } foreach GVAR(lines);
 
 if(_hoveringCount == 0) then {
@@ -83,4 +81,12 @@ if(_hoveringCount == 0) then {
 // Draw a simple line to help the user imagine the dimensions
 if(GVAR(lineStarted)) then {
     _mapControl drawLine [GVAR(lineStartPos), GVAR(mouseWorldPos), [COLOR_BLACK]];
+};
+
+// Draw an ellipse to indicate that line drawing has been started
+if(GVAR(lineDrawStarted)) then {
+    private _ellipse = LINE_ELLIPSE;
+    SET_ELLIPSE_POS(_ellipse, GVAR(mouseWorldPos));
+
+    _mapControl drawEllipse _ellipse;
 };
