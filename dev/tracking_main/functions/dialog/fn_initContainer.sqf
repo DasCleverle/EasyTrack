@@ -20,63 +20,65 @@ _newHeight = CONTAINER_BASE_H;
 {
     EXPLODE_3_PVT(_x,_picOrColor,_tooltip,_fnc_onClick);
 
-    private ["_backgroundPic", "_newPic", "_newButton", "_pos"];
+    if !(_x isEqualTo []) then {
+        private ["_backgroundPic", "_newPic", "_newButton", "_pos"];
 
-    // Create a new RscPicture control for the visual and a RscButton for the functional
-    ADD(_idc, 10);
-    _backgroundPic = _mapDisplay ctrlCreate ["RscPicture", _idc, _control];
-    ADD(_idc, 10);
-    _newPic = _mapDisplay ctrlCreate ["RscPicture", _idc, _control];
-    ADD(_idc, 10);
-    _newButton = _mapDisplay ctrlCreate [QGVAR(ButtonInvisble), _idc, _control];
+        // Create a new RscPicture control for the visual and a RscButton for the functional
+        ADD(_idc, 10);
+        _backgroundPic = _mapDisplay ctrlCreate ["RscPicture", _idc, _control];
+        ADD(_idc, 10);
+        _newPic = _mapDisplay ctrlCreate ["RscPicture", _idc, _control];
+        ADD(_idc, 10);
+        _newButton = _mapDisplay ctrlCreate [QGVAR(ButtonInvisble), _idc, _control];
 
-    // Handle special cases
-    if(_id == "symbols" || { _id == "icons" }) then {
-        _backgroundPic ctrlSetText STRCOLOR(COLOR_TR);
-    }
-    else {
-        _backgroundPic ctrlSetText STRCOLOR(COLOR_BLACK_TR25);
+        // Handle special cases
+        if(_id == "symbols" || { _id == "icons" }) then {
+            _backgroundPic ctrlSetText STRCOLOR(COLOR_TR);
+        }
+        else {
+            _backgroundPic ctrlSetText STRCOLOR(COLOR_BLACK_TR25);
+        };
+
+        if(_id == "directions" && {EGVAR(rft,active)}) then {
+            EGVAR(rft,dir_controls) pushBack [toLower _tooltip, [_newButton, _newPic, _backgroundPic]];
+        };
+
+        // Determine whether the input string is a picture or color
+        if(_picOrColor find ".paa" != -1) then {
+            // Set the height accordingly
+            _newHeight = _newWidth * 4/3;
+
+            // Set background color of pic
+            _newPic ctrlSetTextColor [COLOR_WHITE];
+        }
+        else {
+            _newHeight = CONTAINER_BASE_H;
+        };
+
+        // Set the new controls position
+        _pos = [_newXPos, _newYPos, _newWidth, _newHeight];
+        _backgroundPic ctrlSetPosition _pos;
+        _newPic ctrlSetPosition _pos;
+        _newButton ctrlSetPosition _pos;
+
+        // Set the pictures path or the color
+        _newPic ctrlSetText _picOrColor;
+
+        // Set button tooltip
+        _newButton ctrlSetTooltip _tooltip;
+
+        // Add eventhandler for button
+        _newButton ctrlAddEventHandler ["ButtonClick", format ["[_this select 0, %1, %2] call %3;", ctrlIDC _newPic, ctrlIDC _backgroundPic, _fnc_onClick]];
+
+        // Commit the changes
+        _newPic ctrlCommit 0;
+        _newButton ctrlCommit 0;
+        _backgroundPic ctrlCommit 0;
+
+        // Update the variables
+        ADD(_newXPos,_newWidth + PADDING_X);
+        ADD(_idc, 100);
     };
-
-    if(_id == "directions" && {EGVAR(rft,active)}) then {
-        EGVAR(rft,dir_controls) pushBack [toLower _tooltip, [_newButton, _newPic, _backgroundPic]];
-    };
-
-    // Determine whether the input string is a picture or color
-    if(_picOrColor find ".paa" != -1) then {
-        // Set the height accordingly
-        _newHeight = _newWidth * 4/3;
-
-        // Set background color of pic
-        _newPic ctrlSetTextColor [COLOR_WHITE];
-    }
-    else {
-        _newHeight = CONTAINER_BASE_H;
-    };
-
-    // Set the new controls position
-    _pos = [_newXPos, _newYPos, _newWidth, _newHeight];
-    _backgroundPic ctrlSetPosition _pos;
-    _newPic ctrlSetPosition _pos;
-    _newButton ctrlSetPosition _pos;
-
-    // Set the pictures path or the color
-    _newPic ctrlSetText _picOrColor;
-
-    // Set button tooltip
-    _newButton ctrlSetTooltip _tooltip;
-
-    // Add eventhandler for button
-    _newButton ctrlAddEventHandler ["ButtonClick", format ["[_this select 0, %1, %2] call %3;", ctrlIDC _newPic, ctrlIDC _backgroundPic, _fnc_onClick]];
-
-    // Commit the changes
-    _newPic ctrlCommit 0;
-    _newButton ctrlCommit 0;
-    _backgroundPic ctrlCommit 0;
-
-    // Update the variables
-    ADD(_newXPos,_newWidth + PADDING_X);
-    ADD(_idc, 100);
 
     if((_foreachIndex + 1) mod _perColumn == 0 || {(_foreachIndex + 1) >= count _source}) then {
         private ["_heightIncrease"];

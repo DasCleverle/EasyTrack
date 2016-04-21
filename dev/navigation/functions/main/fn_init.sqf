@@ -20,7 +20,7 @@ GVAR(linesControls) = [
     [QDATAPATH(lines\line_thin.paa), "Thin Line", { [THICKNESS_THIN] call FUNC(startLineDraw); }],
     [QDATAPATH(lines\line_middle.paa), "Middle Line", { [THICKNESS_MIDDLE] call FUNC(startLineDraw); }],
     [QDATAPATH(lines\line_thick.paa), "Thick Line", { [THICKNESS_THICK] call FUNC(startLineDraw); }],
-    [QDATAPATH(lines\line_free.paa), "Free Line", {}],
+    [],
     [QDATAPATH(lines\line_middle.paa), "Default Line", { LINE_SET_TYPE(GVAR(selectedLine), "default") }],
     [QDATAPATH(lines\line_dotted.paa), "Dotted Line", { LINE_SET_TYPE(GVAR(selectedLine), "dotted") }],
     [QDATAPATH(lines\line_dashed.paa), "Dashed Line", { LINE_SET_TYPE(GVAR(selectedLine), "dashed") }],
