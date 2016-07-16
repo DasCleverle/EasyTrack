@@ -2,7 +2,7 @@
 
 PARAMS_2(_mapControl,_selectedMarker);
 
-if(!GVAR(ctrlPressed) || {isNil "_selectedMarker"} || {!isNil QGVAR(currentDirectionArrow)}) exitWith {};
+if(!GVAR(altPressed) || {isNil "_selectedMarker"} || {!isNil QGVAR(currentDirectionArrow)}) exitWith {};
 
 // Resize ellipse
 private ["_selectedEllipse", "_mousePos"];

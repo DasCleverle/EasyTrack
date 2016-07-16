@@ -99,7 +99,7 @@ ISNILS(GVAR(currentMarkerID),0);
 GVAR(dir_controls) = [];
 
 GVAR(mainControlsVisible) = false;
-GVAR(ctrlPressed) = false;
+GVAR(altPressed) = false;
 GVAR(mouseButtonPressed) = false;
 GVAR(mapInitialized) = false;
 GVAR(pasted) = false;

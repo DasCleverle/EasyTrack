@@ -1,11 +1,11 @@
 #include "script_component.hpp"
 
 disableSerialization;
-PARAMS_6(_mapControl,_mouseButton,_mouseX,_mouseY,_shiftState,_ctrlState);
+PARAMS_7(_mapControl,_mouseButton,_mouseX,_mouseY,_shiftState,_ctrlState,_altState);
 
 private ["_mapDisplay", "_grpMain", "_pos", "_icon", "_size", "_marker"];
 
-if(!_ctrlState || {_mouseButton != 0} || {!HAS_TRACKER}) exitWith {};
+if(!_altState || {_mouseButton != 0} || {!HAS_TRACKER}) exitWith {};
 
 GVAR(dblClick) = true;
 
