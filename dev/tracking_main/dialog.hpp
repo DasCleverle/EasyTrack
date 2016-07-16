@@ -71,7 +71,7 @@ class GVAR(Container): RscControlsGroupNoScrollbars {
 class GVAR(grpActions): RscControlsGroupNoHScrollbars {
     idc = IDC_GRP_ACTIONS;
 
-    x = safeZoneX + safeZoneW - 23.5 * GUIMIN_2(1.2, 40) + GUIMIN_2(1.2, 40) - 7 * GUIMIN_2(1.2, 40);
+    x = safeZoneX + safeZoneW - 24 * GUIMIN_2(1.2, 40) - 7 * GUIMIN_2(1.2, 40);
     y = safeZoneY + 1.51 * GUIMIN_3_2(1.2, 25);
     w = 7 * GUIMIN_2(1.2, 40);
     h = 4/3 * 7 * GUIMIN_2(1.2, 40);
