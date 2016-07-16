@@ -5,9 +5,10 @@ class CfgPatches {
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
-        requiredAddons[] = {"cba_main",QUOTE(DOUBLES(PREFIX,tracking_main))};
-        author[] = {AUTHORS};
-        authorUrl = "http://www.gruppe-w.de/";
+        requiredAddons[] = {"cba_main", QUOTE(DOUBLES(PREFIX,tracking_main))};
+        author = MAINAUTHOR;
+        authors[] = {AUTHORS};
+        url = "http://www.gruppe-w.de/";
         VERSION_CONFIG;
     };
 };

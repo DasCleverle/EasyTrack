@@ -5,7 +5,7 @@
 #define MAINCOMPONENT tracking_main
 
 #define MAINAUTHOR "[W] DasCleverle"
-#define AUTHORS MAINAUTHOR, "[W] JeremiahRose", "Orginated by [W] Fett_Li"
+#define AUTHORS "[W] JeremiahRose", "Orginated by [W] Fett_Li"
 
 #define MAJOR 1
 #define MINOR 1
