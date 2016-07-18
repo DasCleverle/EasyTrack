@@ -4,9 +4,9 @@
 disableSerialization;
 PARAMS_5(_mapDisplay,_keyCode,_shiftState,_ctrlState,_altState);
 
-// Control button
-if(_keyCode == DIK_LCONTROL || {_keyCode == DIK_RCONTROL}) then {
-    GVAR(ctrlPressed) = true;
+// Alt button
+if(_keyCode == DIK_LALT || {_keyCode == DIK_RALT}) then {
+    GVAR(altPressed) = true;
 };
 
 // Delete hovered marker when del button is pressed

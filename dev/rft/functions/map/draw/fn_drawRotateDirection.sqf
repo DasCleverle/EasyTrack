@@ -2,7 +2,7 @@
 
 PARAMS_2(_mapControl,_selectedMarker);
 
-if(!GVAR(ctrlPressed) || {isNil "_selectedMarker"} || {!isNil QGVAR(selectedCatch)}) exitWith {};
+if(!GVAR(altPressed) || {isNil "_selectedMarker"} || {!isNil QGVAR(selectedCatch)}) exitWith {};
 
 private ["_mousePos"];
 _mousePos = _mapControl ctrlMapScreenToWorld GVAR(mousePos);

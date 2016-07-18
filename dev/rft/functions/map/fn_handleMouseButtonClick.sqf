@@ -4,7 +4,7 @@ disableSerialization;
 
 PARAMS_7(_mapControl,_mouseButton,_mouseX,_mouseY,_shiftState,_ctrlState,_altState);
 
-if(_mouseButton != 0 || {GVAR(ctrlPressed)}) exitWith {};
+if(_mouseButton != 0 || {GVAR(altPressed)}) exitWith {};
 
 private ["_mapDisplay", "_grpMain", "_mousePos", "_mapMousePos"];
 
@@ -27,3 +27,5 @@ else {
     // hide the main control
     [_mapControl, "hide"] call FUNC(toggleMainControl);
 };
+
+false;

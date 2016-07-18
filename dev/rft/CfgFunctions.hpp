@@ -39,7 +39,7 @@ class CfgFunctions {
             class handleMouseButtonUp {};
             class handleMouseMoving {};
 
-            class resetCtrlState {};
+            class resetAltState {};
         };
 
         class map_draw {

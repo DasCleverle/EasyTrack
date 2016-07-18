@@ -113,7 +113,7 @@ else {
 };
 
 // Make the marker moveable
-if(!isNil QGVAR(hoveredMarker) && {GVAR(ctrlPressed)} && {GVAR(mouseButtonPressed)} && {isNil QGVAR(selectedCatch)} && {isNil QGVAR(currentDirectionArrow)}) then {
+if(!isNil QGVAR(hoveredMarker) && {GVAR(altPressed)} && {GVAR(mouseButtonPressed)} && {isNil QGVAR(selectedCatch)} && {isNil QGVAR(currentDirectionArrow)}) then {
     GVAR(movingMarker) = GVAR(hoveredMarker);
 };
 

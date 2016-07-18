@@ -5,11 +5,11 @@
 #define MAINCOMPONENT tracking_main
 
 #define MAINAUTHOR "[W] DasCleverle"
-#define AUTHORS MAINAUTHOR, "[W] JeremiahRose", "Orginated by [W] Fett_Li"
+#define AUTHORS "[W] JeremiahRose", "Orginated by [W] Fett_Li"
 
 #define MAJOR 1
 #define MINOR 1
-#define PATCHLVL 3
+#define PATCHLVL 4
 
 #ifdef DEV
     #define VERSION MAJOR.MINOR.PATCHLVL-dev.DEV
