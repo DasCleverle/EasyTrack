@@ -20,7 +20,7 @@ if(hasInterface) then {
         {
             _finished = false;
             {
-                if(ctrlIDD _x == 133) then {
+                if(ctrlIDD _x == 311) then {
                     _mapControl = _x displayCtrl 101;
                     _mapControl ctrlAddEventHandler ["draw", FUNC(handleDraw)];
                     _finished = true;
