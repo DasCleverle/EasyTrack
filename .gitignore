@@ -1,6 +1,9 @@
 *.py
 *.lnk
 *.bbcode
+*.pbo
+
+texHeaders.bin
 
 [rR]esources/
 [bB]uild/
