@@ -9,7 +9,7 @@ class CfgFunctions {
             class initMap {};
             class lst_execAction {};
             class removeAction {};
-        }
+        };
 
         class common {
             file = FUNCFILE(common);
@@ -39,6 +39,6 @@ class CfgFunctions {
 
             class xeh_handlePut {};
             class xeh_handleTake {};
-        }
+        };
     };
 };

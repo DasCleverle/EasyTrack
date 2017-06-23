@@ -37,6 +37,7 @@
 #define UHAS_PDA(var1)         UHAS_ITEMS(PDA_ITEMS, var1)
 
 // Functional macros
+#undef QEGVAR
 #define QEGVAR(var1,var2) QUOTE(EGVAR(var1,var2))
 #define MFUNC(var1) EFUNC(MAINCOMPONENT,var1)
 

@@ -12,14 +12,14 @@ class GVAR(Label): RscText {
     sizeEx = FONTSIZE;
     style = 528;
 
-    DIM(1, 1);
+    DIM(1,1);
 
     colorText[] = {COLOR_WHITE};
 };
 
 class GVAR(LabelHeading): GVAR(Label) {
     sizeEx = 1.5 * FONTSIZE;
-    DIM(1, 1.5 * 0.8);
+    DIM(1,1.2);
 };
 
 class GVAR(LabelTooltip): GVAR(Label) {
@@ -59,7 +59,7 @@ class GVAR(Background): IGUIBack {
 
     x = 0;
     y = 0;
-    DIM(1, 1);
+    DIM(1,1);
 
     colorBackground[] = {COLOR_BLACK_TR25};
 };
@@ -71,17 +71,17 @@ class GVAR(Container): RscControlsGroupNoScrollbars {
 class GVAR(grpActions): RscControlsGroupNoHScrollbars {
     idc = IDC_GRP_ACTIONS;
 
-    x = safeZoneX + safeZoneW - 24 * GUIMIN_2(1.2, 40) - 7 * GUIMIN_2(1.2, 40);
-    y = safeZoneY + 1.51 * GUIMIN_3_2(1.2, 25);
-    w = 7 * GUIMIN_2(1.2, 40);
-    h = 4/3 * 7 * GUIMIN_2(1.2, 40);
+    x = safeZoneX + safeZoneW - 24 * GUIMIN_2(1.2,40) - 7 * GUIMIN_2(1.2,40);
+    y = safeZoneY + 1.51 * GUIMIN_3_2(1.2,25);
+    w = 7 * GUIMIN_2(1.2,40);
+    h = 4/3 * 7 * GUIMIN_2(1.2,40);
 
     class controls {
         class background: GVAR(Background) {
             x = 0;
             y = 0;
-            w = 7 * GUIMIN_2(1.2, 40);
-            h = 4/3 * 7 * GUIMIN_2(1.2, 40);
+            w = 7 * GUIMIN_2(1.2,40);
+            h = 4/3 * 7 * GUIMIN_2(1.2,40);
 
             colorBackground[] = {COLOR_BLACK_TR50};
         };
@@ -91,8 +91,8 @@ class GVAR(grpActions): RscControlsGroupNoHScrollbars {
 
             x = 0;
             y = 0;
-            w = 7 * GUIMIN_2(1.2, 40);
-            h = 4/3 * 7 * GUIMIN_2(1.2, 40);
+            w = 7 * GUIMIN_2(1.2,40);
+            h = 4/3 * 7 * GUIMIN_2(1.2,40);
 
             sizeEx = FONTSIZE;
 
