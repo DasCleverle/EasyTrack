@@ -4,12 +4,12 @@
 #define PREFIX CL
 #define MAINCOMPONENT tracking_main
 
-#define MAINAUTHOR "[W] DasCleverle"
-#define AUTHORS "[W] JeremiahRose", "Orginated by [W] Fett_Li"
+#define MAINAUTHOR "DasCleverle"
+#define AUTHORS "[W] Rallen", "JeremiahRose", "Orginated by [W] Fett_Li"
 
 #define MAJOR 1
 #define MINOR 1
-#define PATCHLVL 4
+#define PATCHLVL 5
 
 #ifdef DEV
     #define VERSION MAJOR.MINOR.PATCHLVL-dev.DEV
@@ -20,4 +20,4 @@
 #endif
 
 // MINIMAL required version for the Mod. Components can specify others..
-#define REQUIRED_VERSION 1.48
+#define REQUIRED_VERSION 1.70
