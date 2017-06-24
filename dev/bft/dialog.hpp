@@ -96,9 +96,9 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
     idc = IDC_LST_CONFIGURE;
 
     x = safeZoneX + (safeZoneW - CONFIG_WIDTH) / 2;
-    y = safeZoneY + (safeZoneH - CONFIG_HEIGHT) / 2;
+    y = safeZoneY + (safeZoneH - (2 * GUIMIN_3_2(1.2,2))) / 2;
     w = CONFIG_WIDTH;
-    h = CONFIG_HEIGHT;// + BASE_Y + BASE_H;
+    h = (2 * GUIMIN_3_2(1.2,2));// + BASE_Y + BASE_H;
 
     class controls {
         class background: EGVAR(tracking_main,Background) {
@@ -109,7 +109,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             x = 0;
             y = 0;
             w = CONFIG_WIDTH;
-            h = CONFIG_HEIGHT;
+            h = (2 * GUIMIN_3_2(1.2,2));
         };
 
         class lstConfigure : RscListbox {
@@ -128,7 +128,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             x = 0;
             y = 0;
             w = CONFIG_WIDTH;
-            h = CONFIG_HEIGHT - BASE_Y - 4 * (BASE_Y + BASE_H);
+            h = (2 * GUIMIN_3_2(1.2,2)) - BASE_Y - 4 * (BASE_Y + BASE_H);
         };
 
         class btnShowLeaders: EGVAR(tracking_main,Button) {
@@ -138,7 +138,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             onButtonClick = [_this,"leaders"] call FUNC(btn_changePlayers);
 
             x = BASE_X;
-            y = CONFIG_HEIGHT - 4 * (BASE_Y + BASE_H);
+            y = (2 * GUIMIN_3_2(1.2,2)) - 4 * (BASE_Y + BASE_H);
             w = CONFIG_WIDTH - 2 * BASE_X;
             h = BASE_H;
         };
@@ -150,7 +150,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             onButtonClick = [_this,"all"] call FUNC(btn_changePlayers);
 
             x = BASE_X;
-            y = CONFIG_HEIGHT - 3 * (BASE_Y + BASE_H);
+            y = (2 * GUIMIN_3_2(1.2,2)) - 3 * (BASE_Y + BASE_H);
             w = CONFIG_WIDTH - 2 * BASE_X;
             h = BASE_H;
         };
@@ -162,7 +162,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             onButtonClick = [_this,"all"] call FUNC(btn_changeSymbols);
 
             x = BASE_X;
-            y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
+            y = (2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H);
             w = 0.15 * (CONFIG_WIDTH - 2 * BASE_X);
             h = BASE_H;
         };
@@ -174,7 +174,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             onButtonClick = [_this,"none"] call FUNC(btn_changeSymbols);
 
             x = BASE_X + (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
-            y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
+            y = (2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H);
             w = 0.15 * (CONFIG_WIDTH - 2 * BASE_X);
             h = BASE_H;
         };
@@ -186,7 +186,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             onButtonClick = [_this,"toggle"] call FUNC(btn_changeSymbols);
 
             x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
-            y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
+            y = (2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H);
             w = 0.25 * (CONFIG_WIDTH - 2 * BASE_X);
             h = BASE_H;
         };
@@ -197,7 +197,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             text = $STR_BFT_LBL_SYMBOLS;
 
             x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)) + (0.5 * BASE_X + 0.25 * (CONFIG_WIDTH - 2 * BASE_X));
-            y = CONFIG_HEIGHT - 2 * (BASE_Y + BASE_H);
+            y = (2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H);
             w = 0.5 * (CONFIG_WIDTH - 2 * BASE_X);
             h = BASE_H;
         };
@@ -209,7 +209,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             onButtonClick = _this call FUNC(btn_configureHide);
 
             x = BASE_X;
-            y = CONFIG_HEIGHT - 1 * (BASE_Y + BASE_H);
+            y = (2 * GUIMIN_3_2(1.2,2)) - 1 * (BASE_Y + BASE_H);
             w = CONFIG_WIDTH - 2 * BASE_X;
             h = BASE_H;
         };

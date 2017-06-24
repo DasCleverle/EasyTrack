@@ -1,13 +1,13 @@
-#define PDA(S, NAME) \
-    class S##_EasyTrack_PDA : itemGPS { \
+#define PDA(SIDE,NAME) \
+    class SIDE##_EasyTrack_PDA : itemGPS { \
         _generalMacro = "EasyTrack_PDA"; \
         author = MAINAUTHOR; \
         displayName = NAME EasyTrack PDA; \
         picture = QDATAPATH(icon_pda.paa); \
     }
 
-#define TABLET(S, NAME) \
-    class S##_EasyTrack_Tablet : itemGPS { \
+#define TABLET(SIDE,NAME) \
+    class SIDE##_EasyTrack_Tablet : itemGPS { \
         _generalMacro = "EasyTrack_Tablet"; \
         author = MAINAUTHOR; \
         displayName = NAME EasyTrack Tablet; \
@@ -21,13 +21,13 @@
 class CfgWeapons {
     class itemGPS;
 
-    PDA(b, BLUFOR);
-    PDA(o, OPFOR);
-    PDA(i, GUER);
+    PDA(b,BLUFOR);
+    PDA(o,OPFOR);
+    PDA(i,GUER);
 
-    TABLET(b, BLUFOR);
-    TABLET(o, OPFOR);
-    TABLET(i, GUER);
+    TABLET(b,BLUFOR);
+    TABLET(o,OPFOR);
+    TABLET(i,GUER);
 
     class EasyTrack_PDA_Destructed: itemGPS {
         _generalMacro = "EasyTrack_PDA";

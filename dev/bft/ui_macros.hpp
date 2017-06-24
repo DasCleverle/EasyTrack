@@ -12,5 +12,5 @@
 
 #define IDC_FIRST 19900
 
-#define CONFIG_WIDTH  (0.8 * GUIMIN_3_2(1.2, 2))
-#define CONFIG_HEIGHT (2 * GUIMIN_3_2(1.2, 2))
+#define CONFIG_WIDTH  (0.8 * GUIMIN_3_2(1.2,2))
+#define CONFIG_HEIGHT (2 * GUIMIN_3_2(1.2,2))

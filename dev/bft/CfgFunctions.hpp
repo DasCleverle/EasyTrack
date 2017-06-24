@@ -50,7 +50,7 @@ class CfgFunctions {
             class setFrequency {};
             class setSize {};
             class setSymbol {};
-        }
+        };
 
         class xeh {
             file = FUNCFILE(xeh);

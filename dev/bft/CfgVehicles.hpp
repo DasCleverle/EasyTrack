@@ -1,4 +1,5 @@
 #define SYMBOL(ID, NAME) class ID { name = QUOTE(NAME); value = QMAINDATAPATH(symbols\ID.paa); }
+#undef SIZE
 #define SIZE(ID, NAME, VALUE) class ID { name = QUOTE(NAME); value = VALUE; }
 #define SIZE_DEF(ID, NAME, VALUE) class ID { name = QUOTE(NAME); value = VALUE; default = 1; }
 
@@ -12,7 +13,7 @@ class CfgVehicles {
                     class Objects;
                     class ObjectsAndGroups;
                     class Trigger;
-                }
+                };
             };
         };
     };
@@ -22,7 +23,7 @@ class CfgVehicles {
         displayName = $STR_MODULE_BFT_NAME;
         icon = QDATAPATH(icon_module.paa);
         category = QUOTE(MODULE_CATEGORY);
-        function = QUOTE(FUNC(initModule));
+        function = FUNC(initModule);
         functionPriority = 1;
         isGlobal = 2;
         isTriggerActivated = 0;
@@ -35,7 +36,7 @@ class CfgVehicles {
         displayName = $STR_MODULE_BFT_ASSIGN_NAME;
         icon = QDATAPATH(icon_module_assign.paa);
         category = QUOTE(MODULE_CATEGORY);
-        function = QUOTE(FUNC(initModuleAssign));
+        function = FUNC(initModuleAssign);
         functionPriority = 1;
         isGlobal = 2;
         isTriggerActivated = 0;
@@ -78,7 +79,7 @@ class CfgVehicles {
                     SYMBOL(jet,$STR_BFT_JET);
                     SYMBOL(logistics,$STR_BFT_LOGISTICS);
                     SYMBOL(medical,$STR_BFT_MEDICAL);
-                }
+                };
             };
 
             class Size {
