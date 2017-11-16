@@ -21,4 +21,5 @@ switch (toLower _scope) do {
     };
 };
 
-[_mapDisplay displayCtrl IDC_BTN_CONFIGURE] call FUNC(btn_configure);
+[_mapDisplay displayCtrl IDC_BTN_CONFIGURE] call FUNC(btn_configureHide);
+[] call FUNC(actionConfigure);
