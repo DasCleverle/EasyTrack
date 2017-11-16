@@ -9,7 +9,7 @@
 
 #define MAJOR 1
 #define MINOR 1
-#define PATCHLVL 6
+#define PATCHLVL 7
 
 #ifdef DEV
     #define VERSION MAJOR.MINOR.PATCHLVL-dev.DEV
