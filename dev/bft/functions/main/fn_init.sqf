@@ -1,7 +1,5 @@
 #include "script_component.hpp"
 
-hint "stuff";
-
 GVAR(active) = true;
 
 // Client init
