@@ -32,6 +32,8 @@
                 {!isNil QEGVAR(rft,pfhGPS)},
                 {[] call _AddGpsPfh}
             ] call CBA_fnc_waitUntilAndExecute;
-        };        
+        };
+        
+        GVAR(initClient) = true;
     }
 ] call CBA_fnc_waitUntilAndExecute;
