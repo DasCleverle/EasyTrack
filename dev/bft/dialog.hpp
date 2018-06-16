@@ -17,10 +17,10 @@ class GVAR(TextBoxNoMapCloseReadOnly): GVAR(TextBoxNoMapClose) {
 class GVAR(grpBft): RscControlsGroupNoHScrollbars {
     idc = IDC_GRP_BFT;
 
-    x = safeZoneX + safeZoneW - GUIMIN_3_2(1.2, 2);
-    y = safeZoneY + 1.5 * GUIMIN_3_2(1.2, 25);
-    w = GRP_WIDTH;
-    h = GRP_HEIGHT;
+    x = QUOTE(safeZoneX + safeZoneW - GUIMIN_3_2(1.2, 2));
+    y = QUOTE(safeZoneY + 1.5 * GUIMIN_3_2(1.2, 25));
+    w = QUOTE(GRP_WIDTH);
+    h = QUOTE(GRP_HEIGHT);
 };
 
 class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
@@ -28,33 +28,33 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
 
     x = 0;
     y = 0;
-    w = TOOLTIP_WIDTH;
-    h = TOOLTIP_HEIGHT;
+    w = QUOTE(TOOLTIP_WIDTH);
+    h = QUOTE(TOOLTIP_HEIGHT);
 
     class controls {
         class ctrlBackground : EGVAR(main,Background) {
-            w = TOOLTIP_WIDTH;
-            h = TOOLTIP_HEIGHT;
+            w = QUOTE(TOOLTIP_WIDTH);
+            h = QUOTE(TOOLTIP_HEIGHT);
 
             colorBackground[] = {COLOR_BLACK_TR50};
         };
 
         class lblTextUnit: EGVAR(main,LabelTooltip) {
-            text = $STR_BFT_LBL_TEXTUNIT;
+            text = "$STR_BFT_LBL_TEXTUNIT";
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(0);
         };
 
         class lblTextCallsign: EGVAR(main,LabelTooltip) {
-            text = $STR_BFT_LBL_TEXTCALLSIGN;
+            text = "$STR_BFT_LBL_TEXTCALLSIGN";
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(1);
         };
 
         class lblTextFrequency: EGVAR(main,LabelTooltip) {
-            text = $STR_BFT_LBL_TEXTFREQUENCY;
+            text = "$STR_BFT_LBL_TEXTFREQUENCY";
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(2);
@@ -67,7 +67,7 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
             TOOLTIP_COL(1);
             TOOLTIP_ROW(0);
 
-            w = 2.5 * TOOLTIP_COL_WIDTH;
+            w = QUOTE(2.5 * TOOLTIP_COL_WIDTH);
         };
 
         class lblCallsign: EGVAR(main,LabelTooltip) {
@@ -77,7 +77,7 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
             TOOLTIP_COL(1);
             TOOLTIP_ROW(1);
 
-            w = 2.5 * TOOLTIP_COL_WIDTH;
+            w = QUOTE(2.5 * TOOLTIP_COL_WIDTH);
         };
 
         class lblFrequency: EGVAR(main,LabelTooltip) {
@@ -87,7 +87,7 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
             TOOLTIP_COL(1);
             TOOLTIP_ROW(2);
 
-            w = 2.5 * TOOLTIP_COL_WIDTH;
+            w = QUOTE(2.5 * TOOLTIP_COL_WIDTH);
         };
     };
 };
@@ -95,10 +95,10 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
 class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
     idc = IDC_LST_CONFIGURE;
 
-    x = safeZoneX + (safeZoneW - CONFIG_WIDTH) / 2;
-    y = safeZoneY + (safeZoneH - (2 * GUIMIN_3_2(1.2,2))) / 2;
-    w = CONFIG_WIDTH;
-    h = (2 * GUIMIN_3_2(1.2,2));// + BASE_Y + BASE_H;
+    x = QUOTE(safeZoneX + (safeZoneW - CONFIG_WIDTH) / 2);
+    y = QUOTE(safeZoneY + (safeZoneH - (2 * GUIMIN_3_2(1.2,2))) / 2);
+    w = QUOTE(CONFIG_WIDTH);
+    h = QUOTE((2 * GUIMIN_3_2(1.2,2)));// + BASE_Y + BASE_H;
 
     class controls {
         class background: EGVAR(main,Background) {
@@ -108,8 +108,8 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
 
             x = 0;
             y = 0;
-            w = CONFIG_WIDTH;
-            h = (2 * GUIMIN_3_2(1.2,2));
+            w = QUOTE(CONFIG_WIDTH);
+            h = QUOTE(2 * GUIMIN_3_2(1.2,2));
         };
 
         class lstConfigure : RscListbox {
@@ -123,95 +123,95 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             colorSelectBackground[] = {COLOR_TR};
             period = 0;
 
-            onLbSelChanged = _this call FUNC(lst_configureChanged);
+            onLbSelChanged = QUOTE(_this call FUNC(lst_configureChanged));
 
             x = 0;
             y = 0;
-            w = CONFIG_WIDTH;
-            h = (2 * GUIMIN_3_2(1.2,2)) - BASE_Y - 4 * (BASE_Y + BASE_H);
+            w = QUOTE(CONFIG_WIDTH);
+            h = QUOTE((2 * GUIMIN_3_2(1.2,2)) - BASE_Y - 4 * (BASE_Y + BASE_H));
         };
 
         class btnShowLeaders: EGVAR(main,Button) {
             idc = -1;
 
-            text = $STR_BFT_BTN_SHOWLEADERS;
-            onButtonClick = [_this,"leaders"] call FUNC(btn_changePlayers);
+            text = "$STR_BFT_BTN_SHOWLEADERS";
+            onButtonClick = QUOTE([ARR_2(_this, #leaders)] call FUNC(btn_changePlayers));
 
-            x = BASE_X;
-            y = (2 * GUIMIN_3_2(1.2,2)) - 4 * (BASE_Y + BASE_H);
-            w = CONFIG_WIDTH - 2 * BASE_X;
-            h = BASE_H;
+            x = QUOTE(BASE_X);
+            y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 4 * (BASE_Y + BASE_H));
+            w = QUOTE(CONFIG_WIDTH - 2 * BASE_X);
+            h = QUOTE(BASE_H);
         };
 
         class btnShowAll: EGVAR(main,Button) {
             idc = -1;
 
-            text = $STR_BFT_BTN_SHOWALL;
-            onButtonClick = [_this,"all"] call FUNC(btn_changePlayers);
+            text = "$STR_BFT_BTN_SHOWALL";
+            onButtonClick = QUOTE([ARR_2(_this, #all)] call FUNC(btn_changePlayers));
 
-            x = BASE_X;
-            y = (2 * GUIMIN_3_2(1.2,2)) - 3 * (BASE_Y + BASE_H);
-            w = CONFIG_WIDTH - 2 * BASE_X;
-            h = BASE_H;
+            x = QUOTE(BASE_X);
+            y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 3 * (BASE_Y + BASE_H));
+            w = QUOTE(CONFIG_WIDTH - 2 * BASE_X);
+            h = QUOTE(BASE_H);
         };
 
         class btnAllSymbols: EGVAR(main,Button) {
             idc = -1;
 
-            text = $STR_BFT_BTN_ALLSYMBOLS;
-            onButtonClick = [_this,"all"] call FUNC(btn_changeSymbols);
+            text = "$STR_BFT_BTN_ALLSYMBOLS";
+            onButtonClick = QUOTE([ARR_2(_this, #all)] call FUNC(btn_changeSymbols));
 
-            x = BASE_X;
-            y = (2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H);
-            w = 0.15 * (CONFIG_WIDTH - 2 * BASE_X);
-            h = BASE_H;
+            x = QUOTE(BASE_X);
+            y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H));
+            w = QUOTE(0.15 * (CONFIG_WIDTH - 2 * BASE_X));
+            h = QUOTE(BASE_H);
         };
 
         class btnNoSymbols: EGVAR(main,Button) {
             idc = -1;
 
-            text = $STR_BFT_BTN_NOSYMBOLS;
-            onButtonClick = [_this,"none"] call FUNC(btn_changeSymbols);
+            text = "$STR_BFT_BTN_NOSYMBOLS";
+            onButtonClick = QUOTE([ARR_2(_this, #none)] call FUNC(btn_changeSymbols));
 
-            x = BASE_X + (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
-            y = (2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H);
-            w = 0.15 * (CONFIG_WIDTH - 2 * BASE_X);
-            h = BASE_H;
+            x = QUOTE(BASE_X + (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)));
+            y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H));
+            w = QUOTE(0.15 * (CONFIG_WIDTH - 2 * BASE_X));
+            h = QUOTE(BASE_H);
         };
 
         class btnToggleSymbols: EGVAR(main,Button) {
             idc = -1;
 
-            text = $STR_BFT_BTN_TOGGLESYMBOLS;
-            onButtonClick = [_this,"toggle"] call FUNC(btn_changeSymbols);
+            text = "$STR_BFT_BTN_TOGGLESYMBOLS";
+            onButtonClick = QUOTE([ARR_2(_this, #toggle)] call FUNC(btn_changeSymbols));
 
-            x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X));
-            y = (2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H);
-            w = 0.25 * (CONFIG_WIDTH - 2 * BASE_X);
-            h = BASE_H;
+            x = QUOTE(BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)));
+            y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H));
+            w = QUOTE(0.25 * (CONFIG_WIDTH - 2 * BASE_X));
+            h = QUOTE(BASE_H);
         };
 
         class lblSymbols: EGVAR(main,Label) {
              idc = -1;
 
-            text = $STR_BFT_LBL_SYMBOLS;
+            text = "$STR_BFT_LBL_SYMBOLS";
 
-            x = BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)) + (0.5 * BASE_X + 0.25 * (CONFIG_WIDTH - 2 * BASE_X));
-            y = (2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H);
-            w = 0.5 * (CONFIG_WIDTH - 2 * BASE_X);
-            h = BASE_H;
+            x = QUOTE(BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)) + (0.5 * BASE_X + 0.25 * (CONFIG_WIDTH - 2 * BASE_X)));
+            y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H));
+            w = QUOTE(0.5 * (CONFIG_WIDTH - 2 * BASE_X));
+            h = QUOTE(BASE_H);
         };
 
         class btnHide: EGVAR(main,Button) {
             idc = -1;
 
-            text = $STR_BFT_BTN_HIDE;
-            onButtonClick = _this call FUNC(btn_configureHide);
+            text = "$STR_BFT_BTN_HIDE";
+            onButtonClick = QUOTE(_this call FUNC(btn_configureHide));
 
-            x = BASE_X;
-            y = (2 * GUIMIN_3_2(1.2,2)) - 1 * (BASE_Y + BASE_H);
-            w = CONFIG_WIDTH - 2 * BASE_X;
-            h = BASE_H;
+            x = QUOTE(BASE_X);
+            y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 1 * (BASE_Y + BASE_H));
+            w = QUOTE(CONFIG_WIDTH - 2 * BASE_X);
+            h = QUOTE(BASE_H);
         };
     };
 };
