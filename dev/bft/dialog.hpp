@@ -135,7 +135,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = CSTRING(BTN_SHOWLEADERS);
-            onButtonClick = QUOTE([ARR_2(_this, #leaders)] call FUNC(btn_changePlayers));
+            onButtonClick = QUOTE([ARR_2(_this, 'leaders')] call FUNC(btn_changePlayers));
 
             x = QUOTE(BASE_X);
             y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 4 * (BASE_Y + BASE_H));
@@ -147,7 +147,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = CSTRING(BTN_SHOWALL);
-            onButtonClick = QUOTE([ARR_2(_this, #all)] call FUNC(btn_changePlayers));
+            onButtonClick = QUOTE([ARR_2(_this, 'all')] call FUNC(btn_changePlayers));
 
             x = QUOTE(BASE_X);
             y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 3 * (BASE_Y + BASE_H));
@@ -159,7 +159,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = CSTRING(BTN_ALLSYMBOLS);
-            onButtonClick = QUOTE([ARR_2(_this, #all)] call FUNC(btn_changeSymbols));
+            onButtonClick = QUOTE([ARR_2(_this, 'all')] call FUNC(btn_changeSymbols));
 
             x = QUOTE(BASE_X);
             y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H));
@@ -171,7 +171,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = CSTRING(BTN_NOSYMBOLS);
-            onButtonClick = QUOTE([ARR_2(_this, #none)] call FUNC(btn_changeSymbols));
+            onButtonClick = QUOTE([ARR_2(_this, 'none')] call FUNC(btn_changeSymbols));
 
             x = QUOTE(BASE_X + (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)));
             y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H));
@@ -183,7 +183,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             idc = -1;
 
             text = CSTRING(BTN_TOGGLESYMBOLS);
-            onButtonClick = QUOTE([ARR_2(_this, #toggle)] call FUNC(btn_changeSymbols));
+            onButtonClick = QUOTE([ARR_2(_this, 'toggle')] call FUNC(btn_changeSymbols));
 
             x = QUOTE(BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)));
             y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H));

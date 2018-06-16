@@ -4,7 +4,7 @@
     disableSerialization;
     private ["_configs", "_result"];
 
-    _result = [LLSTRING(SELFDESTRUCT_CONFIRM), LLSTRING(SELFDESTRUCT, LLSTRING(YES), LLSTRING(NO), DISPLAY(IDD_MAINMAP)] call BIS_fnc_guiMessage;
+    _result = [LLSTRING(SELFDESTRUCT_CONFIRM), LLSTRING(SELFDESTRUCT), LLSTRING(YES), LLSTRING(NO), DISPLAY(IDD_MAINMAP)] call BIS_fnc_guiMessage;
     if(!_result) exitWith {};
 
     _configs = configProperties [configFile >> "Extended_Put_Eventhandlers" >> "Man", 'isClass _x && { (configName _x find "putTracker") != -1 } && { (configName _x find QUOTE(PREFIX)) != -1 }'];
