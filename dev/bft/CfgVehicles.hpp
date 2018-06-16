@@ -23,7 +23,7 @@ class CfgVehicles {
         displayName = CSTRING(Enable);
         icon = QDATAPATH(icon_module.paa);
         category = QUOTE(MODULE_CATEGORY);
-        function = FUNC(initModule);
+        function = QFUNC(initModule);
         functionPriority = 1;
         isGlobal = 2;
         isTriggerActivated = 0;
@@ -33,10 +33,10 @@ class CfgVehicles {
 
     class MODULE_BFT_ASSIGN: Module_F {
         scope = 2;
-        displayName = $STR_MODULE_BFT_ASSIGN_NAME;
+        displayName = "$STR_MODULE_BFT_ASSIGN_NAME";
         icon = QDATAPATH(icon_module_assign.paa);
         category = QUOTE(MODULE_CATEGORY);
-        function = FUNC(initModuleAssign);
+        function = QFUNC(initModuleAssign);
         functionPriority = 1;
         isGlobal = 2;
         isTriggerActivated = 0;
@@ -53,19 +53,19 @@ class CfgVehicles {
             };
 
             class Callsign {
-                displayName = $STR_BFT_CALLSIGN;
-                description = $STR_BFT_CALLSIGN_DESC;
-                defaultValue = $STR_BFT_CALLSIGN_DEFAULT;
+                displayName = "$STR_BFT_CALLSIGN";
+                description = "$STR_BFT_CALLSIGN_DESC";
+                defaultValue = "$STR_BFT_CALLSIGN_DEFAULT";
             };
 
             class Frequency {
-                displayName = $STR_BFT_FREQUENCY;
-                description = $STR_BFT_FREQUENCY_DESC;
-                defaultValue = $STR_BFT_FREQUENCY;
+                displayName = "$STR_BFT_FREQUENCY";
+                description = "$STR_BFT_FREQUENCY_DESC";
+                defaultValue = "$STR_BFT_FREQUENCY";
             };
 
             class Symbol {
-                displayName = $STR_BFT_SYMBOL;
+                displayName = "$STR_BFT_SYMBOL";
                 description = "$STR_BFT_SYMBOL_DESC";
                 class values {
                     SYMBOL(inf,$STR_BFT_INF);
@@ -83,8 +83,8 @@ class CfgVehicles {
             };
 
             class Size {
-                displayName = $STR_BFT_SIZE;
-                description = $STR_BFT_SIZE_DESC;
+                displayName = "$STR_BFT_SIZE";
+                description = "$STR_BFT_SIZE_DESC";
 
                 class values {
                     SIZE(fireteam,$STR_BFT_FIRETEAM,SIZE_FIRETEAM);

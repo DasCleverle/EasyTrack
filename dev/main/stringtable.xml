@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="EasyTrack">
-	<Package name="tracking_main">
+	<Package name="main">
 		<Container ID="Common">
 			<Key ID="STR_MAIN_MAINNAME">
 				<Original>EasyTrack</Original>
 				<English>EasyTrack</English>
 				<German>EasyTrack</German>
 			</Key>
-			<Key ID="STR_CL_TRACKING_MAIN_NAME">
+			<Key ID="STR_CL_main_NAME">
 				<Original>EasyTrack</Original>
 				<English>EasyTrack</English>
 				<German>EasyTrack</German>

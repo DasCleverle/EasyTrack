@@ -15,13 +15,13 @@
 
 // Position
 #define POS(NUM) \
-    x = BASE_X; \
-    y = (NUM) * (BASE_H + BASE_Y)
+    x = QUOTE(BASE_X); \
+    y = QUOTE((NUM) * (BASE_H + BASE_Y))
 
 // Dimensions
 #define DIM(WIDTH,HEIGHT) \
-    w = (WIDTH) * BASE_W; \
-    h = (HEIGHT) * BASE_H + ((HEIGHT - 1) * BASE_Y)
+    w = QUOTE((WIDTH) * BASE_W); \
+    h = QUOTE((HEIGHT) * BASE_H + ((HEIGHT - 1) * BASE_Y))
 
 // Size == Pos + Dim
 #define SIZE(Y,W,H) \
@@ -56,5 +56,5 @@
 
 #define TOOLTIP_FONTSIZE (TOOLTIP_ROW_HEIGHT * 0.8)
 
-#define TOOLTIP_COL(X) x = X * TOOLTIP_COL_WIDTH
-#define TOOLTIP_ROW(Y) y = Y * TOOLTIP_ROW_HEIGHT
+#define TOOLTIP_COL(X) x = QUOTE(X * TOOLTIP_COL_WIDTH)
+#define TOOLTIP_ROW(Y) y = QUOTE(Y * TOOLTIP_ROW_HEIGHT)

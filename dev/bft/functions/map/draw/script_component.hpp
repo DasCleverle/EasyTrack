@@ -1,1 +1,1 @@
-#include "\x\cl\addons\bft\script_component.hpp"
+#include "\x\cl_easytrack\addons\bft\script_component.hpp"

@@ -54,17 +54,17 @@ GVAR(directions) = [
 ];
 
 GVAR(mainControls) = [
-    [QEGVAR(tracking_main,LabelHeading),   [localize "STR_RFT_FAVHEADING", false]],            // favorites heading
-    [QEGVAR(tracking_main,Label),          [localize "STR_RFT_FAVINFO1", false]],
-    [QEGVAR(tracking_main,Label),          [localize "STR_RFT_FAVINFO2"]],
+    [QEGVAR(main,LabelHeading),   [localize "STR_RFT_FAVHEADING", false]],            // favorites heading
+    [QEGVAR(main,Label),          [localize "STR_RFT_FAVINFO1", false]],
+    [QEGVAR(main,Label),          [localize "STR_RFT_FAVINFO2"]],
     [QGVAR(FavContainer),   []],
-    [QEGVAR(tracking_main,LabelHeading),   [localize "STR_RFT_RFTNAME"]],                    // main heading
-    [QEGVAR(tracking_main,Button),         [localize "STR_RFT_CENTERONICON", FUNC(btn_CenterOnIcon)]], // "center-on marker" button
-    [QEGVAR(tracking_main,Container),      ["symbols", GVAR(symbols),     6]],        // report symbols
-    [QEGVAR(tracking_main,Container),      ["colors",  GVAR(colors),      5]],        // report colors
-    [QEGVAR(tracking_main,Container),      ["sizes",   GVAR(sizes),       4]],        // report sizes
-    [QEGVAR(tracking_main,Container),      ["directions", GVAR(directions),  5]],        // report directions
-    [QEGVAR(tracking_main,Button),         [localize "STR_RFT_BTN_SHOWELLIPSE", FUNC(btn_toggleEllipse)], "btnToggleEllipse"] // "toggle ellipse" button
+    [QEGVAR(main,LabelHeading),   [localize "STR_RFT_RFTNAME"]],                    // main heading
+    [QEGVAR(main,Button),         [localize "STR_RFT_CENTERONICON", FUNC(btn_CenterOnIcon)]], // "center-on marker" button
+    [QEGVAR(main,Container),      ["symbols", GVAR(symbols),     6]],        // report symbols
+    [QEGVAR(main,Container),      ["colors",  GVAR(colors),      5]],        // report colors
+    [QEGVAR(main,Container),      ["sizes",   GVAR(sizes),       4]],        // report sizes
+    [QEGVAR(main,Container),      ["directions", GVAR(directions),  5]],        // report directions
+    [QEGVAR(main,Button),         [localize "STR_RFT_BTN_SHOWELLIPSE", FUNC(btn_toggleEllipse)], "btnToggleEllipse"] // "toggle ellipse" button
 ];
 
 ISNILS(GVAR(markers),[]);
@@ -89,9 +89,9 @@ GVAR(favorites) = [
 ];
 
 [
-    {!isNil QEGVAR(tracking_main,controlTypes)},
+    {!isNil QEGVAR(main,controlTypes)},
     {
-        EGVAR(tracking_main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavContainer)];
+        EGVAR(main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavContainer)];
 
         // Map init
         [] call FUNC(initMap);

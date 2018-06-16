@@ -27,16 +27,16 @@ GVAR(sizes) = [
 ];
 
 GVAR(mainControls) = [
-    [QEGVAR(tracking_main,LabelHeading),        [localize "STR_BFT_BFTNAME"]],
-    [QEGVAR(tracking_main,Button),              [localize "STR_BFT_CENTERONICON", FUNC(btn_centerOnIcon)]],
-    [QEGVAR(tracking_main,Label),               [localize "STR_BFT_UNITRO", false]],
+    [QEGVAR(main,LabelHeading),        [localize "STR_BFT_BFTNAME"]],
+    [QEGVAR(main,Button),              [localize "STR_BFT_CENTERONICON", FUNC(btn_centerOnIcon)]],
+    [QEGVAR(main,Label),               [localize "STR_BFT_UNITRO", false]],
     [QGVAR(TextBoxNoMapCloseReadOnly),          [], "txtPlayerName"],
-    [QEGVAR(tracking_main,Label),               [localize "STR_BFT_CALLSIGN", false]],
+    [QEGVAR(main,Label),               [localize "STR_BFT_CALLSIGN", false]],
     [QGVAR(TextBoxNoMapClose),                  [], "txtCallsign"],
-    [QEGVAR(tracking_main,Label),               [localize "STR_BFT_FREQUENCY", false]],
+    [QEGVAR(main,Label),               [localize "STR_BFT_FREQUENCY", false]],
     [QGVAR(TextBoxNoMapClose),                  [], "txtFrequency"],
-    [QEGVAR(tracking_main,Container),           ["symbols", GVAR(symbols), 6]],
-    [QEGVAR(tracking_main,Container),           ["sizes",   GVAR(sizes),   4]]
+    [QEGVAR(main,Container),           ["symbols", GVAR(symbols), 6]],
+    [QEGVAR(main,Container),           ["sizes",   GVAR(sizes),   4]]
 ];
 
 GVAR(configureVisible) = false;
@@ -44,10 +44,10 @@ GVAR(configureUnits) = allPlayers;
 GVAR(mapInitialized) = false;
 
 [
-    {!isNil QEGVAR(tracking_main,controlTypes)},
+    {!isNil QEGVAR(main,controlTypes)},
     {
-        EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapClose),FUNC(initTextBoxNoMapClose)];
-        EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapCloseReadOnly),FUNC(initTextBoxNoMapClose)];
+        EGVAR(main,controlTypes) pushBack [QGVAR(TextBoxNoMapClose),FUNC(initTextBoxNoMapClose)];
+        EGVAR(main,controlTypes) pushBack [QGVAR(TextBoxNoMapCloseReadOnly),FUNC(initTextBoxNoMapClose)];
 
         [] call FUNC(initMap);
         if(!EGVAR(rft,active)) then {

@@ -1,13 +1,13 @@
 class RscControlsGroupNoHScrollbars;
 class RscControlsGroupNoScrollbars;
 class RscListbox;
-class EGVAR(tracking_main,Background);
-class EGVAR(tracking_main,LabelTooltip);
-class EGVAR(tracking_main,Label);
-class EGVAR(tracking_main,Button);
-class EGVAR(tracking_main,TextBox);
+class EGVAR(main,Background);
+class EGVAR(main,LabelTooltip);
+class EGVAR(main,Label);
+class EGVAR(main,Button);
+class EGVAR(main,TextBox);
 
-class GVAR(TextBoxNoMapClose): EGVAR(tracking_main,TextBox) {
+class GVAR(TextBoxNoMapClose): EGVAR(main,TextBox) {
 };
 
 class GVAR(TextBoxNoMapCloseReadOnly): GVAR(TextBoxNoMapClose) {
@@ -32,35 +32,35 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
     h = TOOLTIP_HEIGHT;
 
     class controls {
-        class ctrlBackground : EGVAR(tracking_main,Background) {
+        class ctrlBackground : EGVAR(main,Background) {
             w = TOOLTIP_WIDTH;
             h = TOOLTIP_HEIGHT;
 
             colorBackground[] = {COLOR_BLACK_TR50};
         };
 
-        class lblTextUnit: EGVAR(tracking_main,LabelTooltip) {
+        class lblTextUnit: EGVAR(main,LabelTooltip) {
             text = $STR_BFT_LBL_TEXTUNIT;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(0);
         };
 
-        class lblTextCallsign: EGVAR(tracking_main,LabelTooltip) {
+        class lblTextCallsign: EGVAR(main,LabelTooltip) {
             text = $STR_BFT_LBL_TEXTCALLSIGN;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(1);
         };
 
-        class lblTextFrequency: EGVAR(tracking_main,LabelTooltip) {
+        class lblTextFrequency: EGVAR(main,LabelTooltip) {
             text = $STR_BFT_LBL_TEXTFREQUENCY;
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(2);
         };
 
-        class lblUnit: EGVAR(tracking_main,LabelTooltip) {
+        class lblUnit: EGVAR(main,LabelTooltip) {
             idc = IDC_LBL_UNIT;
             text = "John Doe";
 
@@ -70,7 +70,7 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
             w = 2.5 * TOOLTIP_COL_WIDTH;
         };
 
-        class lblCallsign: EGVAR(tracking_main,LabelTooltip) {
+        class lblCallsign: EGVAR(main,LabelTooltip) {
             idc = IDC_LBL_CALLSIGN;
             text = "John Doe's Squad";
 
@@ -80,7 +80,7 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
             w = 2.5 * TOOLTIP_COL_WIDTH;
         };
 
-        class lblFrequency: EGVAR(tracking_main,LabelTooltip) {
+        class lblFrequency: EGVAR(main,LabelTooltip) {
             idc = IDC_LBL_FREQUENCY;
             text = "John Doe's Frequency";
 
@@ -101,7 +101,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
     h = (2 * GUIMIN_3_2(1.2,2));// + BASE_Y + BASE_H;
 
     class controls {
-        class background: EGVAR(tracking_main,Background) {
+        class background: EGVAR(main,Background) {
             idc = -1;
 
             colorBackground[] = {COLOR_BLACK_TR50};
@@ -131,7 +131,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             h = (2 * GUIMIN_3_2(1.2,2)) - BASE_Y - 4 * (BASE_Y + BASE_H);
         };
 
-        class btnShowLeaders: EGVAR(tracking_main,Button) {
+        class btnShowLeaders: EGVAR(main,Button) {
             idc = -1;
 
             text = $STR_BFT_BTN_SHOWLEADERS;
@@ -143,7 +143,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             h = BASE_H;
         };
 
-        class btnShowAll: EGVAR(tracking_main,Button) {
+        class btnShowAll: EGVAR(main,Button) {
             idc = -1;
 
             text = $STR_BFT_BTN_SHOWALL;
@@ -155,7 +155,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             h = BASE_H;
         };
 
-        class btnAllSymbols: EGVAR(tracking_main,Button) {
+        class btnAllSymbols: EGVAR(main,Button) {
             idc = -1;
 
             text = $STR_BFT_BTN_ALLSYMBOLS;
@@ -167,7 +167,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             h = BASE_H;
         };
 
-        class btnNoSymbols: EGVAR(tracking_main,Button) {
+        class btnNoSymbols: EGVAR(main,Button) {
             idc = -1;
 
             text = $STR_BFT_BTN_NOSYMBOLS;
@@ -179,7 +179,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             h = BASE_H;
         };
 
-        class btnToggleSymbols: EGVAR(tracking_main,Button) {
+        class btnToggleSymbols: EGVAR(main,Button) {
             idc = -1;
 
             text = $STR_BFT_BTN_TOGGLESYMBOLS;
@@ -191,7 +191,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             h = BASE_H;
         };
 
-        class lblSymbols: EGVAR(tracking_main,Label) {
+        class lblSymbols: EGVAR(main,Label) {
              idc = -1;
 
             text = $STR_BFT_LBL_SYMBOLS;
@@ -202,7 +202,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
             h = BASE_H;
         };
 
-        class btnHide: EGVAR(tracking_main,Button) {
+        class btnHide: EGVAR(main,Button) {
             idc = -1;
 
             text = $STR_BFT_BTN_HIDE;

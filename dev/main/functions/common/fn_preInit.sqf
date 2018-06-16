@@ -1,7 +1,7 @@
 #include "script_component.hpp"
 
 GVAR(components) = [
-    "tracking_main",
+    "main",
     "bft",
     "rft"
 ];

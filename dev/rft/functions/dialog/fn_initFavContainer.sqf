@@ -8,7 +8,7 @@ private ["_favCount", "_mapDisplay", "_background",  "_newXPos", "_newYPos", "_n
 
 _favCount = 4;
 _mapDisplay = ctrlParent _control;
-_background = _mapDisplay ctrlCreate [QEGVAR(tracking_main,Background), -1, _control];
+_background = _mapDisplay ctrlCreate [QEGVAR(main,Background), -1, _control];
 
 _newXPos = CONTAINER_BASE_X;
 _newYPos = CONTAINER_BASE_Y;
@@ -23,7 +23,7 @@ _height = 2 * CONTAINER_BASE_Y + _newHeight;
 
     _picSymbol = _mapDisplay ctrlCreate ["RscPicture", -1, _control];
     _picSize = _mapDisplay ctrlCreate ["RscPicture", -1, _control];
-    _btnAction = _mapDisplay ctrlCreate [QEGVAR(tracking_main,ButtonInvisble), -1, _control];
+    _btnAction = _mapDisplay ctrlCreate [QEGVAR(main,ButtonInvisble), -1, _control];
     _picEmphasis = _mapDisplay ctrlCreate ["RscPicture", -1, _control];
 
     _picSymbol ctrlSetTextColor _color;
