@@ -7,6 +7,11 @@
 				<English>EasyTrack</English>
 				<German>EasyTrack</German>
 			</Key>
+			<Key ID="STR_CL_TRACKING_MAIN_NAME">
+				<Original>EasyTrack</Original>
+				<English>EasyTrack</English>
+				<German>EasyTrack</German>
+			</Key>
 		</Container>
 		<Container ID="Actions">
 			<Key ID="STR_MAIN_SELFDESTRUCT">

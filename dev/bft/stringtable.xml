@@ -118,11 +118,6 @@
 			</Key>
 		</Container>
 		<Container ID="CfgVehicles">
-			<Key ID="STR_MODULE_BFT_NAME">
-				<Original>Enable Blue Force Tracking</Original>
-				<English>Enable Blue Force Tracking</English>
-				<German>Blue Force Tracking aktivieren</German>
-			</Key>
 			<Key ID="STR_MODULE_BFT_ASSIGN_NAME">
 				<Original>Assign BFT Information</Original>
 				<English>Assign BFT Information</English>
@@ -216,6 +211,13 @@
 				<Original>Configure BFT</Original>
 				<English>Configure BFT</English>
 				<German>BFT konfigurieren</German>
+			</Key>
+		</Container>
+		<Container ID="CBA Settings">
+			<Key ID="STR_CL_BFT_ENABLE">
+				<Original>Enable Red Force Tracking</Original>
+				<English>Enable Red Force Tracking</English>
+				<German>Red Force Tracking aktivieren</German>
 			</Key>
 		</Container>
 	</Package>

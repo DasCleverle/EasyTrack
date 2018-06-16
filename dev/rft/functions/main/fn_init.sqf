@@ -3,52 +3,26 @@
 GVAR(active) = true;
 
 // Client init
-if(hasInterface) then {
-    waitUntil { !isNull player };
-    waitUntil { !isNull (finddisplay 46) };
-
-    // JIP
-    GVAR(markers) = [missionNamespace, QGVAR(markers), []] call BIS_fnc_getServerVariable;
-    GVAR(currentMarkerID) = [missionNamespace, QGVAR(currentMarkerID), 0] call BIS_fnc_getServerVariable;
-
-    {
-        SET_MARKER(MARKER_GET_ID(_x), _x);
-    } foreach GVAR(markers);
-
-    // GPS
-    GVAR(pfhGPS) = [
-        {
-            _finished = false;
-            {
-                if(ctrlIDD _x == 311) then {
-                    _mapControl = _x displayCtrl 101;
-                    _mapControl ctrlAddEventHandler ["draw", FUNC(handleDraw)];
-                    _finished = true;
-                };
-            } forEach (uiNamespace getVariable "IGUI_displays");
-            if(_finished) then {
-                [_this select 1] call CBA_fnc_removePerFrameHandler;
-            };
-        },0,[]
-    ] call CBA_fnc_addPerFrameHandler;
+if (hasInterface) then {
+    [] call FUNC(initClient);
 };
 
 // Global variables for client and server
 GVAR(symbols) = [
-    [QMAINDATAPATH(symbols\unknown.paa),         localize "STR_RFT_UNKNOWN",                 { [QMAINDATAPATH(symbols\unknown.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\inf.paa),             localize "STR_RFT_INF",                { [QMAINDATAPATH(symbols\inf.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\unknown.paa),         localize "STR_RFT_UNKNOWN",     { [QMAINDATAPATH(symbols\unknown.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\inf.paa),             localize "STR_RFT_INF",         { [QMAINDATAPATH(symbols\inf.paa)] call FUNC(setSymbol); }],
     [QMAINDATAPATH(symbols\motinf.paa),          localize "STR_RFT_MOTINF",      { [QMAINDATAPATH(symbols\motinf.paa)] call FUNC(setSymbol); }],
     [QMAINDATAPATH(symbols\mechinf.paa),         localize "STR_RFT_MECHINF",     { [QMAINDATAPATH(symbols\mechinf.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\recon.paa),           localize "STR_RFT_RECON",                   { [QMAINDATAPATH(symbols\recon.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\hq.paa),              localize "STR_RFT_HQ",                      { [QMAINDATAPATH(symbols\hq.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\armor.paa),           localize "STR_RFT_ARMOR",                   { [QMAINDATAPATH(symbols\armor.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\artillery.paa),       localize "STR_RFT_ARTILLERY",               { [QMAINDATAPATH(symbols\artillery.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\heli.paa),            localize "STR_RFT_HELI",                    { [QMAINDATAPATH(symbols\heli.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\jet.paa),             localize "STR_RFT_JET",                     { [QMAINDATAPATH(symbols\jet.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\uav.paa),             localize "STR_RFT_UAV",                     { [QMAINDATAPATH(symbols\uav.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\logistics.paa),       localize "STR_RFT_LOGISTICS",               { [QMAINDATAPATH(symbols\logistics.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\medical.paa),         localize "STR_RFT_MEDICAL",                 { [QMAINDATAPATH(symbols\medical.paa)] call FUNC(setSymbol); }],
-    [QMAINDATAPATH(symbols\static.paa),          localize "STR_RFT_STATIC",                  { [QMAINDATAPATH(symbols\static.paa)] call FUNC(setSymbol); }]
+    [QMAINDATAPATH(symbols\recon.paa),           localize "STR_RFT_RECON",       { [QMAINDATAPATH(symbols\recon.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\hq.paa),              localize "STR_RFT_HQ",          { [QMAINDATAPATH(symbols\hq.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\armor.paa),           localize "STR_RFT_ARMOR",       { [QMAINDATAPATH(symbols\armor.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\artillery.paa),       localize "STR_RFT_ARTILLERY",   { [QMAINDATAPATH(symbols\artillery.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\heli.paa),            localize "STR_RFT_HELI",        { [QMAINDATAPATH(symbols\heli.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\jet.paa),             localize "STR_RFT_JET",         { [QMAINDATAPATH(symbols\jet.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\uav.paa),             localize "STR_RFT_UAV",         { [QMAINDATAPATH(symbols\uav.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\logistics.paa),       localize "STR_RFT_LOGISTICS",   { [QMAINDATAPATH(symbols\logistics.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\medical.paa),         localize "STR_RFT_MEDICAL",     { [QMAINDATAPATH(symbols\medical.paa)] call FUNC(setSymbol); }],
+    [QMAINDATAPATH(symbols\static.paa),          localize "STR_RFT_STATIC",      { [QMAINDATAPATH(symbols\static.paa)] call FUNC(setSymbol); }]
 ];
 
 GVAR(colors) = [
@@ -114,14 +88,18 @@ GVAR(favorites) = [
     [QMAINDATAPATH(symbols\unknown.paa), SIZE_UNIT, [COLOR_GREY]]
 ];
 
-waitUntil { !isNil QEGVAR(tracking_main,controlTypes); };
-EGVAR(tracking_main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavContainer)];
+[
+    {!isNil QEGVAR(tracking_main,controlTypes)},
+    {
+        EGVAR(tracking_main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavContainer)];
 
-// Map init
-[] call FUNC(initMap);
-[] call MFUNC(initMap);
+        // Map init
+        [] call FUNC(initMap);
+        [] call MFUNC(initMap);
 
-// syncing
-QGVAR(packet) addPublicVariableEventHandler {
-    (_this select 1) call FUNC(syncMarker);
-};
+        // syncing
+        QGVAR(packet) addPublicVariableEventHandler {
+            (_this select 1) call FUNC(syncMarker);
+        };
+    }
+] call CBA_fnc_waitUntilAndExecute;

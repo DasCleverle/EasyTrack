@@ -2,37 +2,7 @@
 
 GVAR(active) = true;
 
-// Client init
-if(hasInterface) then {
-    waitUntil { !isNull player };
-    waitUntil { !isNull (finddisplay 46) };
-
-    // set player variables
-    player setVariable [QGVAR(drawMarker), false, true];
-    player setVariable [QGVAR(marker), NEW_MARKER, true];
-
-    // GPS
-    if(EGVAR(rft,active)) then {
-        waitUntil { !isNil QEGVAR(rft,pfhGPS); };
-    };
-
-    GVAR(pfhGPS) = [
-        {
-            _finished = false;
-            {
-                if(ctrlIDD _x == 311) then {
-                    _mapControl = _x displayCtrl 101;
-                    _mapControl ctrlAddEventHandler ["draw", FUNC(handleDraw)];
-                    _finished = true;
-                };
-            } forEach (uiNamespace getVariable "IGUI_displays");
-            if(_finished) then {
-                [_this select 1] call CBA_fnc_removePerFrameHandler;
-            };
-        },
-        0,[]
-    ] call CBA_fnc_addPerFrameHandler;
-};
+if (hasInterface) then {[] call FUNC(initClient)};
 
 // Common init
 GVAR(symbols) = [
@@ -73,13 +43,17 @@ GVAR(configureVisible) = false;
 GVAR(configureUnits) = allPlayers;
 GVAR(mapInitialized) = false;
 
-waitUntil { !isNil QEGVAR(tracking_main,controlTypes) };
-EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapClose),FUNC(initTextBoxNoMapClose)];
-EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapCloseReadOnly),FUNC(initTextBoxNoMapClose)];
+[
+    {!isNil QEGVAR(tracking_main,controlTypes)},
+    {
+        EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapClose),FUNC(initTextBoxNoMapClose)];
+        EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapCloseReadOnly),FUNC(initTextBoxNoMapClose)];
 
-[] call FUNC(initMap);
-if(!EGVAR(rft,active)) then {
-    [] call MFUNC(initMap);
-};
+        [] call FUNC(initMap);
+        if(!EGVAR(rft,active)) then {
+            [] call MFUNC(initMap);
+        };
 
-[localize "STR_BFT_CONFIGURE", { HAS_TABLET }, FUNC(actionConfigure)] call MFUNC(addAction);
+        [localize "STR_BFT_CONFIGURE", { HAS_TABLET }, FUNC(actionConfigure)] call MFUNC(addAction);
+    }
+] call CBA_fnc_WaitUntilAndExecute;

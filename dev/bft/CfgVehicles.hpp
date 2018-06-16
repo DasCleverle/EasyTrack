@@ -19,8 +19,8 @@ class CfgVehicles {
     };
 
     class MODULE_BFT: Module_F {
-        scope = 2;
-        displayName = $STR_MODULE_BFT_NAME;
+        scope = 1;
+        displayName = CSTRING(Enable);
         icon = QDATAPATH(icon_module.paa);
         category = QUOTE(MODULE_CATEGORY);
         function = FUNC(initModule);

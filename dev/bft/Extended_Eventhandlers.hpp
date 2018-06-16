@@ -5,3 +5,8 @@ class Extended_Put_Eventhandlers {
         };
     };
 };
+class Extended_PreInit_Eventhandlers {
+    class ADDON {
+        init = QUOTE(call COMPILE_FILE(XEH_preInit));
+    };
+};
