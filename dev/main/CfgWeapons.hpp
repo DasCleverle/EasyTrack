@@ -30,14 +30,14 @@ class CfgWeapons {
     class EasyTrack_PDA_Destructed: itemGPS {
         _generalMacro = "EasyTrack_PDA";
         author = MAINAUTHOR;
-        displayName = "$STR_MAIN_PDA_DESTRCUTED";
+        displayName = CSTRING(PDA_DESTRCUTED);
         picture = QDATAPATH(icon_pda_destructed.paa);
     };
 
     class EasyTrack_Tablet_Destructed: itemGPS {
         _generalMacro = "EasyTrack_Tablet";
         author = MAINAUTHOR;
-        displayName = "$STR_MAIN_TABLET_DESTRCUTED";
+        displayName = CSTRING(TABLET_DESTRCUTED);
         picture = QDATAPATH(icon_tablet_destructed.paa);
 
         class iteminfo {

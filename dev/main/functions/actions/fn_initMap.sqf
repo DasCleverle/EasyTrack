@@ -15,7 +15,7 @@ _btnActions ctrlSetPosition [
     7 * GUIMIN_2(1.2, 40),
     1.1 * GUIMIN_3_2(1.2, 25)
 ];
-_btnActions ctrlSetText localize "STR_MAIN_MAINNAME";
+_btnActions ctrlSetText LLSTRING(NAME);
 _btnActions ctrlAddEventHandler ["ButtonClick", FUNC(btn_toggleActions)];
 _btnActions ctrlShow HAS_TRACKER;
 _btnActions ctrlCommit 0;

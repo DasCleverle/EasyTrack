@@ -40,21 +40,21 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
         };
 
         class lblTextUnit: EGVAR(main,LabelTooltip) {
-            text = "$STR_BFT_LBL_TEXTUNIT";
+            text = CSTRING(LBL_TEXTUNIT);
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(0);
         };
 
         class lblTextCallsign: EGVAR(main,LabelTooltip) {
-            text = "$STR_BFT_LBL_TEXTCALLSIGN";
+            text = CSTRING(LBL_TEXTCALLSIGN);
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(1);
         };
 
         class lblTextFrequency: EGVAR(main,LabelTooltip) {
-            text = "$STR_BFT_LBL_TEXTFREQUENCY";
+            text = CSTRING(LBL_TEXTFREQUENCY);
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(2);
@@ -134,7 +134,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnShowLeaders: EGVAR(main,Button) {
             idc = -1;
 
-            text = "$STR_BFT_BTN_SHOWLEADERS";
+            text = CSTRING(BTN_SHOWLEADERS);
             onButtonClick = QUOTE([ARR_2(_this, #leaders)] call FUNC(btn_changePlayers));
 
             x = QUOTE(BASE_X);
@@ -146,7 +146,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnShowAll: EGVAR(main,Button) {
             idc = -1;
 
-            text = "$STR_BFT_BTN_SHOWALL";
+            text = CSTRING(BTN_SHOWALL);
             onButtonClick = QUOTE([ARR_2(_this, #all)] call FUNC(btn_changePlayers));
 
             x = QUOTE(BASE_X);
@@ -158,7 +158,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnAllSymbols: EGVAR(main,Button) {
             idc = -1;
 
-            text = "$STR_BFT_BTN_ALLSYMBOLS";
+            text = CSTRING(BTN_ALLSYMBOLS);
             onButtonClick = QUOTE([ARR_2(_this, #all)] call FUNC(btn_changeSymbols));
 
             x = QUOTE(BASE_X);
@@ -170,7 +170,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnNoSymbols: EGVAR(main,Button) {
             idc = -1;
 
-            text = "$STR_BFT_BTN_NOSYMBOLS";
+            text = CSTRING(BTN_NOSYMBOLS);
             onButtonClick = QUOTE([ARR_2(_this, #none)] call FUNC(btn_changeSymbols));
 
             x = QUOTE(BASE_X + (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)));
@@ -182,7 +182,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnToggleSymbols: EGVAR(main,Button) {
             idc = -1;
 
-            text = "$STR_BFT_BTN_TOGGLESYMBOLS";
+            text = CSTRING(BTN_TOGGLESYMBOLS);
             onButtonClick = QUOTE([ARR_2(_this, #toggle)] call FUNC(btn_changeSymbols));
 
             x = QUOTE(BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)));
@@ -194,7 +194,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class lblSymbols: EGVAR(main,Label) {
              idc = -1;
 
-            text = "$STR_BFT_LBL_SYMBOLS";
+            text = CSTRING(LBL_SYMBOLS);
 
             x = QUOTE(BASE_X + 2 * (0.5 * BASE_X + 0.15 * (CONFIG_WIDTH - 2 * BASE_X)) + (0.5 * BASE_X + 0.25 * (CONFIG_WIDTH - 2 * BASE_X)));
             y = QUOTE((2 * GUIMIN_3_2(1.2,2)) - 2 * (BASE_Y + BASE_H));
@@ -205,7 +205,7 @@ class GVAR(grpConfigureContainer): RscControlsGroupNoScrollbars {
         class btnHide: EGVAR(main,Button) {
             idc = -1;
 
-            text = "$STR_BFT_BTN_HIDE";
+            text = CSTRING(BTN_HIDE);
             onButtonClick = QUOTE(_this call FUNC(btn_configureHide));
 
             x = QUOTE(BASE_X);

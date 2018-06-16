@@ -35,21 +35,21 @@ class GVAR(grpMarkerTooltip) : RscControlsGroupNoScrollbars {
         };
 
         class lblTextID: EGVAR(main,LabelTooltip) {
-            text = "$STR_RFT_LBL_TEXTID";
+            text = CSTRING(LBL_TEXTID);
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(0);
         };
 
         class lblTextAge: EGVAR(main,LabelTooltip) {
-            text = "$STR_RFT_LBL_TEXTAGE";
+            text = CSTRING(TEXTAGE);
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(1);
         };
 
         class lblTextCreator: EGVAR(main,LabelTooltip) {
-            text = "$STR_RFT_LBL_TEXTCREATOR";
+            text = CSTRING(TEXTCREATOR);
 
             TOOLTIP_COL(0);
             TOOLTIP_ROW(2);

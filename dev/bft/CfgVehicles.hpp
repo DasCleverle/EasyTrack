@@ -1,4 +1,4 @@
-#define SYMBOL(ID, NAME) class ID { name = QUOTE(NAME); value = QMAINDATAPATH(symbols\ID.paa); }
+#define SYMBOL(ID, NAME) class ID { name = CSTRING(NAME); value = QMAINDATAPATH(symbols\ID.paa); }
 #undef SIZE
 #define SIZE(ID, NAME, VALUE) class ID { name = QUOTE(NAME); value = VALUE; }
 #define SIZE_DEF(ID, NAME, VALUE) class ID { name = QUOTE(NAME); value = VALUE; default = 1; }
@@ -33,7 +33,7 @@ class CfgVehicles {
 
     class MODULE_BFT_ASSIGN: Module_F {
         scope = 2;
-        displayName = "$STR_MODULE_BFT_ASSIGN_NAME";
+        displayName = CSTRING(MODULE_ASSIGN_NAME);
         icon = QDATAPATH(icon_module_assign.paa);
         category = QUOTE(MODULE_CATEGORY);
         function = QFUNC(initModuleAssign);
@@ -53,44 +53,44 @@ class CfgVehicles {
             };
 
             class Callsign {
-                displayName = "$STR_BFT_CALLSIGN";
-                description = "$STR_BFT_CALLSIGN_DESC";
-                defaultValue = "$STR_BFT_CALLSIGN_DEFAULT";
+                displayName = CSTRING(CALLSIGN);
+                description = CSTRING(CALLSIGN_DESC);
+                defaultValue = CSTRING(CALLSIGN_DEFAULT);
             };
 
             class Frequency {
-                displayName = "$STR_BFT_FREQUENCY";
-                description = "$STR_BFT_FREQUENCY_DESC";
-                defaultValue = "$STR_BFT_FREQUENCY";
+                displayName = CSTRING(FREQUENCY);
+                description = CSTRING(FREQUENCY_DESC);
+                defaultValue = CSTRING(FREQUENCY);
             };
 
             class Symbol {
-                displayName = "$STR_BFT_SYMBOL";
-                description = "$STR_BFT_SYMBOL_DESC";
+                displayName = CSTRING(SYMBOL);
+                description = CSTRING(SYMBOL_DESC);
                 class values {
-                    SYMBOL(inf,$STR_BFT_INF);
-                    SYMBOL(motinf,$STR_BFT_MOTINF);
-                    SYMBOL(mechinf,$STR_BFT_MECHINF);
-                    SYMBOL(recon,$STR_BFT_RECON);
-                    SYMBOL(hq,$STR_BFT_HQ);
-                    SYMBOL(armor,$STR_BFT_ARMOR);
-                    SYMBOL(artillery,$STR_BFT_ARTILLERY);
-                    SYMBOL(heli,$STR_BFT_HELI);
-                    SYMBOL(jet,$STR_BFT_JET);
-                    SYMBOL(logistics,$STR_BFT_LOGISTICS);
-                    SYMBOL(medical,$STR_BFT_MEDICAL);
+                    SYMBOL(inf,INF);
+                    SYMBOL(motinf,MOTINF);
+                    SYMBOL(mechinf,MECHINF);
+                    SYMBOL(recon,RECON);
+                    SYMBOL(hq,HQ);
+                    SYMBOL(armor,ARMOR);
+                    SYMBOL(artillery,ARTILLERY);
+                    SYMBOL(heli,HELI);
+                    SYMBOL(jet,JET);
+                    SYMBOL(logistics,LOGISTICS);
+                    SYMBOL(medical,MEDICAL);
                 };
             };
 
             class Size {
-                displayName = "$STR_BFT_SIZE";
-                description = "$STR_BFT_SIZE_DESC";
+                displayName = CSTRING(SIZE);
+                description = CSTRING(SIZE_DESC);
 
                 class values {
-                    SIZE(fireteam,$STR_BFT_FIRETEAM,SIZE_FIRETEAM);
-                    SIZE_DEF(unit,$STR_BFT_UNIT,SIZE_UNIT);
-                    SIZE(squad,$STR_BFT_SQUAD,SIZE_SQUAD);
-                    SIZE(platoon,$STR_BFT_PLATOON,SIZE_PLATOON);
+                    SIZE(fireteam,FIRETEAM,SIZE_FIRETEAM);
+                    SIZE_DEF(unit,UNIT,SIZE_UNIT);
+                    SIZE(squad,SQUAD,SIZE_SQUAD);
+                    SIZE(platoon,PLATOON,SIZE_PLATOON);
                 };
             };
         };

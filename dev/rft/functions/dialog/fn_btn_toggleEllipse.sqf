@@ -13,12 +13,12 @@ _iconPos = ICON_POS(_icon);
 
 if(_ellipsePos isEqualTo [-1]) then {
     SET_ELLIPSE_POS(_ellipse, _iconPos);
-    _control ctrlSetText localize "STR_RFT_BTN_HIDEELLIPSE";
+    _control ctrlSetText LLSTRING(BTN_HIDEELLIPSE);
     _control ctrlCommit 0;
 }
 else {
     SET_ELLIPSE_POS(_ellipse, [-1]);
-    _control ctrlSetText localize "STR_RFT_BTN_SHOWELLIPSE";
+    _control ctrlSetText LLSTRING(BTN_SHOWELLIPSE);
     _control ctrlCommit 0;
 };
 
