@@ -11,6 +11,7 @@ class CfgPatches {
         url = "http://www.gruppe-w.de/";
         VERSION_CONFIG;
     };
+    class CL_tracking_main {author="";};
 };
 
 #include "CfgFactionClasses.hpp"

@@ -1,8 +1,8 @@
 // COMPONENT should be defined in the script_component.hpp and included BEFORE this hpp
 
 #define MAINPREFIX x
-#define PREFIX CL
-#define MAINCOMPONENT tracking_main
+#define PREFIX CL_easytrack
+#define MAINCOMPONENT main
 
 #define MAINAUTHOR "DasCleverle"
 #define AUTHORS "[W] Rallen", "JeremiahRose", "Orginated by [W] Fett_Li"

@@ -15,7 +15,7 @@ if(typeName _source == typeName "") then {
     _marker = NEW_MARKER(_icon, _size, _side);
     GVAR(selectedMarker) = _marker;
 
-    [localize "STR_RFT_STATIC"] call FUNC(dir_setSelected);
+    [LLSTRING(STATIC)] call FUNC(dir_setSelected);
 }
 else {
     _marker = +_source;

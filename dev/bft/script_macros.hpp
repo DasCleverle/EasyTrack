@@ -4,7 +4,7 @@
 #define MODULE_BFT GVAR(module)
 #define MODULE_BFT_ASSIGN GVAR(moduleAssign)
 
-#define NEW_MARKER [player, localize "STR_BFT_CALLSIGN_DEFAULT", localize "STR_BFT_FREQUENCY_DEFAULT", ICON_DEFAULT, ICON_SIZE_DEFAULT]
+#define NEW_MARKER [player, LLSTRING(ALLSIGN_DEFAULT), LLSTRING(FREQUENCY_DEFAULT), ICON_DEFAULT, ICON_SIZE_DEFAULT]
 
 #define MARKER_GET_UNIT(var1)           (var1 select 0)
 #define MARKER_GET_CALLSIGN(var1)       (var1 select 1)

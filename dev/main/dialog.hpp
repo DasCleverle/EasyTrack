@@ -9,7 +9,7 @@ class RscControlsGroupNoHScrollbars;
 class GVAR(Label): RscText {
     idc = -1;
     //shadow = 0;
-    sizeEx = FONTSIZE;
+    sizeEx = QUOTE(FONTSIZE);
     style = 528;
 
     DIM(1,1);
@@ -18,22 +18,22 @@ class GVAR(Label): RscText {
 };
 
 class GVAR(LabelHeading): GVAR(Label) {
-    sizeEx = 1.5 * FONTSIZE;
+    sizeEx = QUOTE(1.5 * FONTSIZE);
     DIM(1,1.2);
 };
 
 class GVAR(LabelTooltip): GVAR(Label) {
-    sizeEx = TOOLTIP_FONTSIZE;
+    sizeEx = QUOTE(TOOLTIP_FONTSIZE);
 
     TOOLTIP_COL(0);
     TOOLTIP_ROW(0);
-    w = TOOLTIP_COL_WIDTH;
-    h = TOOLTIP_ROW_HEIGHT;
+    w = QUOTE(TOOLTIP_COL_WIDTH);
+    h = QUOTE(TOOLTIP_ROW_HEIGHT);
 };
 
 class GVAR(Button): RscButton {
     idc = -1;
-    sizeEx = FONTSIZE;
+    sizeEx = QUOTE(FONTSIZE);
 
     DIM(1,1);
 };
@@ -47,7 +47,7 @@ class GVAR(ButtonInvisble): GVAR(Button) {
 
 class GVAR(TextBox): RscEdit {
     idc = -1;
-    sizeEx = FONTSIZE;
+    sizeEx = QUOTE(FONTSIZE);
 
     colorBackground[] = {COLOR_BLACK_TR25};
 
@@ -71,17 +71,17 @@ class GVAR(Container): RscControlsGroupNoScrollbars {
 class GVAR(grpActions): RscControlsGroupNoHScrollbars {
     idc = IDC_GRP_ACTIONS;
 
-    x = safeZoneX + safeZoneW - 24 * GUIMIN_2(1.2,40) - 7 * GUIMIN_2(1.2,40);
-    y = safeZoneY + 1.51 * GUIMIN_3_2(1.2,25);
-    w = 7 * GUIMIN_2(1.2,40);
-    h = 4/3 * 7 * GUIMIN_2(1.2,40);
+    x = QUOTE(safeZoneX + safeZoneW - 24 * GUIMIN_2(1.2,40) - 7 * GUIMIN_2(1.2,40));
+    y = QUOTE(safeZoneY + 1.51 * GUIMIN_3_2(1.2,25));
+    w = QUOTE(7 * GUIMIN_2(1.2,40));
+    h = QUOTE(4/3 * 7 * GUIMIN_2(1.2,40));
 
     class controls {
         class background: GVAR(Background) {
             x = 0;
             y = 0;
-            w = 7 * GUIMIN_2(1.2,40);
-            h = 4/3 * 7 * GUIMIN_2(1.2,40);
+            w = QUOTE(7 * GUIMIN_2(1.2,40));
+            h = QUOTE(4/3 * 7 * GUIMIN_2(1.2,40));
 
             colorBackground[] = {COLOR_BLACK_TR50};
         };
@@ -91,12 +91,12 @@ class GVAR(grpActions): RscControlsGroupNoHScrollbars {
 
             x = 0;
             y = 0;
-            w = 7 * GUIMIN_2(1.2,40);
-            h = 4/3 * 7 * GUIMIN_2(1.2,40);
+            w = QUOTE(7 * GUIMIN_2(1.2,40));
+            h = QUOTE(4/3 * 7 * GUIMIN_2(1.2,40));
 
-            sizeEx = FONTSIZE;
+            sizeEx = QUOTE(FONTSIZE);
 
-            onLbSelChanged = _this call FUNC(lst_execAction);
+            onLbSelChanged = QUOTE(_this call FUNC(lst_execAction));
 
             colorBackground[] = {COLOR_TR};
             colorSelect2[] = {COLOR_WHITE};

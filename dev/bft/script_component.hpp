@@ -1,5 +1,5 @@
 #define COMPONENT BFT
-#include "\x\cl\addons\tracking_main\script_mod.hpp"
+#include "\x\cl_easytrack\addons\main\script_mod.hpp"
 
 //#define DEBUG_MODE_FULL
 
@@ -11,5 +11,5 @@
     #define DEBUG_SETTINGS DEBUG_SETTINGS_CORE
 #endif
 
-#include "\x\cl\addons\tracking_main\script_macros.hpp"
-#include "\x\cl\addons\bft\script_macros.hpp"
+#include "\x\cl_easytrack\addons\main\script_macros.hpp"
+#include "script_macros.hpp"

@@ -16,8 +16,8 @@ private ["_btnToggleEllipse", "_ellipsePos"];
 _ellipsePos = ELLIPSE_POS(MARKER_GET_ELLIPSE(_marker));
 
 if(_ellipsePos isEqualTo [-1]) then {
-    _btnToggleEllipse ctrlSetText localize "STR_RFT_BTN_SHOWELLIPSE";
+    _btnToggleEllipse ctrlSetText LLSTRING(BTN_SHOWELLIPSE);
 }
 else {
-    _btnToggleEllipse ctrlSetText localize "STR_RFT_BTN_HIDEELLIPSE";
+    _btnToggleEllipse ctrlSetText LLSTRING(BTN_HIDEELLIPSE);
 };

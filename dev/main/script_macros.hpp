@@ -4,14 +4,14 @@
 #include "ui_macros.hpp"
 
 // Constants
-#define MODULE_CATEGORY EGVAR(tracking_main,moduleCategory)
+#define MODULE_CATEGORY EGVAR(main,moduleCategory)
 
 #define ICON_SIZE 40
 #define ICON_SIZE_SIZE (ICON_SIZE * 1.2)
 #define ICON_SIZE_DIR (ICON_SIZE * 4)
 #define ICON_MIN_DISTANCE 0.0007
 
-#define SIZE_BASE_SYS(var1) \a3\ui_f\data\map\Markers\NATO\group_##var1##.paa
+#define SIZE_BASE_SYS(var1) \a3\ui_f\data\map\Markers\NATO\DOUBLES(group,var1).paa
 #define SIZE_FIRETEAM   QUOTE(SIZE_BASE_SYS(0))
 #define SIZE_UNIT       QUOTE(SIZE_BASE_SYS(1))
 #define SIZE_SQUAD      QUOTE(SIZE_BASE_SYS(2))
@@ -43,12 +43,12 @@
 
 #define EDATAPATH(var1,var2) PATHTOF_SYS(PREFIX,var1,data\var2)
 #define QEDATAPATH(var1,var2) QUOTE(EDATAPATH(var1,var2))
-#define MAINDATAPATH(var1) EDATAPATH(tracking_main,var1)
+#define MAINDATAPATH(var1) EDATAPATH(main,var1)
 #define QMAINDATAPATH(var1) QUOTE(MAINDATAPATH(var1))
 
 #define DATAPATH(FILE) PATHTOF(data\FILE)
 #define QDATAPATH(FILE) QUOTE(DATAPATH(FILE))
-#define FUNCFILE(CLASS) PATHTOF(functions\CLASS)
+#define FUNCFILE(CLASS) QPATHTOF(functions\CLASS)
 
 #define X(var1) (var1 select 0)
 #define Y(var1) (var1 select 1)

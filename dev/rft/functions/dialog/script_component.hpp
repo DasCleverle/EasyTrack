@@ -1,1 +1,1 @@
-#include "\x\cl\addons\rft\script_component.hpp"
+#include "..\..\script_component.hpp"

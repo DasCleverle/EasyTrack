@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Project name="EasyTrack">
-	<Package name="tracking_main">
+	<Package name="main">
 		<Container ID="Common">
-			<Key ID="STR_MAIN_MAINNAME">
+			<Key ID="STR_CL_EASYTRACK_MAIN_NAME">
 				<Original>EasyTrack</Original>
 				<English>EasyTrack</English>
 				<German>EasyTrack</German>
 			</Key>
 		</Container>
 		<Container ID="Actions">
-			<Key ID="STR_MAIN_SELFDESTRUCT">
+			<Key ID="STR_CL_EASYTRACK_MAIN_SELFDESTRUCT">
 				<Original>Self Destruction</Original>
 				<English>Self Destruction</English>
 				<German>Selbstzerstörung</German>
 			</Key>
-			<Key ID="STR_MAIN_SELFDESTRUCT_CONFIRM">
+			<Key ID="STR_CL_EASYTRACK_MAIN_SELFDESTRUCT_CONFIRM">
 				<Original>Do you really want to self destruct your EasyTrack Device(s)?</Original>
 				<English>Do you really want to self destruct your EasyTrack Device(s)?</English>
 				<German>Möchten Sie wirklich Ihr EasyTrack-Gerät(e) zerstören?</German>
 			</Key>
-			<Key ID="STR_MAIN_YES">
+			<Key ID="STR_CL_EASYTRACK_MAIN_YES">
 				<Original>Yes</Original>
 				<English>Yes</English>
 				<German>Ja</German>
 			</Key>
-			<Key ID="STR_MAIN_NO">
+			<Key ID="STR_CL_EASYTRACK_MAIN_NO">
 				<Original>No</Original>
 				<English>No</English>
 				<German>Nein</German>
 			</Key>
 		</Container>
 		<Container ID="CfgWeapons">
-			<Key ID="STR_MAIN_TABLET_DESTRCUTED">
+			<Key ID="STR_CL_EASYTRACK_MAIN_TABLET_DESTRCUTED">
 				<Original>Destructed EasyTrack Tablet</Original>
 				<English>Destructed EasyTrack Tablet</English>
 				<German>Zerstörtes EasyTrack-Tablet</German>
 			</Key>
-			<Key ID="STR_MAIN_PDA_DESTRCUTED">
+			<Key ID="STR_CL_EASYTRACK_MAIN_PDA_DESTRCUTED">
 				<Original>Destructed EasyTrack PDA</Original>
 				<English>Destructed EasyTrack PDA</English>
 				<German>Zerstörtes EasyTrack-PDA</German>
