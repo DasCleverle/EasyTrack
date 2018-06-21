@@ -89,7 +89,7 @@ GVAR(favorites) = [
 ];
 
 [
-    {!isNil QEGVAR(tracking_main,controlTypes)},
+    {(!isNil QEGVAR(tracking_main,controlTypes)) && !((isNull player) or (isNull (finddisplay 46)))},
     {
         EGVAR(tracking_main,controlTypes) pushBack [QGVAR(FavContainer),FUNC(initFavContainer)];
 

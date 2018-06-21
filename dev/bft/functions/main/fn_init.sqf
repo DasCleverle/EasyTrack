@@ -44,7 +44,7 @@ GVAR(configureUnits) = allPlayers;
 GVAR(mapInitialized) = false;
 
 [
-    {!isNil QEGVAR(tracking_main,controlTypes)},
+    {(!isNil QEGVAR(tracking_main,controlTypes)) && !((isNull player) or (isNull (finddisplay 46)))},
     {
         EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapClose),FUNC(initTextBoxNoMapClose)];
         EGVAR(tracking_main,controlTypes) pushBack [QGVAR(TextBoxNoMapCloseReadOnly),FUNC(initTextBoxNoMapClose)];
