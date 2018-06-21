@@ -9,8 +9,6 @@
         }] call CBA_fnc_waitUntilAndExecute;
         [missionNamespace, QGVAR(currentMarkerID), 0] spawn BIS_fnc_getServerVariable;
 
-
-
         // GPS
         GVAR(pfhGPS) = [
             {

@@ -7,7 +7,6 @@
         player setVariable [QGVAR(marker), NEW_MARKER, true];
 
         // GPS
-
         private _AddGpsPfh = {
             GVAR(pfhGPS) = [
                 {
@@ -27,12 +26,11 @@
             ] call CBA_fnc_addPerFrameHandler;
         };
 
-        if (missionNamespace getVariable [QEGVAR(rft,active), false]) then {
-            [
-                {!isNil QEGVAR(rft,pfhGPS)},
-                {[] call _AddGpsPfh}
-            ] call CBA_fnc_waitUntilAndExecute;
-        };
+        [
+            {!((missionNamespace getVariable [QEGVAR(rft,active), false]) && isNil QEGVAR(rft,pfhGPS))},
+            {[] call _this},
+            _addGpsPfh
+        ] call CBA_fnc_waitUntilAndExecute;
         
         GVAR(initClient) = true;
     }
