@@ -2,6 +2,7 @@
 
 class CfgPatches {
     class ADDON {
+        name = "EasyTrack";
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;

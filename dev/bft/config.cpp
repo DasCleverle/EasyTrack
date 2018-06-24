@@ -2,6 +2,7 @@
 
 class CfgPatches {
     class ADDON {
+        name = "EasyTrack - Blue Force Tracking";
         units[] = {};
         weapons[] = {};
         requiredVersion = REQUIRED_VERSION;
