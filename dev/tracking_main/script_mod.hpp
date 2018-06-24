@@ -8,8 +8,8 @@
 #define AUTHORS "[W] Rallen", "JeremiahRose", "Orginated by [W] Fett_Li"
 
 #define MAJOR 1
-#define MINOR 1
-#define PATCHLVL 7
+#define MINOR 2
+#define PATCHLVL 0
 
 #ifdef DEV
     #define VERSION MAJOR.MINOR.PATCHLVL-dev.DEV
@@ -20,4 +20,4 @@
 #endif
 
 // MINIMAL required version for the Mod. Components can specify others..
-#define REQUIRED_VERSION 1.70
+#define REQUIRED_VERSION 1.82
