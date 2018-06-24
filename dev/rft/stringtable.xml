@@ -191,13 +191,6 @@
 				<German>Benutzerdefiniert</German>
 			</Key>
 		</Container>
-		<Container ID="CfgVehicles">
-			<Key ID="STR_MODULE_RFT_NAME">
-				<Original>Enable Red Force Tracking</Original>
-				<English>Enable Red Force Tracking</English>
-				<German>Red Force Tracking aktivieren</German>
-			</Key>
-		</Container>
 		<Container ID="dialog">
 			<Key ID="STR_RFT_LBL_TEXTID">
 				<Original>ID:</Original>
@@ -230,6 +223,13 @@
 				<Original>Configure RFT</Original>
 				<English>Configure RFT</English>
 				<German>RFT konfigurieren</German>
+			</Key>
+		</Container>
+		<Container ID="CBA Settings">
+			<Key ID="STR_CL_RFT_ENABLE">
+				<Original>Enable Red Force Tracking</Original>
+				<English>Enable Red Force Tracking</English>
+				<German>Red Force Tracking aktivieren</German>
 			</Key>
 		</Container>
 	</Package>

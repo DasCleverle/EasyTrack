@@ -20,6 +20,7 @@ class CfgFunctions {
             file = FUNCFILE(main);
 
             class init {};
+            class initClient {};
             class initModule {};
             class getMarkerIndex {};
             class dirToString {};
