@@ -215,9 +215,9 @@
 		</Container>
 		<Container ID="CBA Settings">
 			<Key ID="STR_CL_BFT_ENABLE">
-				<Original>Enable Red Force Tracking</Original>
-				<English>Enable Red Force Tracking</English>
-				<German>Red Force Tracking aktivieren</German>
+				<Original>Enable Blue Force Tracking</Original>
+				<English>Enable Blue Force Tracking</English>
+				<German>Blue Force Tracking aktivieren</German>
 			</Key>
 		</Container>
 	</Package>
